@@ -1,6 +1,8 @@
 ﻿
+using API.DataTransferObjects;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specification;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,23 +17,46 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository _repo;
-        public ProductsController(IProductRepository repo)
+        private readonly IGenericRepository<Product> _productsRepository;
+        private readonly IGenericRepository<ProductBrand> _productBrandRepository;
+        private readonly IGenericRepository<ProductType> _productTypeRepository;
+
+        public ProductsController(IGenericRepository<Product> productsRepository,
+         IGenericRepository<ProductBrand> productBrandRepository,
+         IGenericRepository<ProductType> productTypeRepository)
         {
-            _repo = repo;
+            _productsRepository = productsRepository;
+            _productBrandRepository = productBrandRepository;
+            _productTypeRepository = productTypeRepository;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
-            var products = await _repo.GetProductsAsync();
+            
+            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var products = await _productsRepository.ListAsync(spec);
 
             return Ok(products);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductsToReturnDto>> GetProduct(int id)
         {
-            return await _repo.GetProductByIdAsync(id);
+
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+
+            var product = await _productsRepository.GetEntityWithSpecification(spec);
+
+            return new ProductsToReturnDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                PictureUrl = product.PictureUrl,
+                Price = product.Price,
+                ProductBrand = product.ProductBrand.Name,
+                ProductType = product.ProductType.Name
+            };
         }
 
         [HttpGet("Brands")]
@@ -41,7 +66,7 @@ namespace API.Controllers
             //var productBrand = await _repo.GetProductBrandAsync();
             //return Ok(productBrand);
 
-            return Ok(await _repo.GetProductBrandsAsync());
+            return Ok(await _productBrandRepository.ListAllAsync());
         }
 
         [HttpGet("Types")]
@@ -51,7 +76,7 @@ namespace API.Controllers
             //var productTypes = await _repo.GetProductTypeAsync();
             //return  Ok(productTypes);
 
-            return Ok(await _repo.GetProductTypesAsync());
+            return Ok(await _productTypeRepository.ListAllAsync());
         }
     }
 }
