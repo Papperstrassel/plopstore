@@ -1,10 +1,12 @@
 ﻿
 using API.DataTransferObjects;
+using API.Errors;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specification;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -34,10 +36,11 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductsToReturnDto>>> GetProducts()
+        public async Task<ActionResult<IReadOnlyList<ProductsToReturnDto>>> GetProducts(
+            [FromQuery]ProductSpecParams productParams)
         {
             
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
             var products = await _productsRepository.ListAsync(spec);
 
             return Ok(_mapper
@@ -46,12 +49,19 @@ namespace API.Controllers
                
         }
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductsToReturnDto>> GetProduct(int id)
         {
 
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
             var product = await _productsRepository.GetEntityWithSpecification(spec);
+
+            if(product == null)
+            {
+                return NotFound(new ApiResponse(404));
+            }
 
             return _mapper.Map<Product, ProductsToReturnDto>(product);
         }
