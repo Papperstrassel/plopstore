@@ -32,12 +32,12 @@ namespace API.Controllers
         public ActionResult GetServerError()
         {
             //Code block to test error handling and ExceptionMiddleWare 
-            return null;
-            //var thing = _context.Products.Find(42);
-            //var thingToReturn = thing.ToString();
+            //return null;
+            var thing = _context.Products.Find(42);
+            var thingToReturn = thing.ToString();
 
 
-            //return Ok();
+            return Ok();
 
         }
 
