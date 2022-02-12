@@ -11,6 +11,7 @@ import { IUser } from '../shared/models/user';
   providedIn: 'root'
 })
 export class AccountService {
+  //Grab apiUrl from our environment 
   baseUrl = environment.apiUrl;
   private currentUserSource = new BehaviorSubject<IUser>(null);
   currentUser$ = this.currentUserSource.asObservable();
