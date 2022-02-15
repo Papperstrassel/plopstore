@@ -3,27 +3,43 @@
 
         <main class="form-signin">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+           <div class="text-center mb-4">
+            <h1 class="h3 mb-5 fw-normal">sign in</h1>
+           </div>
+          
            
-            <h1 class="h3 mb-5 fw-normal">Please sign in</h1>
+            
+                <app-text-input formControlName="email" [label]="'Email Address'"></app-text-input>
+            
+           
+                <app-text-input formControlName="password" [label]="'Password'" [type]="'password'" ></app-text-input>
+
+          
+           
         
-            <div class="form-floating">
-                <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating mt-2">
-                <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
+         
+
+
         
             <div class="checkbox mb-2 mt-2">
                 <label>
                 <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+            <button [disabled]="loginForm.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
            
             </form>
         </main>
 
+    </div>
+
+    <div class="col-4">
+        <p>Form Status: {{loginForm.status}}</p>
+        <p>Email Status: {{loginForm.get('email').status}}</p>
+        <p>Email Touched: {{loginForm.get('email').touched}}</p>
+        <p>Email Dirty: {{loginForm.get('email').dirty}}</p>
+        <pre>{{loginForm.value | json}}</pre>
     </div>
 </div>
