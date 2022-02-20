@@ -69,7 +69,7 @@ namespace Infrastructure.Services
 
         public Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
         {
-            throw new System.NotImplementedException();
+            throw new System.NotImplementedException("Not done yet.");
         }
     }
 
