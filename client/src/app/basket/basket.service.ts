@@ -87,6 +87,13 @@ export class BasketService {
       }
     }
   }
+  
+  deleteLocalBasket(id: string) {
+    this.basketSource.next(null);
+    this.basketTotalSource.next(null);
+    localStorage.removeItem('basket_id');
+  }
+
    // Also removes the persisting storage of item basket with the localstorage removal. 
   deleteBasket(basket: IBasket) {
     return this.http.delete(this.baseUrl + 'basket?id=' + basket.id).subscribe(() => {
