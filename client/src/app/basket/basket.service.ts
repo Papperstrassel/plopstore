@@ -23,7 +23,10 @@ export class BasketService {
 
   setShippingPrice(deliveryMethod: IDeliveryMethod) {
     this.shipping = deliveryMethod.price;
+    const basket = this.getCurrentBasketValue();
+    basket.deliveryMethodId = deliveryMethod.id;
     this.calculateTotals();
+    this.setBasket(basket);
   }
 
   getBasket(id: string) {
@@ -73,7 +76,7 @@ export class BasketService {
     } else {
       this.removeItemFromBasket(item);
     }
-   
+
   }
 
   removeItemFromBasket(item: IBasketItem) {
@@ -87,14 +90,14 @@ export class BasketService {
       }
     }
   }
-  
+
   deleteLocalBasket(id: string) {
     this.basketSource.next(null);
     this.basketTotalSource.next(null);
     localStorage.removeItem('basket_id');
   }
 
-   // Also removes the persisting storage of item basket with the localstorage removal. 
+   // Also removes the persisting storage of item basket with the localstorage removal.
   deleteBasket(basket: IBasket) {
     return this.http.delete(this.baseUrl + 'basket?id=' + basket.id).subscribe(() => {
       this.basketSource.next(null);
@@ -115,14 +118,14 @@ export class BasketService {
     this.basketTotalSource.next({shipping, total, subtotal});
   }
 
-  //Method to see if item exist already, to update quantity or add it as new item. 
+  //Method to see if item exist already, to update quantity or add it as new item.
   private addOrUpdateItem(items: IBasketItem[], itemToAdd: IBasketItem, quantity: number): IBasketItem[] {
     console.log(items);
     const index = items.findIndex(i => i.id === itemToAdd.id);
     if(index === - 1) {
       itemToAdd.quantity = quantity;
       items.push(itemToAdd);
-    } 
+    }
     else {
       items[index].quantity += quantity;
     }
@@ -142,7 +145,7 @@ export class BasketService {
       productName: item.name,
       price: item.price,
       pictureUrl: item.pictureUrl,
-      quantity, 
+      quantity,
       brand: item.productBrand,
       productType: item.productType
     };
