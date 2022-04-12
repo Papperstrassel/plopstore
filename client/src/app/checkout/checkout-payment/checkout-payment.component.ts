@@ -25,6 +25,7 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
   cardCvc: any;
   cardErrors: any;
   cardHandler = this.onChange.bind(this);
+  loading = false;
 
   constructor(private basketService: BasketService, private checkoutService: CheckoutService,
     private toastr: ToastrService, private router: Router) { }
@@ -66,33 +67,43 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
 
   }
 
-  submittOrder() {
+  async submittOrder() {
+    this.loading = true;
     const basket = this.basketService.getCurrentBasketValue();
-    const orderToCreate = this.getOrderToCreate(basket);
-    this.checkoutService.createOrder(orderToCreate).subscribe((order: IOrder) => {
-      this.toastr.success('Order created successfully');
-      this.stripe.confirmCardPayment(basket.clientSecret, {
-        payment_method: {
-          card: this.cardNumber, //We have 3 elements, cardNumber, expiry and Cvc, we only need to put 1 since Stripe will put them all togheter automatically
-          billing_details: {
-            name: this.checkoutForm.get('paymentForm').get('nameOnCard').value
-          }
-        }
-      }).then(result => {
-        console.log(result);
-        if (result.paymentIntent) {
-          this.basketService.deleteLocalBasket(basket.id);
-          const navigationExtras: NavigationExtras = {state: order};
-          this.router.navigate(['checkout/success'], navigationExtras)
-        } else {
-          this.toastr.error(result.error.message);
-        }
-      });
+    try {
 
-    }, error => {
-      this.toastr.error(error.message);
+      const createdOrder = await this.createOrder(basket); // Will recieve response from createOrder which is now a "Promise" and will wait for this before moving on to the next step.
+    const paymentResult = await this.confirmPaymentWithStripe(basket);
+
+    if (paymentResult.paymentIntent) {
+      this.basketService.deleteLocalBasket(basket.id);
+      const navigationExtras: NavigationExtras = {state: createdOrder};
+      this.router.navigate(['checkout/success'], navigationExtras)
+    } else {
+      this.toastr.error(paymentResult.error.message);
+    }
+    this.loading = false;
+    } catch (error) {
       console.log(error);
+      this.loading = false;
+    }
+
+  }
+
+  private async confirmPaymentWithStripe(basket) {
+    return this.stripe.confirmCardPayment(basket.clientSecret, {
+      payment_method: {
+        card: this.cardNumber, //We have 3 elements, cardNumber, expiry and Cvc, we only need to put 1 since Stripe will put them all togheter automatically
+        billing_details: {
+          name: this.checkoutForm.get('paymentForm').get('nameOnCard').value
+        }
+      }
     });
+  }
+
+  private async createOrder(basket: IBasket) {
+    const orderToCreate = this.getOrderToCreate(basket);
+    return this.checkoutService.createOrder(orderToCreate).toPromise();
   }
   //helper method
   private getOrderToCreate(basket: IBasket) {
