@@ -71,9 +71,24 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
     const orderToCreate = this.getOrderToCreate(basket);
     this.checkoutService.createOrder(orderToCreate).subscribe((order: IOrder) => {
       this.toastr.success('Order created successfully');
-      this.basketService.deleteLocalBasket(basket.id);
-      const navigationExtras: NavigationExtras = {state: order};
-      this.router.navigate(['checkout/success'], navigationExtras)
+      this.stripe.confirmCardPayment(basket.clientSecret, {
+        payment_method: {
+          card: this.cardNumber, //We have 3 elements, cardNumber, expiry and Cvc, we only need to put 1 since Stripe will put them all togheter automatically
+          billing_details: {
+            name: this.checkoutForm.get('paymentForm').get('nameOnCard').value
+          }
+        }
+      }).then(result => {
+        console.log(result);
+        if (result.paymentIntent) {
+          this.basketService.deleteLocalBasket(basket.id);
+          const navigationExtras: NavigationExtras = {state: order};
+          this.router.navigate(['checkout/success'], navigationExtras)
+        } else {
+          this.toastr.error(result.error.message);
+        }
+      });
+
     }, error => {
       this.toastr.error(error.message);
       console.log(error);
