@@ -52,12 +52,14 @@ namespace API.Controllers
                 case "payment_intent.succeeded":
                     intent = (PaymentIntent)stripeEvent.Data.Object;
                     _logger.LogInformation("Payment Succeeded: ", intent.Id);
-                    // TODO: update order with new status
+                    order = await _paymentService.UpdateOrderPaymentSucceeded(intent.Id);
+                    _logger.LogInformation("Order updated to payment recieved: ", order.Id);
                     break;
                 case "payment_intent.payment_failed":
                     intent = (PaymentIntent)stripeEvent.Data.Object;
                     _logger.LogInformation("Payment Failed: ", intent.Id);
-                    // TODO: update order with new status
+                    order = await _paymentService.UpdateOrderPaymentFailed(intent.Id);
+                    _logger.LogInformation("Payment Failed: ", order.Id);
                     break;
             }
             //We need to notify Stripe that we have recieved their events, and we do this by sending a new emptyResult
