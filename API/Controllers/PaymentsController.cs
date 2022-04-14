@@ -15,7 +15,7 @@ namespace API.Controllers
     {
         private readonly IPaymentService _paymentService;
         private readonly ILogger<PaymentsController> _logger;
-        private const string WhSecret = ""; // We're going to get "something" from stripe telling us we can trust it. 
+        private const string WhSecret = "whsec_798a4a56f1b5cda0ea9f800f9486f6be37086201a8dbe9630cd2406e4c125762"; // We're going to get "something" from stripe telling us we can trust it. 
 
         public PaymentsController(IPaymentService paymentService, ILogger<PaymentsController> logger)
         {
