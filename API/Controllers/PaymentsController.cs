@@ -5,6 +5,7 @@ using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Stripe;
 using Order = Core.Entities.OrderAggregate.Order; //Removes ambigouity on what order object we're using. We use our order object and not the one coming from Stripe class. 
@@ -15,12 +16,13 @@ namespace API.Controllers
     {
         private readonly IPaymentService _paymentService;
         private readonly ILogger<PaymentsController> _logger;
-        private const string WhSecret = "whsec_798a4a56f1b5cda0ea9f800f9486f6be37086201a8dbe9630cd2406e4c125762"; // We're going to get "something" from stripe telling us we can trust it. 
+        private readonly string _WhSecret; // We're going to get "something" from stripe telling us we can trust it. 
 
-        public PaymentsController(IPaymentService paymentService, ILogger<PaymentsController> logger)
+        public PaymentsController(IPaymentService paymentService, ILogger<PaymentsController> logger, IConfiguration config)
         {
             _paymentService = paymentService;
             _logger = logger;
+            _WhSecret = config.GetSection("StripeSettings:WhSecret").Value;
         }
 
         [Authorize]
@@ -42,7 +44,7 @@ namespace API.Controllers
 
             //pass in the WbSecret to make sure this is actually coming from Stripe, so we can trust the stripe event.
             var stripeEvent = EventUtility.ConstructEvent(json, Request.Headers["Stripe-Signature"],
-                WhSecret);
+                _WhSecret);
 
             PaymentIntent intent;
             Order order; //Order class from Core entities that we have created. 
