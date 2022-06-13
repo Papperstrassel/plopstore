@@ -1,17 +1,17 @@
 
   <header class="navbar-main">
 
-    <nav>
+    <nav class="navbar-desktop">
       <div  class="expand-sign">
         <button class="bento-menu">
           <img src="/assets/images/Bento_menu.svg" style="max-height: 20px" alt="bentoMenu">
         </button>
       </div>
       <div class="navbarTop">
-      <img src="/assets/images/Mjaubie_new_logo.svg" alt="logo" class="logo" routerLink="/">
+      <img src="/assets/images/Mjaubie_new_logo_blue.svg" alt="logo" class="logo" routerLink="/">
 
         <ul class="nav-links">
-          <li><a class="nav-bar-text" routerLink="/shop" routerLinkActive="active">Products</a></li>
+          <li><a class="nav-bar-text" routerLink="/shop" routerLinkActive="active">Shop</a></li>
           <li>
             <ng-container *ngIf="(currentUser$ | async) === null">
               <a class="nav-bar-text" routerLink="/account/login">Sign In</a>
@@ -19,13 +19,16 @@
           </li>
         </ul>
       </div>
+
         <button class="activate-cart" routerLink="/basket">
-          <img class="shop-cart" src="/assets/images/Shop-Cart.svg" style="width: 26px; height: 18px;" alt="shopping-cart">
+          <img class="shop-cart" src="/assets/images/Shop-Cart_blue.svg" style="width: 26px; height: 18px;" alt="shopping-cart">
+            <div *ngIf="(basket$ | async) as basket" class="cart-no">
+              {{basket.items.length}}
+            </div>
         </button>
-
-
       </nav>
   </header>
+
 
 
 
