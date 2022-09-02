@@ -1,0 +1,50 @@
+[
+  {
+    "Name": "Sony WH-100XM4",
+    "Description": "Advanced noise reduction First class sound wireless",
+    "Price": 279.99,
+    "PictureUrl": "images/products/SonyWH100XM4.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Beats Headphone Family",
+    "Description": "Iconic sound in two styles",
+    "Price": 129.99,
+    "PictureUrl": "images/products/BeatsFamily.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "Sony MDR-A1ANC",
+    "Description": "Wireless sound Great battery life",
+    "Price": 94.99,
+    "PictureUrl": "images/products/SonyMDRA1ANC.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Airpods Pro",
+    "Description": "Magical Sound Active Noise cancellation",
+    "Price": 249,
+    "PictureUrl": "images/products/AirpodsProIEW.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Jabra Elite 85T",
+    "Description": "Waterproof Made for active life style",
+    "Price": 119,
+    "PictureUrl": "images/products/JabraEliteIEW.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Grey Pods A3",
+    "Description": "Long battery life Quality sound",
+    "Price": 49,
+    "PictureUrl": "images/products/GreyPodsIEW.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 5
+  }
+]

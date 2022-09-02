@@ -2,8 +2,8 @@
     "deploy.reloaded": {
         "packages": [
             {
-                "name": "Version 1.0.0",
-                "description": "Package version 1.0.0",
+                "name": "Version 1.0.2",
+                "description": "Package version 1.0.2",
 
                 "files": [
                     "publish/**"
