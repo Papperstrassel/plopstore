@@ -1,8 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
 
 .btn {
     width: 30%;
     height: 40px;
 }
+
+.card-product {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: $montserrat-font;
+}
+
+//Test section
+.product-card {
+
+  width: 22em;
+  height: 39em;
+  margin: 0.3em;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-top: 1em;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.25),
+  0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: .4s;
+  background: #f2f2f2;
+}
+
+.product-card-info {
+
+  display: grid;
+  height: 18em;
+
+
+
+}
+
+.rating-system {
+  padding-left: 2em;
+}
+
+.content:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16),
+  0 3px 6px rgba(0,0,0,0.23);
+  transform: translate(0px, -8px);
+}
+
+.description-text {
+  text-align: left;
+}
+
+.product-info-main {
+
+  background-color: beige;
+  //text-align: left;
+
+
+
+}
+.product-card .imgbox {
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.product-card .imgbox img {
+  justify-content: center;
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: 5em auto 0;
+}
+
+
+
+.product-card-product-name {
+  position: relative;
+  font-family: $montserrat-font;
+  font-weight: 500;
+  color: #000000;
+  text-align: center;
+  padding-top: 1.5em;
+  font-size: 1em;
+}
+
+.product-card-quick-details {
+
+  margin-top: 2em;
+  height: 2em;
+  font-family: $montserrat-font;
+  font-weight: 500;
+  color: #313131;
+}
+
+.details {
+  position: absolute;
+  width: 100%;
+  bottom: -145px;
+  background: white;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: 0.5s;
+}
+
+
+
+
+.fa {
+  margin: .1em;
+}
+
+.checked {
+  color: #FFCD3C;
+}
+
+.product-price {
+
+  color: black;
+  font-family: $montserrat-font;
+  font-size: 1.1em;
+  font-weight: 600;
+
+}
+//Test section
+
 
 .image :hover {
     opacity: 1;
@@ -33,4 +159,10 @@
     & button:last-of-type {
         transform: translateX(20px);
     }
+}
+
+.stars i {
+  color: #FFCD3C;
+  font-size: .8em;;
+
 }
