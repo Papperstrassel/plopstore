@@ -26,10 +26,11 @@ $montserrat-font: 'Montserrat', sans-serif;
   border-radius: 5px;
   cursor: pointer;
   padding-top: 1em;
-  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.25),
-  0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  //box-shadow: 0 7px 12px rgba(0, 0, 0, 0.25),
+  //0 10px 10px rgba(0, 0, 0, 0.22);
   transition: .4s;
-  background: #f2f2f2;
+  background: #FFFDFA;
 }
 
 .product-card-info {
@@ -55,24 +56,17 @@ $montserrat-font: 'Montserrat', sans-serif;
   text-align: left;
 }
 
-.product-info-main {
 
-  background-color: beige;
-  //text-align: left;
-
-
-
-}
 .product-card .imgbox {
   justify-content: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .product-card .imgbox img {
   justify-content: center;
   display: block;
-  width: 50%;
-  height: 50%;
+  width: 13em;
+  height: 13em;
   margin: 5em auto 0;
 }
 
@@ -81,10 +75,10 @@ $montserrat-font: 'Montserrat', sans-serif;
 .product-card-product-name {
   position: relative;
   font-family: $montserrat-font;
-  font-weight: 500;
+  font-weight: 600;
   color: #000000;
   text-align: center;
-  padding-top: 1.5em;
+  padding-top: 1.2em;
   font-size: 1em;
 }
 
@@ -97,17 +91,6 @@ $montserrat-font: 'Montserrat', sans-serif;
   color: #313131;
 }
 
-.details {
-  position: absolute;
-  width: 100%;
-  bottom: -145px;
-  background: white;
-  padding: 10px;
-  box-sizing: border-box;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition: 0.5s;
-}
-
 
 
 
@@ -116,6 +99,10 @@ $montserrat-font: 'Montserrat', sans-serif;
 }
 
 .checked {
+  color: #FFCD3C;
+}
+
+.fa-star-half-o {
   color: #FFCD3C;
 }
 
@@ -138,31 +125,6 @@ $montserrat-font: 'Montserrat', sans-serif;
     }
 }
 
-.hover-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(255,255,255, 0.5);
-    opacity: 0;
-    transition: all 0.5s;
 
-    & button {
-        z-index: 1000;
-        transition: all 0.5s;
 
-    }
-    & button:first-of-type {
-        transform: translateX(-20px);
-    }
-    & button:last-of-type {
-        transform: translateX(20px);
-    }
-}
 
-.stars i {
-  color: #FFCD3C;
-  font-size: .8em;;
-
-}

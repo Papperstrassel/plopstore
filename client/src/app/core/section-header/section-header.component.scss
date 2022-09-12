@@ -19,6 +19,16 @@ $montserrat-font: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
   font-weight: 500;
-  color: #414141;
+  color: #585858;
   font-size: 1.2em;
 }
+
+::ng-deep .xng-breadcrumb-root {
+
+  color: #414141;
+  font-family: $montserrat-font;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+
