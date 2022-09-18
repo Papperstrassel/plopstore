@@ -142,4 +142,20 @@ $montserrat-font: 'Montserrat', sans-serif;
   transform: translateY(0);
 }
 
+.filter-ul-items {
+  margin-left: -3em;
+  :hover {
+    text-decoration: underline;
+  }
+}
+
+.filter-list-items {
+  list-style: none;
+  cursor: pointer;
+  padding-bottom: .5em;
+  font-family: $montserrat-font;
+  font-weight: 500;
+}
+
+
 

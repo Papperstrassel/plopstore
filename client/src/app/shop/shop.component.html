@@ -32,19 +32,54 @@
           <button class="button-28" accordion-heading type="button">
             <div>Types</div>
           </button>
-          This is just some content to illustrate fancy headings.
+          <div>
+            <ng-container *ngIf="productTypes && brands">
+              <ul class="filter-ul-items">
+                <li class="filter-list-items"
+                  *ngFor="let productType of productTypes"
+                  [class.active]="productType.id === this.shopParams.typeId"
+                  [value]="productType.id"
+                  (click)="onTypeSelected(productType.id)">
+                  {{productType.name}}
+                </li>
+              </ul>
+            </ng-container>
+          </div>
+
         </accordion-group>
         <accordion-group [panelClass]="customClass">
           <button class="button-28" accordion-heading type="button">
             Price
           </button>
-          More info
+          <ng-container *ngIf="productTypes && brands">
+           <ul class="filter-ul-items">
+            <li class="filter-list-items"
+              *ngFor="let sort of sortOptions"
+              [value]="sort.value"
+              (click)="onSortSelected(sort.value)">
+              {{sort.name}}
+              </li>
+
+           </ul>
+          </ng-container>
         </accordion-group>
         <accordion-group [panelClass]="customClass">
           <button class="button-28" accordion-heading type="button">
             Brand
           </button>
-          More info
+         <div>
+          <ng-container *ngIf="productTypes && brands">
+            <ul class="filter-ul-items">
+              <li class="filter-list-items"
+                *ngFor="let brand of brands"
+                [class.active]="brand.id === this.shopParams.brandId"
+                [value]="brand.id"
+                (click)="onBrandSelected(brand.id)">
+                {{brand.name}}
+              </li>
+           </ul>
+          </ng-container>
+         </div>
         </accordion-group>
       </accordion>
      </div>

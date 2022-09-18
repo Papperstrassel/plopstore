@@ -22,7 +22,8 @@ export class ShopComponent implements OnInit {
 
 
   sortOptions = [
-    {name: 'Alphabetical', value: 'name'},
+    //Leaving out Alphapetical sorting for now
+    //{name: 'Alphabetical', value: 'name'},
     {name: 'Price: Low to High', value: 'priceAscending'},
     {name: 'Price: High to Low', value: 'priceDescending'}
   ];
