@@ -27,15 +27,16 @@ $montserrat-font: 'Montserrat', sans-serif;
 .product-listing {
   display: flex;
   justify-content: center;
-  border: 2px solid red;
+  //border: 2px solid red;
   position: relative;
 }
 
 .tempMenu {
-  border: 2px solid green;
+  //border: 2px solid green;
   display: block;
   position: relative;
   height: 100%;
+  width: 250px;
 }
 
 
@@ -86,41 +87,8 @@ $montserrat-font: 'Montserrat', sans-serif;
   color: black;
 }
 
-.filter-alternatives {
-  position: relative;
-  display: grid;
-  place-content: center;
-  flex-direction: column;
-  margin-right: 2em;
-
-}
 
 
-.dropdown-filter-holder {
-  display: flex;
-
-
-
-  ul {
-    list-style: none;
-    padding: 1rem 3rem;
-
-  }
-
-  li a {
-    text-decoration: none;
-    padding-top: .2em;
-    border: 1px solid black;
-
-  }
-
-}
-
-.filter-listitem-dropdown {
-  display: none;
-  position: relative;
-  z-index: 1;
-}
 
 
 
@@ -129,7 +97,7 @@ $montserrat-font: 'Montserrat', sans-serif;
   appearance: none;
   background-color: transparent;
   border: 2px solid #B7B7B7;
-  border-radius: 25px;
+  border-radius: 20px;
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
@@ -149,9 +117,13 @@ $montserrat-font: 'Montserrat', sans-serif;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100%;
+  width: 60%;
   will-change: transform;
   margin-top: 10px;
+}
+
+.buttonZero {
+  display: none;
 }
 
 .button-28:disabled {
@@ -169,4 +141,5 @@ $montserrat-font: 'Montserrat', sans-serif;
   box-shadow: none;
   transform: translateY(0);
 }
+
 

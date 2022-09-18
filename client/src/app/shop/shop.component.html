@@ -24,36 +24,35 @@
 
     </div>
 
-    <div class="filter-alternatives">
-
-
-
-
-    <button class="button-28" role="button">Type</button>
+  <div class="filter-alternatives">
     <div class="dropdown-filter-holder">
      <div class="dropdown">
-      <ul class="filter-listitem-dropdown">
-        <li><a href="">Apple</a></li>
-        <li><a href="">Jabra</a></li>
-        <li><a href="">Sony</a></li>
-      </ul>
+      <accordion [isAnimated]="true" class="customClass">
+        <accordion-group [panelClass]="customClass">
+          <button class="button-28" accordion-heading type="button">
+            <div>Types</div>
+          </button>
+          This is just some content to illustrate fancy headings.
+        </accordion-group>
+        <accordion-group [panelClass]="customClass">
+          <button class="button-28" accordion-heading type="button">
+            Price
+          </button>
+          More info
+        </accordion-group>
+        <accordion-group [panelClass]="customClass">
+          <button class="button-28" accordion-heading type="button">
+            Brand
+          </button>
+          More info
+        </accordion-group>
+      </accordion>
      </div>
     </div>
-
-
-    <button class="button-28" role="button">Price</button>
-    <div>
-      <ul>
-        <li><a href="">High-to-low</a></li>
-        <li><a href="">Low-to-High</a></li>
-        <li><a href="">Sony</a></li>
-      </ul>
-    </div>
-    <button class="button-28" role="button">Brand</button>
+  </div>
 
 
 
-    </div>
 
 
 

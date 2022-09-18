@@ -18,6 +18,9 @@ export class ShopComponent implements OnInit {
   shopParams: ShopParams;
   totalCount: number;
 
+  customClass = 'customClass';
+
+
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
     {name: 'Price: Low to High', value: 'priceAscending'},
