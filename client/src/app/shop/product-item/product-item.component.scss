@@ -2,10 +2,7 @@
 $montserrat-font: 'Montserrat', sans-serif;
 
 
-.btn {
-    width: 30%;
-    height: 40px;
-}
+
 
 .card-product {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -18,8 +15,8 @@ $montserrat-font: 'Montserrat', sans-serif;
 //Test section
 .product-card {
 
-  width: 22em;
-  height: 39em;
+  width: 19em;
+  height: 33em;
   margin: 0.3em;
   box-sizing: border-box;
   text-align: center;
@@ -27,8 +24,6 @@ $montserrat-font: 'Montserrat', sans-serif;
   cursor: pointer;
   padding-top: 1em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  //box-shadow: 0 7px 12px rgba(0, 0, 0, 0.25),
-  //0 10px 10px rgba(0, 0, 0, 0.22);
   transition: .4s;
   background: #FFFDFA;
 }
@@ -36,14 +31,22 @@ $montserrat-font: 'Montserrat', sans-serif;
 .product-card-info {
 
   display: grid;
-  height: 18em;
+  height: auto;
 
 
 
 }
 
-.rating-system {
+.product-info-text {
+  text-align: left;
+  margin-top: 0.5em;
   padding-left: 2em;
+  padding-right: 2em;
+}
+
+.rating-system {
+  padding-left: 5em;
+  margin-top: 3em;
 }
 
 .content:hover {
@@ -65,9 +68,9 @@ $montserrat-font: 'Montserrat', sans-serif;
 .product-card .imgbox img {
   justify-content: center;
   display: block;
-  width: 13em;
-  height: 13em;
-  margin: 5em auto 0;
+  width: 12em;
+  height: 12em;
+  margin: 1em auto 0;
 }
 
 
@@ -85,6 +88,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 .product-card-quick-details {
 
   margin-top: 2em;
+  padding-bottom: 2em;
   height: 2em;
   font-family: $montserrat-font;
   font-weight: 500;
@@ -108,6 +112,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 .product-price {
 
+  padding-top: 2em;
   color: black;
   font-family: $montserrat-font;
   font-size: 1.1em;

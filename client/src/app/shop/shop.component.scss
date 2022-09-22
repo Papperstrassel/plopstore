@@ -74,10 +74,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 
   }
 
-  .filter-icon {
-    margin: 0;
-    align-self: center;
-  }
+
 
 .filter-headline-label {
   margin-left: 0.5em;
@@ -158,4 +155,128 @@ $montserrat-font: 'Montserrat', sans-serif;
 }
 
 
+//Grid stuff
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
 
+}
+.sidebar-pane {
+  grid-column: 1;
+  grid-row: 1;
+}
+.products-pane {
+  grid-column: 2 ;
+  grid-row: 1;
+}
+
+.product-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto;
+}
+
+.product-card--holder {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.container-filter {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3em;
+  padding-left: 2em;
+}
+
+.filter-wrapper {
+  position: relative;
+  margin: 0 1.25rem 0 1.875rem;
+}
+
+.filter-listing {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+
+
+
+
+}
+
+.filter-title {
+  position: relative;
+}
+
+.filter-headline-label {
+  margin-left: 1em;
+}
+
+.filter-icon-svg {
+  padding-top: 0.15em;
+}
+
+//test wrapper
+
+
+.main-wrapper {
+  display: flex;
+  position: relative;
+}
+
+
+
+
+
+.product-card-wrapper {
+  //implicit grid
+  border: 2px solid green;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, .1fr);
+}
+
+.wrapped-div {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.test-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+
+}
+
+.filter-stuffz {
+
+  border: 2px solid green;
+  display: flex;
+  align-self: start;
+
+  padding-bottom: 3rem;
+  flex-direction: column;
+}
+// Grid stuff end
+
+//Flex test
+.left-side-filter-items {
+  flex: 0 0 20%;
+  width: 20%;
+  display: block;
+  float: left;
+  padding-left: 1em;
+}
+
+//
