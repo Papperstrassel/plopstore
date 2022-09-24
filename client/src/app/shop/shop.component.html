@@ -1,7 +1,7 @@
 <div class="container-shop">
 
 
-
+<aside>
   <div class="tempMenu">
     <div class="filter-header">
 
@@ -85,15 +85,16 @@
      </div>
     </div>
   </div>
-</div>
-
-
-  <div class="product-listing">
+  </div>
+</aside>
+  <div class="products-holder">
     <div class="card-grid">
       <div class="item-cards" *ngFor="let item of products">
         <app-product-item [product]="item"></app-product-item>
       </div>
     </div>
   </div>
+
+
 
  </div>
