@@ -5,96 +5,76 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 
 
-
-//Test section
 .product-card {
+  min-width: 16em;
+  min-height: 20em;
 
-  width: 19em;
-  height: 33em;
-  margin: 0.3em;
-  box-sizing: border-box;
-  text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
-  padding-top: 1em;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transition: .4s;
+  height: 25em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   background: #FFFDFA;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
 }
 
-.product-card-info {
-
-  display: grid;
+.product-image {
+  max-width: 100%;
   height: auto;
+  object-fit: contain;
+}
 
-
+.thumbnail-holder {
+  display: flex;
+  width: 7rem;
+  margin: auto;
+  margin-bottom: 2em;
+  margin-top: 1em;
 
 }
 
-.product-info-text {
-  text-align: left;
-  margin-top: 0.5em;
-  padding-left: 2em;
-  padding-right: 2em;
+.information-holder {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 2em;
+}
+
+.product-description {
+  font-family: $montserrat-font;
+  font-size: .8em;
+  text-align: center;
+
+}
+
+.left-align-product-info {
+
+  line-height: 1.3;
 }
 
 .rating-system {
-  padding-left: 5em;
-  margin-top: 3em;
+  font-size: 0.75em;
 }
 
-.content:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16),
-  0 3px 6px rgba(0,0,0,0.23);
-  transform: translate(0px, -8px);
-}
-
-.description-text {
-  text-align: left;
-}
-
-
-.product-card .imgbox {
-  justify-content: center;
-  margin-bottom: 1.5em;
-}
-
-.product-card .imgbox img {
-  justify-content: center;
-  display: block;
-  width: 12em;
-  height: 12em;
-  margin: 1em auto 0;
-}
-
-
-
-.product-card-product-name {
-  position: relative;
+.product-price {
   font-family: $montserrat-font;
   font-weight: 600;
-  color: #000000;
-  text-align: center;
-  padding-top: 1.2em;
-  font-size: 1em;
+  font-size: 0.8em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
-
-.product-card-quick-details {
-
-  margin-top: 2em;
-  padding-bottom: 2em;
-  height: 2em;
-  font-family: $montserrat-font;
-  font-weight: 500;
-  color: #313131;
-}
-
-
-
 
 .fa {
   margin: .1em;
 }
+
 
 .checked {
   color: #FFCD3C;
@@ -103,27 +83,4 @@ $montserrat-font: 'Montserrat', sans-serif;
 .fa-star-half-o {
   color: #FFCD3C;
 }
-
-.product-price {
-
-  padding-top: 2em;
-  color: black;
-  font-family: $montserrat-font;
-  font-size: 1.1em;
-  font-weight: 600;
-
-}
-//Test section
-
-
-.image :hover {
-    opacity: 1;
-    & button {
-        transform: none;
-        opacity: 1;
-    }
-}
-
-
-
 

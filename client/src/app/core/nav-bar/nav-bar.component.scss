@@ -20,8 +20,8 @@ $primary-font-color: #006EB9;
 
 .logo{
   cursor: pointer;
-  height: 28px;
-  width: 130px;
+  //height: 28px;
+  width: 6em;
 }
 
 .activate-cart{
@@ -82,7 +82,7 @@ $primary-font-color: #006EB9;
   color: $primary-font-color;
   font-family: $montserrat-font;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 0.85em;
   text-align: center;
   font-weight: 700;
 }

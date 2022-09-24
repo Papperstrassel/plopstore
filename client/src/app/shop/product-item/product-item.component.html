@@ -1,31 +1,28 @@
 <div class="product-card">
-  <div class="imgbox">
-    <img src="{{product.pictureUrl}}" alt="{{product.name}}">
-  </div>
-  <div class="product-card-product-name">
-    {{product.name}}
+
+  <div class="thumbnail-holder">
+    <img class="product-image" src="{{product.pictureUrl}}" alt="{{product.name}}">
   </div>
 
+  <div class="information-holder">
 
-  <div class="product-card-info">
-    <div class="product-card-quick-details">
-      <div class="product-info-main">
-        <p class="product-info-text">
-          {{product.description}}
-        </p>
-      </div>
-        </div>
-        <div class="rating-system">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star-half-o"></span>
-          (192)
-        </div>
+    <p class="product-name">{{product.name}}</p>
+    <div class="product-description">
+      <p class="left-align-product-info">{{product.description}}</p>
+    </div>
 
-        <div class="product-price">
-          {{product.price | currency}}
-        </div>
+    <div class="rating-system">
+      <span class="fa fa-star checked fa-1x"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star-half-o"></span>
+      <span class="fa fa-star"></span>
+      <span>(294)</span>
+    </div>
+
+    <div class="product-price">
+      {{product.price | currency}}
+    </div>
   </div>
+
 </div>

@@ -88,8 +88,9 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 
 .filter-headline-label {
+
   margin-left: 0.5em;
-  font-size: 1.3em;
+  font-size: 1em;
   font-family: $montserrat-font;
   font-weight: 600;
   color: black;
@@ -105,18 +106,18 @@ $montserrat-font: 'Montserrat', sans-serif;
   appearance: none;
   background-color: transparent;
   border: 2px solid #B7B7B7;
-  border-radius: 20px;
+  border-radius: 18px;
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
   display: inline-block;
   font-family: $montserrat-font;
-  font-size: 16px;
+  font-size: .8em;
   font-weight: 600;
   line-height: normal;
   margin: 0;
-  min-height: 30px;
-  min-width: 150px;
+  min-height: 2em;
+  min-width: 4em;
   outline: none;
   padding: 10px 10px;
   text-align: center;
@@ -151,6 +152,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 .filter-ul-items {
   margin-left: -3em;
   padding-right: 1em;
+  padding-bottom: 0;
   :hover {
     text-decoration: underline;
   }
@@ -159,7 +161,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 .filter-list-items {
   list-style: none;
   cursor: pointer;
-  padding-bottom: .5em;
+  padding-bottom: 0;
   font-family: $montserrat-font;
   font-weight: 500;
 }
