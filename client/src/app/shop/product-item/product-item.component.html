@@ -11,18 +11,23 @@
       <p class="left-align-product-info">{{product.description}}</p>
     </div>
 
+    <div class="buttonStuff">
+      <button class="Add-Button">One</button>
+      <button class="View-Button">Two</button>
+    </div>
+
     <div class="rating-system">
-      <span class="fa fa-star checked fa-1x"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star-half-o"></span>
-      <span class="fa fa-star"></span>
       <span>(294)</span>
-    </div>
-
-    <div class="product-price">
-      {{product.price | currency}}
-    </div>
   </div>
+
+  <div class="product-price">
+    {{product.price | currency}}
+  </div>
+</div>
 
 </div>
