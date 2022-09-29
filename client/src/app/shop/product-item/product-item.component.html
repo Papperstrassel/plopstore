@@ -12,8 +12,8 @@
     </div>
 
     <div class="buttonStuff">
-      <button class="Add-Button">One</button>
-      <button class="View-Button">Two</button>
+      <button (click)="addItemToBasket()" type="button" class="Add-Button">Add</button>
+      <button routerLink="/shop/{{product.id}}"type="button" class="View-Button">View</button>
     </div>
 
     <div class="rating-system">
