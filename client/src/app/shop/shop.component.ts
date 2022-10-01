@@ -5,10 +5,32 @@ import { IProductType } from '../shared/models/productType';
 import { ShopParams } from '../shared/models/shopParams';
 import { ShopService } from './shop.service';
 
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations'
+
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.scss']
+  styleUrls: ['./shop.component.scss'],
+
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        transform: 'translate3d(0,0,0)'
+      })),
+      state('out', style({
+        transform: 'translate3d(100%, 0, 0)'
+      })),
+      transition('in => out', animate('300ms ease-in-out')),
+      transition('out => in', animate('250ms ease-in-out'))
+    ]),
+  ]
+
 })
 export class ShopComponent implements OnInit {
   @ViewChild('search', {static: false}) searchTerm: ElementRef;
@@ -19,6 +41,13 @@ export class ShopComponent implements OnInit {
   totalCount: number;
 
   customClass = 'customClass';
+
+  //animation testing
+
+  menuState:string = 'out';
+
+
+  //animation testing
 
 
   sortOptions = [
@@ -31,6 +60,14 @@ export class ShopComponent implements OnInit {
   constructor(private shopService: ShopService) {
     this.shopParams = this.shopService.getShopParams();
    }
+
+   //animation testing
+
+
+   toggleMenu(){
+    this.menuState = this.menuState === 'out' ? 'in' : 'out';
+  }
+   //animation testing end
 
   ngOnInit()  {
     this.getProducts(true);

@@ -7,6 +7,13 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ShopRoutingModule } from './shop-routing.module';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { getBsVer, IBsVersion } from 'ngx-bootstrap/utils';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BasketModule } from '../basket/basket.module';
+
+
+
+
+
 
 
 
@@ -21,7 +28,10 @@ import { getBsVer, IBsVersion } from 'ngx-bootstrap/utils';
     CommonModule,
     SharedModule,
     ShopRoutingModule,
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    BasketModule
+
+
   ]
 
 })
