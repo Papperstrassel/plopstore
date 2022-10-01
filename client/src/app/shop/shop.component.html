@@ -1,4 +1,4 @@
-
+<div [ngClass]="menuState === 'in' ? 'overflow-removed' : 'overflow-normal'">
 <div class="mobile-filter-container">
   <div>
     <img src="/assets/images/FilterIcon_1.svg" style="max-height: 30px" alt="FilterIcon">
@@ -12,9 +12,6 @@
   <button (click)="toggleMenu()">Toggle Thingy</button>
   <div class="shop-cart-panel">
     <div class="shop-cart-panel-content">
-      <div class="cart-header">
-        Your Cart
-      </div>
       <div class="cart-product-container">
         <app-basket></app-basket>
       </div>
@@ -22,11 +19,11 @@
   </div>
 </div>
 
+
 <div>
   <button (click)="toggleMenu()">Toggle Thingy</button>
 </div>
 <div class="container-shop">
-
 
 
   <div class="tempMenu">
@@ -118,7 +115,5 @@
 
 
 
-
 </div>
-
-
+</div>

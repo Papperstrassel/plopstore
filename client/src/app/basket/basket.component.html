@@ -5,25 +5,15 @@
 
   <div class="product-basket-holder">
       <div *ngIf="basket$ | async">
-        <div class="container">
-          <div class="row">
-              <div>
-                 <app-basket-summary
-                      (decrement)="decrementItemQuantity($event)"
-                      (increment)="incrementItemQuantity($event)"
-                      (remove)="removeBasketItem($event)"
-                 ></app-basket-summary>
-              </div>
-              <app-order-totals></app-order-totals>
-          </div>
-
-
+        <app-basket-summary
+        (decrement)="decrementItemQuantity($event)"
+        (increment)="incrementItemQuantity($event)"
+        (remove)="removeBasketItem($event)"
+        ></app-basket-summary>
+        <app-order-totals></app-order-totals>
 
       </div>
 
 
   </div>
-
-
-
 </div>
