@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
+
+.order-summary-header {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  padding-left: 1.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #1F80BF;
+  border-top: 1px solid #EEEEEE;
+}
+
+.shipping-info-text {
+  font-family: $montserrat-font;
+  font-weight: 400;
+  font-size: 0.85em;
+  color: #6D6D6D;
+
+}
+
+.order-list-text {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.order-total-numbers {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+}

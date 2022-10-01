@@ -1,4 +1,9 @@
 <div class="basket-container">
+  <div class="empty-cart">
+    <div *ngIf="(basket$ | async) == null" class="cart-info-empty">
+      There is nothing here but you can try and add stuff
+    </div>
+  </div>
   <div class="shipping-info">
 
   </div>
@@ -11,9 +16,10 @@
         (remove)="removeBasketItem($event)"
         ></app-basket-summary>
         <app-order-totals></app-order-totals>
-
+        <div class="checkout-button-holder">
+          <!--TODO: Hook up checkout button-->
+          <button class="checkout-btn" role="button">Checkout</button>
+        </div>
       </div>
-
-
   </div>
 </div>
