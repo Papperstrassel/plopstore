@@ -19,7 +19,7 @@
             <ng-container *ngIf="currentUser$ | async">
               <div class="dropdown ml-3 mr-5" dropdown>
                   <a class="dropdown-toggle" style="cursor: pointer" dropdownToggle>
-                      <a class="nav-bar-text">Welcome {{(currentUser$ | async).displayName}}</a>
+                      <a class="nav-bar-user">Welcome {{(currentUser$ | async).displayName}}</a>
                   </a>
                   <div class ="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
                       <a routerLink="/basket" class="dropdown-item d-flex align-items-center py-2">

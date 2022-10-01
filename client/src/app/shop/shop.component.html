@@ -8,6 +8,16 @@
   </div>
 </div>
 
+<div class="shop-cart-window">
+  <div class="shop-cart-panel">
+    <div class="shop-cart-panel-content">
+      <div class="cart-header">
+        Your Cart
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="container-shop">
 
@@ -36,7 +46,7 @@
           <div>
             <ng-container *ngIf="productTypes && brands">
               <ul class="filter-ul-items">
-                <li class="filter-list-items"
+                <li class="filter-list-items" tabindex="0"
                   *ngFor="let productType of productTypes"
                   [class.active]="productType.id === this.shopParams.typeId"
                   [value]="productType.id"
@@ -54,13 +64,13 @@
           </button>
           <ng-container *ngIf="productTypes && brands">
            <ul class="filter-ul-items">
-            <li class="filter-list-items"
+            <li class="filter-list-items" tabindex="1"
               *ngFor="let sort of sortOptions"
+              [class.active]="shopParams.sort === sort.value"
               [value]="sort.value"
               (click)="onSortSelected(sort.value)">
               {{sort.name}}
               </li>
-
            </ul>
           </ng-container>
         </accordion-group>
@@ -71,7 +81,7 @@
          <div>
           <ng-container *ngIf="productTypes && brands">
             <ul class="filter-ul-items">
-              <li class="filter-list-items"
+              <li class="filter-list-items" tabindex="2"
                 *ngFor="let brand of brands"
                 [class.active]="brand.id === this.shopParams.brandId"
                 [value]="brand.id"
