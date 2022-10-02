@@ -14,9 +14,6 @@ import { BasketModule } from '../basket/basket.module';
 
 
 
-
-
-
 @NgModule({
   declarations: [
     ShopComponent,

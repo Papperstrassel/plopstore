@@ -9,6 +9,7 @@ import {ToastrModule} from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { SharedModule } from '../shared/shared.module';
+import { BasketModule } from '../basket/basket.module';
 
 
 
@@ -19,14 +20,18 @@ import { SharedModule } from '../shared/shared.module';
     RouterModule,
     BreadcrumbModule,
     SharedModule,
+    BasketModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
     })
   ],
+
   exports: [
     NavBarComponent,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    BasketModule
+
   ]
 })
 export class CoreModule { }

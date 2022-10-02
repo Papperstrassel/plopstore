@@ -11,7 +11,7 @@ import {
   style,
   animate,
   transition
-} from '@angular/animations'
+} from '@angular/animations';
 
 @Component({
   selector: 'app-shop',

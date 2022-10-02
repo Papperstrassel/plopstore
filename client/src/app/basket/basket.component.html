@@ -1,16 +1,4 @@
 <div class="basket-container">
-  <div class="empty-cart">
-    <div *ngIf="(basket$ | async) == null" class="cart-info-empty">
-      <div class="empty-cart-info">
-        Your shopping cart is empty.
-        <div class="button-holder"><button class="checkout-btn" role="button" routerLink="/shop" routerLinkActive="active">Shop now</button></div>
-      </div>
-    </div>
-  </div>
-
-
-
-
   <div class="product-basket-holder">
       <div *ngIf="basket$ | async">
         <app-basket-summary

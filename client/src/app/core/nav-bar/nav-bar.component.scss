@@ -168,5 +168,154 @@ $primary-font-color: #006EB9;
   transform: translateX(0%);
 }
 
-// testing
+// testing Basket
+.shop-cart-window {
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+}
+
+.shop-cart-panel {
+  max-width: 30rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 11;
+  background-color: white;
+}
+
+.shop-cart-panel-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.cart-always-shown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $montserrat-font;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #1F80BF;
+  padding-top: 1em;
+  padding-bottom: 1.1em;
+  margin-left: 6em;
+  padding-left: 3em;
+
+}
+
+.cart-product-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.exit-symbol {
+  font-size: 1em;
+  margin-left: 6em;
+  padding-right: 1em;
+  padding-left: .5em;
+  margin-top: 0.1em;
+  cursor: pointer;
+}
+
+.overflow-removed {
+  overflow: hidden;
+
+}
+
+.overflow-normal {
+  height: 100%;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-info-empty {
+  padding-top: 3em;
+
+ }
+
+ .empty-cart-info {
+  font-size: 1.1em;
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+}
+
+.button-holder {
+  padding-top: 5em;
+}
+
+.checkout-button {
+  width: 100%;
+  height: 3em;
+
+}
+
+
+/* CSS */
+.shop-now-btn {
+  align-items: center;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 4.5em;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  width: 100%;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.shop-now-btn:focus {
+  color: #171e29;
+}
+
+.shop-now-btn:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.shop-now-btn:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .shop-now-btn {
+    min-width: 170px;
+  }
+}
+// end of basket test
 

@@ -1,3 +1,32 @@
+<div [ngClass]="menuState === 'in' ? 'overflow-removed' : 'overflow-normal'">
+<div class="shop-cart-window" [@slideInOut]="menuState">
+  <div class="shop-cart-panel">
+    <div class="shop-cart-panel-content">
+      <div class="cart-always-shown">
+        <div>Your Cart</div>
+        <div (click)="toggleMenu()" class="exit-symbol"><i class="fa fa-times" aria-hidden="true"></i></div>
+      </div>
+      <div *ngIf="(basket$ | async) == null">
+        <div class="empty-cart">
+          <div class="cart-info-empty">
+            <div class="empty-cart-info">
+              Your shopping cart is empty.
+              <div class="button-holder"><button class="shop-now-btn"
+                role="button"(click)="toggleMenu()"
+                routerLink="/shop" routerLinkActive="active">Shop now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-product-container">
+        <app-basket></app-basket>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
   <header class="navbar-main">
 
@@ -39,7 +68,7 @@
         </ul>
       </div>
 
-        <button class="activate-cart" routerLink="/basket">
+        <button class="activate-cart" (click)="toggleMenu()">
           <img class="shop-cart" src="/assets/images/Shop-Cart_blue.svg" style="width: 26px; height: 18px;" alt="shopping-cart">
             <div *ngIf="(basket$ | async) as basket" class="cart-no">
               {{basket.items.length}}
@@ -47,7 +76,7 @@
         </button>
       </nav>
   </header>
-
+</div>
 
 
 
