@@ -6,7 +6,17 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 }
 
-.shipping-info {
+.shop-cart-always-show {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.cart-name {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
   display: flex;
 }
 
@@ -19,13 +29,22 @@ $montserrat-font: 'Montserrat', sans-serif;
   justify-content: center;
 }
 .cart-info-empty {
-  width: 100%;
-  background: red;
+ padding-top: 3em;
+
+}
+.empty-cart-info {
+  font-size: 1.1em;
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+}
+
+.button-holder {
+  padding-top: 5em;
 }
 
 .checkout-button-holder {
   display: flex;
-
 }
 
 .checkout-button {

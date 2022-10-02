@@ -245,6 +245,21 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 }
 
+.cart-always-shown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $montserrat-font;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #1F80BF;
+  padding-top: 1em;
+  padding-bottom: 1.1em;
+  margin-left: 6em;
+  padding-left: 3em;
+
+}
+
 .cart-header {
   position: relative;
   display: flex;
@@ -254,8 +269,20 @@ $montserrat-font: 'Montserrat', sans-serif;
   padding-bottom: 2em;
 }
 
+.exit-symbol {
+  font-size: 1em;
+  margin-left: 6em;
+  padding-right: 1em;
+  padding-left: .5em;
+  margin-top: 0.1em;
+  cursor: pointer;
+}
+
+
+
 .cart-product-container {
   display: flex;
+  justify-content: center;
 
 }
 

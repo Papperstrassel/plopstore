@@ -44,7 +44,7 @@ export class ShopComponent implements OnInit {
 
   //animation testing
 
-  menuState:string = 'out';
+  public menuState:string = 'out';
 
 
   //animation testing
@@ -64,7 +64,7 @@ export class ShopComponent implements OnInit {
    //animation testing
 
 
-   toggleMenu(){
+   public toggleMenu(){
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
    //animation testing end
