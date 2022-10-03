@@ -1,24 +1,44 @@
-<div class="d-flex justify-content-center mt-5">
-    <div class="col-3">
 
+<div class="d-flex justify-content-center mt-5">
+  <div class="bg-img-holder">
+    <img class="bg-image" src="/assets/images/loginbg.jpg" alt="bgImg">
+  </div>
+    <div class="sign-in-form-holder">
         <main class="form-signin">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
            <div class="text-center mb-4">
-            <h1 class="h3 mb-5 fw-normal">sign in</h1>
+            <h1 class="Sign-in-text">Sign In</h1>
            </div>
                 <app-text-input formControlName="email" [label]="'Email Address'"></app-text-input>
                 <app-text-input formControlName="password" [label]="'Password'" [type]="'password'" ></app-text-input>
             <div class="checkbox mb-2 mt-2">
-                <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <label class="remember-check">
+                <input type="checkbox" value="remember-me"> <p class="remember-text">Remember me</p>
                 </label>
             </div>
 
             <button [disabled]="loginForm.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-           
+
             </form>
+
+            <div class="info-pane">
+              <div class="user-reg-info">
+                <p class="titleSignUp">Not a member yet?</p>
+                <p class="member-benefits">Unlock access to:</p>
+                <ul class="benefits-list">
+                  <li><p class="member-benefits-item">Special Deals</p></li>
+                  <li><p class="member-benefits-item">Order History</p></li>
+                  <li><p class="member-benefits-item">Faster checkout</p></li>
+                  <li><p class="member-benefits-item">And more</p></li>
+                </ul>
+                <div class="signup-btn-holder">
+                  <button class="signup-btn">Register</button>
+                </div>
+              </div>
+            </div>
         </main>
 
     </div>
 </div>
+
