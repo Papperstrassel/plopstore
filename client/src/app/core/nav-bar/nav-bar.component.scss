@@ -1,29 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700&display=swap');
+$montserrat-font: 'Montserrat', sans-serif;
+$lexend-font: 'Lexend', sans-serif;
+$primary-font-color: #006EB9;
+
 .cart-no {
-    position: absolute;
-    min-height: 25px;
-    min-width: 25px;
-    border-radius: 50%;
-    font-size: 1em;
-    background: red;
-    color: white;
-    text-align: center;
-    top: -12px;
-    right: 32px;
+  padding-top: 3px;
+  position: relative;
+  min-height: 25px;
+  min-width: 25px;
+  font-size: 0.9em;
+  color: #3c3d3d;
+  text-align: center;
+  font-family: $montserrat-font;
+  font-weight: 600;
+
 }
 
-a {
-    text-decoration: none;
-    color: #343a40;
-
-    &.active {
-        color: orange;
-    }
+.logo{
+  cursor: pointer;
+  //height: 28px;
+  width: 6em;
 }
 
-.logo {
+.activate-cart{
+  display: flex;
+  border: none;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.bento-menu{
+  border: none;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  align-items: center;
+}
+
+.navbar-desktop {
+  top: 0;
+  width: 100%;
+  height: 30%;
+  margin: auto;
+  display: flex;
+  padding: 0 24px;
+  position: relative;
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 /15%);
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+
+
+}
+
+
+
+.navbarTop{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  padding-top: 15px;
+}
+.nav-links a{
+  color: $primary-font-color;
+  font-family: $montserrat-font;
+  text-decoration: none;
+  font-size: .8rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+
+.nav-links li{
+  list-style: none;
+}
+
+.expand-sign{
+  display: none;
+}
+
+.expand-sign div{
+  width: 25px;
+  height: 2px;
+  background-color: $primary-font-color;
+  margin: 5px;
+}
+
+
+
+@media screen and (max-width: 1340px) {
+  .nav-links {
+
+    width: 35%;
+
+  }
+}
+
+
+@media screen and (max-width: 966px) {
+
+
+
+   .navbar-main{
+     position: relative;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     margin: 0;
+     width: 100%;
+     height: 40%;
+   }
+
+   .navbar-desktop{
+     display: flex;
+     align-items: center;
+     position: relative;
+     height: 60px;
+     padding: 0 0 0 10px;
+   }
+
+
+
+
+  .nav-links{
+    display: none;
+  }
+
+
+
+  .logo{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .expand-sign{
+    display: block;
     cursor: pointer;
+  }
 
-    &:focus {
-        outline: none;
-    }
+  .shop-cart {
+    margin-right: .3em;
+  }
 }
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+// testing Basket
+.shop-cart-window {
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+}
+
+.shop-cart-panel {
+  max-width: 30rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 11;
+  background-color: white;
+}
+
+.shop-cart-panel-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.cart-always-shown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $montserrat-font;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #1F80BF;
+  padding-top: 1em;
+  padding-bottom: 1.1em;
+  margin-left: 6em;
+  padding-left: 3em;
+
+}
+
+.cart-product-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.exit-symbol {
+  font-size: 1em;
+  margin-left: 6em;
+  padding-right: 1em;
+  padding-left: .5em;
+  margin-top: 0.1em;
+  cursor: pointer;
+}
+
+.overflow-removed {
+  overflow: hidden;
+
+}
+
+.overflow-normal {
+  height: 100%;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-info-empty {
+  padding-top: 3em;
+
+ }
+
+ .empty-cart-info {
+  font-size: 1.1em;
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+}
+
+.button-holder {
+  padding-top: 5em;
+}
+
+.checkout-button {
+  width: 100%;
+  height: 3em;
+
+}
+
+
+/* CSS */
+.shop-now-btn {
+  align-items: center;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 4.5em;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  width: 100%;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.shop-now-btn:focus {
+  color: #171e29;
+}
+
+.shop-now-btn:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.shop-now-btn:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .shop-now-btn {
+    min-width: 170px;
+  }
+}
+// end of basket test
+

@@ -16,6 +16,10 @@ import { RouterModule } from '@angular/router';
 
 
 
+
+
+
+
 @NgModule({
   declarations: [
     PagingHeaderComponent,
@@ -23,7 +27,10 @@ import { RouterModule } from '@angular/router';
     OrderTotalsComponent,
     TextInputComponent,
     StepperComponent,
-    BasketSummaryComponent
+    BasketSummaryComponent,
+
+
+
   ],
   imports: [
     CommonModule,
@@ -33,7 +40,9 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     CdkStepperModule,
-    RouterModule
+    RouterModule,
+
+
 
   ],
   exports: [

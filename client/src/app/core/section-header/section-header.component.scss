@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
+
+.section-title {
+  margin-top: 0.8em;
+  display: flex;
+  justify-content: center;
+  //background-color: wheat;
+  font-family: $montserrat-font;
+  font-weight: 500;
+  font-size: 1.1em;
+  color: #585858;
+
+}
+
+.section-description {
+  margin-bottom: -1em;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  color: #585858;
+  font-size: 1em;
+}
+
+::ng-deep .xng-breadcrumb-root {
+
+  color: #414141;
+  font-family: $montserrat-font;
+  font-weight: 400;
+  font-size: .8em;
+  margin: 0;
+
+}
+
+

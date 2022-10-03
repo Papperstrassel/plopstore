@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import"../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import"../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
-@import"../node_modules/bootswatch/dist/Lux/bootstrap.min.css";
-@import"../node_modules/font-awesome/css/font-awesome.min.css";
+@import"../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";;
 @import"../node_modules/ngx-toastr/toastr.css";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
 
 .xng-breadcrumb-root {
     padding: 8px 16px;
@@ -13,7 +15,7 @@
 
 label.xng-breadcrumb-trail {
     margin-bottom: 0;
-    color: orange;
+    color: #B1B1B1;
 }
 
 .xng-breadcrumb-seperator {
@@ -23,3 +25,22 @@ label.xng-breadcrumb-trail {
 .StripeElement {
   height: 3.125em;
 }
+
+.customClass {
+
+  border: none;
+  background-color: transparent;
+
+  .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+
+  .panel-body {
+    background-color: transparent;
+
+  }
+}
+

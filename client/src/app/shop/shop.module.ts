@@ -5,6 +5,12 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ShopRoutingModule } from './shop-routing.module';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { getBsVer, IBsVersion } from 'ngx-bootstrap/utils';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BasketModule } from '../basket/basket.module';
+
+
 
 
 
@@ -12,13 +18,20 @@ import { ShopRoutingModule } from './shop-routing.module';
   declarations: [
     ShopComponent,
     ProductItemComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+
   ],
   imports: [
     CommonModule,
     SharedModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    AccordionModule.forRoot(),
+    BasketModule
+
+
   ]
-  
+
 })
-export class ShopModule { }
+export class ShopModule {
+  customClass = 'customClass';
+ }

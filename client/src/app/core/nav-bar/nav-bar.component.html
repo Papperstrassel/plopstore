@@ -1,43 +1,82 @@
-<div class="d-flex flex-column flex-md-row align-row align-items-center justify-content-between p-3 px-md-4 mb-3 bg-white
-border-bottom shadow-sm fixed-top">
-    <img src="/assets/images/Logo2.png" style="max-height: 70px;" alt="logo" class="logo" routerLink="/">
-    <nav class="my-2 my-md-0 mr-3 text-uppercase" style="font-size: larger;">
-        <a class="p-2" [routerLink]="['/']" routerLinkActive="active"
-         [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a class="p-2" routerLink="/shop" routerLinkActive="active">Shop</a>
-        <a class="p-2" routerLink="/test-error" routerLinkActive="active">Errors</a>
-    </nav>
-    <div class="d-flex align-items-center">
-        <a routerLink="/basket" class="position-relative">
-            <i class="fa fa-shopping-cart fa-2x mr-5 text-dark"></i>
-            <div *ngIf="(basket$ | async) as basket" class="cart-no">{{basket.items.length}}</div>
-        </a>
-        <ng-container *ngIf="(currentUser$ | async) === null">
-            <a routerLink="/account/login" class="btn btn-outline-secondary mr-2">Login</a>
-            <a routerLink="/account/register" class="btn btn-outline-secondary mr-3">Sign up</a>
-        </ng-container>
-
-        <ng-container *ngIf="currentUser$ | async">
-            <div class="dropdown ml-3 mr-5" dropdown>
-                <a class="dropdown-toggle" style="cursor: pointer" dropdownToggle>
-                    <strong>Welcome {{(currentUser$ | async).displayName}}</strong>    
-                </a>
-                <div class ="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
-                    <a routerLink="/basket" class="dropdown-item d-flex align-items-center py-2">
-                        <i class="fa fa-shopping-cart mr-3"></i> View Basket
-                    </a>
-                    <a routerLink="/orders" class="dropdown-item d-flex align-items-center py-2">
-                        <i class="fa fa-history mr-3"></i> View Orders
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
-                        <i class="fa fa-sign-out mr-3"></i> Logout
-                    </a>
-                </div>
+<div [ngClass]="menuState === 'in' ? 'overflow-removed' : 'overflow-normal'">
+<div class="shop-cart-window" [@slideInOut]="menuState">
+  <div class="shop-cart-panel">
+    <div class="shop-cart-panel-content">
+      <div class="cart-always-shown">
+        <div>Your Cart</div>
+        <div (click)="toggleMenu()" class="exit-symbol"><i class="fa fa-times" aria-hidden="true"></i></div>
+      </div>
+      <div *ngIf="(basket$ | async) == null">
+        <div class="empty-cart">
+          <div class="cart-info-empty">
+            <div class="empty-cart-info">
+              Your shopping cart is empty.
+              <div class="button-holder"><button class="shop-now-btn"
+                role="button"(click)="toggleMenu()"
+                routerLink="/shop" routerLinkActive="active">Shop now</button>
+              </div>
             </div>
-        </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="cart-product-container">
+        <app-basket></app-basket>
+      </div>
     </div>
+  </div>
 </div>
 
 
-    
+
+  <header class="navbar-main">
+
+    <nav class="navbar-desktop">
+      <div  class="expand-sign">
+        <button class="bento-menu">
+          <img src="/assets/images/Bento_menu.svg" style="max-height: 20px" alt="bentoMenu">
+        </button>
+      </div>
+      <div class="navbarTop">
+      <img src="/assets/images/Mjaubie_new_logo_blue.svg" alt="logo" class="logo" routerLink="/">
+
+        <ul class="nav-links">
+          <li><a class="nav-bar-text" routerLink="/shop" routerLinkActive="active">Shop</a></li>
+          <li>
+            <ng-container *ngIf="(currentUser$ | async) === null">
+              <a class="nav-bar-text" routerLink="/account/login">Sign In</a>
+            </ng-container>
+            <ng-container *ngIf="currentUser$ | async">
+              <div class="dropdown ml-3 mr-5" dropdown>
+                  <a class="dropdown-toggle" style="cursor: pointer" dropdownToggle>
+                      <a class="nav-bar-user">Welcome {{(currentUser$ | async).displayName}}</a>
+                  </a>
+                  <div class ="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
+                      <a routerLink="/basket" class="dropdown-item d-flex align-items-center py-2">
+                          <i class="fa fa-shopping-cart mr-3"></i> View Basket
+                      </a>
+                      <a routerLink="/orders" class="dropdown-item d-flex align-items-center py-2">
+                          <i class="fa fa-history mr-3"></i> View Orders
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
+                          <i class="fa fa-sign-out mr-3"></i> Logout
+                      </a>
+                  </div>
+              </div>
+          </ng-container>
+          </li>
+        </ul>
+      </div>
+
+        <button class="activate-cart" (click)="toggleMenu()">
+          <img class="shop-cart" src="/assets/images/Shop-Cart_blue.svg" style="width: 26px; height: 18px;" alt="shopping-cart">
+            <div *ngIf="(basket$ | async) as basket" class="cart-no">
+              {{basket.items.length}}
+            </div>
+        </button>
+      </nav>
+  </header>
+</div>
+
+
+

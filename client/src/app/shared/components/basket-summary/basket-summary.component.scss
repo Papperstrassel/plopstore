@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
+.product-name {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+  font-size: .8em;
+}
+
+.product-type-text {
+  font-family: $montserrat-font;
+  font-weight: 500;
+  color: #6D6D6D;
+  font-size: .8em;
+}
+
+.product-info {
+  line-height: 1;
+  padding-top: 0.5em;
+  text-align: center;
+
+}
+
+
+.picture-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+.fa-minus {
+  color: #999999;
+  padding-top: 0.2em;
+}
+
+.fa-plus {
+  color: #999999;
+  padding-top: 0.2em;
+}
+.fa-trash-o {
+  color: #999999;
+}
+
+.quantity-text {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 2px solid #dadada;
+  border-radius: 9px;
+}
+
+.price-text {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+  font-size: .9em;
+
+}
+
+
