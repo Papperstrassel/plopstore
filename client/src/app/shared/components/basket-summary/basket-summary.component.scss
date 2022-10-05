@@ -50,13 +50,14 @@ $montserrat-font: 'Montserrat', sans-serif;
 }
 
 .quantity-text {
+  padding: 0.1em;
   font-family: $montserrat-font;
   font-weight: 600;
   font-size: 1.1em;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  border: 2px solid #ececec;
-  border-radius: 9px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
 }
 
 .price-text {

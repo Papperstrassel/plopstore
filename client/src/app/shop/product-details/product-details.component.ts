@@ -14,7 +14,10 @@ export class ProductDetailsComponent implements OnInit {
   product: IProduct;
   quantity = 1;
 
-  constructor(private shopService: ShopService, private activateRoute: ActivatedRoute, private bcService: BreadcrumbService, 
+  customClass = 'customClass';
+
+
+  constructor(private shopService: ShopService, private activateRoute: ActivatedRoute, private bcService: BreadcrumbService,
     private basketService: BasketService) {
     this.bcService.set('@productDetails',' ')
    }
@@ -35,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
     if(this.quantity > 1) {
       this.quantity--;
     }
-    
+
   }
 
   loadProduct() {

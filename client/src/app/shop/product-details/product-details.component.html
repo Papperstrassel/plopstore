@@ -10,6 +10,28 @@
         <p class="title-text">{{product.name}}</p>
         <p class="product-type-text">{{product.productType}}</p>
         <p class="product-price-text">{{product.price | currency}}</p>
+
+        <div class="btn-holder">
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="detail-info-box">
+          <accordion [isAnimated]="true" class="customClass">
+            <accordion-group [panelClass]="customClass" [isOpen]="true">
+              <button class="product-desc-spec-btn" accordion-heading type="button">
+                Description
+              </button>
+              <div class="expanded-info">
+                {{product.description}}
+              </div>
+            </accordion-group>
+            <accordion-group [panelClass]="customClass">
+              <button class="product-desc-spec-btn" accordion-heading type="button">
+                Specification
+              </button>
+            </accordion-group>
+          </accordion>
+        </div>
       </div>
     </div>
   </div>

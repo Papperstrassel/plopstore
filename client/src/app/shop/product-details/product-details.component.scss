@@ -5,13 +5,14 @@ $light-color: #AAAAAA;
 
 @media (min-width: 600px) {
   .information-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-details-holder { padding-top: 3em;}
+
 }
 
 
 
 .product-details-holder {
   display: flex;
-  border: 2px solid red;
   margin-left: 2em;
   margin-right: 2em;
   margin-top: .1em;
@@ -27,13 +28,13 @@ $light-color: #AAAAAA;
 }
 
 .product-graphic-holder {
+  padding-right: .1em;
 
-  border: 2px solid blue;
 }
 
 .product-info-holder {
+  padding-left: 1em;
 
-  border: 2px solid green;
 }
 
 .title-text {
@@ -44,8 +45,8 @@ $light-color: #AAAAAA;
 }
 
 .img-holder {
+  padding-right: .1em;
 
-  border: 2px solid black;
 }
 .product-image {
   width: 100%;
@@ -55,19 +56,93 @@ $light-color: #AAAAAA;
 
 .product-type-text {
   margin: 0;
-  margin-left: .1em;
-  margin-top: -1.25em;
+  margin-top: -1.55em;
   font-family: $montserrat-font;
   color: $light-color;
   font-weight: 500;
+  font-size: 0.85em;
 }
 
 .product-price-text {
   margin: 0;
-  //margin-top: 2em;
   padding-top: 1.1em;
   color: $base-color;
   font-family: $montserrat-font;
-  font-weight: 600;
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.35rem;
 }
+
+.btn-holder {
+  padding-top: 1.2em;
+  width: 43%;
+
+}
+
+.add-to-cart-btn {
+  align-items: center;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 3.2em;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  width: 100%;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add-to-cart-btn:focus {
+  color: #171e29;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.add-to-cart-btn:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.detail-info-box {
+  margin-top: 3em;
+
+}
+
+.product-desc-spec-btn {
+  padding-top: 1em;
+  border: none;
+  background-color: white;
+  font-family: $montserrat-font;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+
+.expanded-info {
+  margin-top: 0.5em;
+  margin-left: 0.4em;
+  font-family: $montserrat-font;
+  font-size: 0.85em;
+  color: black;
+
+
+}
+
