@@ -1,7 +1,7 @@
 <div class="mt-4" [formGroup]="checkoutForm">
-    <h4 class="mb-3">Choose your delivery method</h4>
-    <div class="row ml-5" formGroupName="deliveryForm">
-        <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
+    <h4 class="delivery-header">Delivery Method</h4>
+    <div class="delivery-grid-holder" formGroupName="deliveryForm">
+        <div class="delivery-option-item" *ngFor="let method of deliveryMethods">
            <input type="radio"
                 id={{method.id}}
                 (click)="setShippingPrice(method)"
@@ -17,11 +17,12 @@
     </div>
 </div>
 
-<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
-    <button class="btn btn-outline-primary" cdkStepperPrevious>
+
+<div class="button-holder-nav">
+    <button class="backtrack-btn" cdkStepperPrevious>
         <i class="fa fa-angle-left"></i> Back to Address
     </button>
-    <button [disabled]="checkoutForm.get('deliveryForm').invalid" class="btn btn-primary" cdkStepperNext>
+    <button [disabled]="checkoutForm.get('deliveryForm').invalid" class="forward-btn" cdkStepperNext>
       Go to Review  <i class="fa fa-angle-right"></i>
     </button>
 </div>
