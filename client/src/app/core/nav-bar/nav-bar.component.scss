@@ -317,5 +317,57 @@ $primary-font-color: #006EB9;
     min-width: 170px;
   }
 }
-// end of basket test
 
+.checkout-button-holder {
+  display: flex;
+}
+
+.checkout-btn {
+  align-items: center;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 4.5em;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  width: 100%;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.checkout-btn:focus {
+  color: #171e29;
+}
+
+.checkout-btn:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.checkout-btn:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .button-58 {
+    min-width: 170px;
+  }
+}

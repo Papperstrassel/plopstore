@@ -22,6 +22,10 @@
       <div class="cart-product-container">
         <app-basket></app-basket>
       </div>
+      <div *ngIf="(basket$ | async) !== null" class="checkout-button-holder">
+        <!--TODO: Hook up checkout button-->
+        <button (click)="toggleMenu()" routerLink="/checkout" class="checkout-btn" role="button">Checkout</button>
+      </div>
     </div>
   </div>
 </div>

@@ -12,14 +12,14 @@
         <p class="product-price-text">{{product.price | currency}}</p>
 
         <div class="btn-holder">
-          <button class="add-to-cart-btn">Add to Cart</button>
+          <button (click)="addItemToBasket()" class="add-to-cart-btn">Add to Cart</button>
         </div>
 
         <div class="detail-info-box">
           <accordion [isAnimated]="true" class="customClass">
             <accordion-group [panelClass]="customClass" [isOpen]="true">
               <button class="product-desc-spec-btn" accordion-heading type="button">
-                Description
+                Description <i class="fa fa-caret-down" aria-hidden="true"></i>
               </button>
               <div class="expanded-info">
                 {{product.description}}
@@ -27,7 +27,7 @@
             </accordion-group>
             <accordion-group [panelClass]="customClass">
               <button class="product-desc-spec-btn" accordion-heading type="button">
-                Specification
+                Specification <i class="fa fa-caret-down" aria-hidden="true"></i>
               </button>
             </accordion-group>
           </accordion>
