@@ -1,6 +1,6 @@
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-8">
+<div class="checkout-section-holder">
+    <div class="checkout-order-section-row">
+        <div class="checkout-stepper-holder">
             <app-stepper [linearModeSelected]="true" #appStepper>
                 <cdk-step [label]=" 'Address'" [completed]="(checkoutForm.get('addressForm')).valid">
                     <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
@@ -16,7 +16,7 @@
                 </cdk-step>
             </app-stepper>
         </div>
-        <div class="col-4">
+        <div class="order-summary-holder">
             <app-order-totals></app-order-totals>
         </div>
     </div>
