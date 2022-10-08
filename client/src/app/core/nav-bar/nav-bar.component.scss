@@ -203,6 +203,12 @@ $primary-font-color: #006EB9;
 
 }
 
+.user-cart-text {
+  margin-left: 2em;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
 .cart-always-shown {
   display: flex;
   justify-content: center;
@@ -214,7 +220,7 @@ $primary-font-color: #006EB9;
   padding-top: 1em;
   padding-bottom: 1.1em;
   margin-left: 6em;
-  padding-left: 3em;
+  margin-top: .7em;
 
 }
 
@@ -225,12 +231,11 @@ $primary-font-color: #006EB9;
 }
 
 .exit-symbol {
-  font-size: 1em;
-  margin-left: 6em;
-  padding-right: 1em;
-  padding-left: .5em;
+  font-size: 1.3em;
+  margin-left: 5em;
   margin-top: 0.1em;
   cursor: pointer;
+  color: #BF1F80 ;
 }
 
 .overflow-removed {
@@ -249,14 +254,18 @@ $primary-font-color: #006EB9;
 
 .cart-info-empty {
   padding-top: 3em;
-
+  display: flex;
+  justify-content: center;
  }
 
  .empty-cart-info {
-  font-size: 1.1em;
+  width: 15em;
+  text-align: center;
+  font-size: 1.5em;
   font-family: $montserrat-font;
-  font-weight: 600;
+  font-weight: 700;
   color: #1F80BF;
+
 }
 
 .button-holder {
@@ -323,6 +332,9 @@ $primary-font-color: #006EB9;
 
 .checkout-button-holder {
   display: flex;
+  bottom: 0;
+  width: 100%;
+
 }
 
 .checkout-btn {

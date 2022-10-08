@@ -3,14 +3,14 @@
   <div class="shop-cart-panel">
     <div class="shop-cart-panel-content">
       <div class="cart-always-shown">
-        <div>Your Cart</div>
+        <div class="user-cart-text">Your Cart</div>
         <div (click)="toggleMenu()" class="exit-symbol"><i class="fa fa-times" aria-hidden="true"></i></div>
       </div>
       <div *ngIf="(basket$ | async) == null">
         <div class="empty-cart">
           <div class="cart-info-empty">
             <div class="empty-cart-info">
-              Your shopping cart is empty.
+              Wops, there are no items in the cart yet
               <div class="button-holder"><button class="shop-now-btn"
                 role="button"(click)="toggleMenu()"
                 routerLink="/shop" routerLinkActive="active">Shop now</button>
