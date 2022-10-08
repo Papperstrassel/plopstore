@@ -4,6 +4,15 @@
     max-width: 33.333333%;
   }
 
+  .checkout-section-holder {
+    border: 2px solid red;
+    min-width: 50%;
+  }
+
+  .checkout-stepper-holder {
+    width: 50em;
+  }
+
 }
 
 .checkout-section-holder {
@@ -25,7 +34,4 @@
 
 }
 
-.checkout-stepper-holder {
-  display: flex;
 
-}

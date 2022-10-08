@@ -78,16 +78,16 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 //Review section display only
 
-.review-holder {
-  display: flex;
-  justify-content: center;
-}
+
+
 
 @media (min-width: 600px) {
   .product-review-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
+  }
+  .review-holder {
+    display: flex;
   }
 }
 
