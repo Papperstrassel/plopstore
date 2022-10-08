@@ -69,22 +69,52 @@ $primary-font-color: #006EB9;
   margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-
+  //justify-content: center;
 }
 
-.discover_img{
-  width: 175px;
-  height: 56px;
-  margin-right: 15px;
-}
 
-.explore_img{
-  width: 175px;
-  height: 56px;
-  margin-left: 15px;
-}
+
+//button stuff
+
+.view-btn {
+  display: inline-block;
+  padding: 0.1rem 1rem;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #BF1F80;
+  border: 3px solid #BF1F80;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: $montserrat-font;
+  border-radius: 3px;
+ }
+
+ .view-btn::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #BF1F80;
+   transform: translateX(-100%);
+   transition: all .3s;
+   z-index: -1;
+  }
+
+  .view-btn:hover {
+   color: white;
+
+  }
+
+  .view-btn:hover::before {
+   transform: translateX(0);
+  }
+
 
 //Mobile Media section
 
@@ -93,6 +123,10 @@ $primary-font-color: #006EB9;
     position: relative;
     height: 600px;
     width: 100%;
+  }
+
+  .home-hero_buttons {
+    justify-content: center;
   }
 
   .two-col{

@@ -72,7 +72,9 @@
         <button class="activate-cart" (click)="toggleMenu()">
           <img class="shop-cart" src="/assets/images/Shop-Cart_blue.svg" style="width: 26px; height: 18px;" alt="shopping-cart">
             <div *ngIf="(basket$ | async) as basket" class="cart-no">
-              {{basket.items.length}}
+              <div class="item-quantity-basket">
+                {{basket.items.length}}
+              </div>
             </div>
         </button>
       </nav>

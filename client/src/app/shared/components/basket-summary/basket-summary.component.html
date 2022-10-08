@@ -24,9 +24,13 @@
                     <td class="align-middle">
                         <div class="quantity-container"
                             [class.justify-content-center]="!isBasket">
-                            <i *ngIf="isBasket" (click)="decrementItemQuantity(item)" class="fa fa-minus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            <div class="minus-symbol-holder">
+                              <i *ngIf="isBasket" (click)="decrementItemQuantity(item)" class="fa fa-minus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            </div>
                             <span class="quantity-text">{{item.quantity}}</span>
-                            <i *ngIf="isBasket" (click)="incrementItemQuantity(item)" class="fa fa-plus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            <div class="plus-symbol-holder">
+                              <i *ngIf="isBasket" (click)="incrementItemQuantity(item)" class="fa fa-plus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            </div>
                         </div>
                     </td>
                     <td class="align-middle">
