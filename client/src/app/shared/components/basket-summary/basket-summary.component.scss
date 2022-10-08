@@ -33,12 +33,20 @@ $montserrat-font: 'Montserrat', sans-serif;
   align-items: center;
   justify-content: space-between;
 
+}
 
+.minus-symbol-holder {
+  margin-right: 0.5em;
+}
+
+.plus-symbol-holder {
+  margin-left: 0.5em;
 }
 
 .fa-minus {
   color: #1f40bf;
   padding-top: 0.2em;
+
 }
 
 .fa-plus {
@@ -68,4 +76,55 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 }
 
+//Review section display only
 
+.review-holder {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .product-review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+}
+
+.product-review-grid {
+
+  display: grid;
+  gap: 2em;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+
+.product-review-grid-item {
+  border: 2px solid red;
+  //display: flex;
+  padding: 1em;
+
+
+}
+
+.quantity-container-review {
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.review-quantity-text {
+
+  font-family: $montserrat-font;
+  font-weight: 600;
+
+}
+
+.review-price-text {
+  margin-left: 0.4em;
+  font-family: $montserrat-font;
+  font-weight: 600;
+
+}
