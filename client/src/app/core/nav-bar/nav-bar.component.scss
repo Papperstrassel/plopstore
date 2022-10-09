@@ -5,6 +5,9 @@ $montserrat-font: 'Montserrat', sans-serif;
 $lexend-font: 'Lexend', sans-serif;
 $primary-font-color: #006EB9;
 
+
+
+
 .cart-no {
   padding-top: 3px;
   position: relative;
@@ -38,6 +41,32 @@ $primary-font-color: #006EB9;
 
 }
 
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+}
+
+.dropdown-item-custom {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
 .bento-menu{
   border: none;
   margin: 0;
@@ -49,9 +78,10 @@ $primary-font-color: #006EB9;
 }
 
 .navbar-desktop {
+
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 30%;
   margin: auto;
   display: flex;
   padding: 0 24px;
@@ -67,7 +97,7 @@ $primary-font-color: #006EB9;
 
 
 .navbarTop{
-  flex: 1;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,6 +134,18 @@ $primary-font-color: #006EB9;
   margin: 5px;
 }
 
+.empty-btn {
+  border: none;
+  background: transparent;
+  font-family: $montserrat-font;
+}
+
+@media screen and (min-width: 900px) {
+  .navbarTop {
+    flex: 1;
+  }
+
+}
 
 
 @media screen and (max-width: 1340px) {
@@ -120,7 +162,7 @@ $primary-font-color: #006EB9;
 
 
    .navbar-main{
-     position: relative;
+     position: sticky;
      top: 0;
      left: 0;
      right: 0;
@@ -142,9 +184,7 @@ $primary-font-color: #006EB9;
    .logo{
 
     display: block;
-    //margin-left: auto;
-    //margin-right: auto;
-    margin-left: 7.3em;
+
 
 
   }
@@ -170,6 +210,79 @@ $primary-font-color: #006EB9;
 .nav-active{
   transform: translateX(0%);
 }
+//hamburger overlay¨
+.hamburger-window {
+
+  position: fixed;
+  width: 100%;
+  top: 3.8em;
+  bottom: 0;
+  z-index: 10;
+}
+
+
+.hamburger-panel {
+  max-width: 30rem;
+  position: absolute;
+  top: 0em;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  background-color: white;
+}
+
+.hamburger-panel-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.mobile-navigation-menu {
+  margin-left: 1em;
+  padding-top: 3em;
+  display: grid;
+  text-align: left;
+  justify-content: center;
+
+}
+
+.mobile-menu-item {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+  color: rgb(65, 65, 65);
+
+
+}
+.mobile-menu-item-user {
+  font-family: $montserrat-font;
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+  color: $primary-font-color;
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+.mobile-user-item {
+  font-family: $montserrat-font;
+  font-weight: 500;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  color: rgb(65, 65, 65);
+}
+
+.colored-panel {
+  background: $primary-font-color;
+  width: 100%;
+  height: 3em;
+  position: absolute;
+  bottom: 0;
+}
+
+//end of hamburger overlay
 
 // testing Basket
 .shop-cart-window {

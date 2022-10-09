@@ -5,6 +5,7 @@ import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IBasket } from 'src/app/shared/models/basket';
 import { IUser } from 'src/app/shared/models/user';
+import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 
 
 
@@ -15,6 +16,7 @@ import { IUser } from 'src/app/shared/models/user';
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
+  providers: [{ provide: BsDropdownConfig, useValue: { isAnimated: true, autoClose: true } }],
 
   animations: [
     trigger('slideInOut', [
@@ -26,6 +28,17 @@ import { IUser } from 'src/app/shared/models/user';
       })),
       transition('in => out', animate('300ms ease-in-out')),
       transition('out => in', animate('250ms ease-in-out'))
+    ]),
+
+    trigger('slideInOut_burger', [
+      state('in_b', style({
+        transform: 'translate3d(0,0,0)'
+      })),
+      state('out_b', style({
+        transform: 'translate3d(-100%, 0, 0)'
+      })),
+      transition('in_b => out_b', animate('300ms ease-in-out')),
+      transition('out_b => in_b', animate('250ms ease-in-out'))
     ]),
   ]
 
@@ -39,6 +52,7 @@ export class NavBarComponent implements OnInit {
   currentUser$: Observable<IUser>;
 
   public menuState:string = 'out';
+  public hamburgerMenuState:string = 'out_b';
 
 
   constructor(private basketService: BasketService, private accountService: AccountService,) { }
@@ -52,6 +66,10 @@ export class NavBarComponent implements OnInit {
   public toggleMenu(){
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
 
+  }
+
+  public toggleHamburgerMenu() {
+    this.hamburgerMenuState = this.hamburgerMenuState === 'out_b' ? 'in_b' : 'out_b';
   }
 
   logout() {

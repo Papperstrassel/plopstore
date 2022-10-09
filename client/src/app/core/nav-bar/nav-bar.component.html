@@ -1,10 +1,10 @@
+<!--Basket overlay -->
 <div [ngClass]="menuState === 'in' ? 'overflow-removed' : 'overflow-normal'">
 <div class="shop-cart-window" [@slideInOut]="menuState">
   <div class="shop-cart-panel">
     <div class="shop-cart-panel-content">
       <div class="cart-always-shown">
         <div class="user-cart-text">Your Cart</div>
-        <!-- <div (click)="toggleMenu()" class="exit-symbol"><i class="fa fa-times" aria-hidden="true"></i></div> -->
         <div (click)="toggleMenu()" class="exit-symbol"><img src="/assets/images/close-icon-3.svg" class="picture.fluid-2" style="max-height: 0.65em;" alt="close-icon"></div>
       </div>
       <div *ngIf="(basket$ | async) == null">
@@ -24,12 +24,39 @@
         <app-basket></app-basket>
       </div>
       <div *ngIf="(basket$ | async) !== null" class="checkout-button-holder">
-        <!--TODO: Hook up checkout button-->
         <button (click)="toggleMenu()" routerLink="/checkout" class="checkout-btn" role="button">Checkout</button>
       </div>
     </div>
   </div>
 </div>
+<!--End of Basket overlay-->
+
+<!--hamburger overlay-->
+<div [ngClass]="hamburgerMenuState === 'in_b' ? 'overflow-removed' : 'overflow-normal'">
+<div class="hamburger-window" [@slideInOut_burger]="hamburgerMenuState">
+  <div class="hamburger-panel">
+    <div class="hamburger-panel-content">
+      <div class="mobile-navigation-menu">
+        <ng-container *ngIf="(currentUser$ | async) === null">
+          <div class="mobile-menu-item" routerLink="/account/login" (click)="toggleHamburgerMenu()">Sign In</div>
+        </ng-container>
+        <ng-container *ngIf="currentUser$ | async">
+          <div class="mobile-menu-item-user">Welcome {{(currentUser$ | async).displayName}}</div>
+          <div class="mobile-user-item" routerLink="/orders"><i class="fa fa-history mr-3"></i> View Orders</div>
+          <div class="mobile-user-item" (click)="logout()"><i class="fa fa-sign-out mr-3"></i> Logout</div>
+        </ng-container>
+        <div class="mobile-menu-item">Shop</div>
+        <div class="mobile-menu-item">FAQ</div>
+        <div class="mobile-menu-item">Contact Us</div>
+      </div>
+    </div>
+    <div class="colored-panel"></div>
+  </div>
+</div>
+</div>
+
+
+<!--End of hamburger overlay-->
 
 
 
@@ -38,7 +65,7 @@
     <nav class="navbar-desktop">
       <div  class="expand-sign">
         <button class="bento-menu">
-          <img src="/assets/images/Bento_menu.svg" style="max-height: 20px" alt="bentoMenu">
+          <img src="/assets/images/Bento_menu.svg" style="max-height: 20px" alt="bentoMenu" (click)="toggleHamburgerMenu()">
         </button>
       </div>
       <div class="navbarTop">
@@ -51,19 +78,18 @@
               <a class="nav-bar-text" routerLink="/account/login">Sign In</a>
             </ng-container>
             <ng-container *ngIf="currentUser$ | async">
-              <div class="dropdown ml-3 mr-5" dropdown>
-                  <a class="dropdown-toggle" style="cursor: pointer" dropdownToggle>
-                      <a class="nav-bar-user">Welcome {{(currentUser$ | async).displayName}}</a>
-                  </a>
-                  <div class ="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
-                      <a routerLink="/orders" class="dropdown-item d-flex align-items-center py-2">
-                          <i class="fa fa-history mr-3"></i> View Orders
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
-                          <i class="fa fa-sign-out mr-3"></i> Logout
-                      </a>
-                  </div>
+              <div class="btn-group" dropdown>
+                <button id="button-animated" dropdownToggle type="button" class="empty-btn"
+                        aria-controls="dropdown-animated">
+                        <a class="nav-bar-user">Welcome {{(currentUser$ | async).displayName}} <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                </button>
+                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" style="cursor: pointer;"
+                    role="menu" aria-labelledby="button-animated">
+                  <li role="menuitem"><a class="dropdown-item d-flex align-items-center py-2" routerLink="/orders"><i class="fa fa-history mr-3"></i> View Orders</a></li>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><a class="dropdown-item d-flex align-items-center py-2" (click)="logout()"><i class="fa fa-sign-out mr-3"></i> Logout</a>
+                  </li>
+                </ul>
               </div>
           </ng-container>
           </li>
@@ -81,6 +107,5 @@
       </nav>
   </header>
 </div>
-
 
 

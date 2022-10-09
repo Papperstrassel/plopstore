@@ -20,7 +20,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 }
 
 .Sign-in-text {
-  color: #FFFFFF;
+  color: #000000;
   font-family: $montserrat-font;
   font-weight: 600;
 }
@@ -40,6 +40,14 @@ $montserrat-font: 'Montserrat', sans-serif;
   padding-left: .3em;
 }
 
+.sign-in-form-holder-grid {
+  display: grid;
+  grid-column: repeat(2, 1fr);
+}
+
+.sign-in-window {
+  border: 2px solid red;
+}
 .sign-in-form-holder {
   position: absolute;
   min-width: 20em;
@@ -91,6 +99,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 .signup-btn-holder {
   display: flex;
+  justify-content: center;
   padding-top: 1em;
 }
 
@@ -111,7 +120,6 @@ $montserrat-font: 'Montserrat', sans-serif;
   letter-spacing: -.8px;
   line-height: 24px;
   min-width: 140px;
-  width: 100%;
   outline: 0;
   padding: 0 17px;
   text-align: center;
@@ -136,4 +144,51 @@ $montserrat-font: 'Montserrat', sans-serif;
   background-color: #3385ff;
   border-color: #3385ff;
   fill: #06f;
+}
+
+//rehaul design
+
+@media screen and (min-width: 700px) {
+  .content-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .login-window-main {
+    flex-grow: 0;
+
+  }
+
+  .content-grid {
+    padding: 3em;
+  }
+}
+
+
+
+.sign-in-container {
+
+  max-width: 60rem;
+  margin: 0 auto;
+
+}
+
+.content-grid {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  padding: 1.5em;
+}
+
+.login-window-main {
+
+  padding-top: 1.5em;
+
+}
+
+.benefit-info-pane {
+  border: 3px solid #1F80BF;
+}
+
+.window-size-box {
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
 }
