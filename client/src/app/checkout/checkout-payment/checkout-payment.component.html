@@ -1,6 +1,11 @@
 <div class="mt-4" [formGroup]="checkoutForm">
+  <div class="payment-icon-holder">
+    <div class="payment-icon"><img src="/assets/images/visa_icon.png" class="picture.fluid-2" style="max-height: 3.3em;" alt="visa-icon"></div>
+    <div class="payment-icon"><img src="/assets/images/stripe_icon.png" class="picture.fluid-2" style="max-height: 3.3em;" alt="stripe-icon"></div>
+    <div class="payment-icon"><img src="/assets/images/mastercard_icon.png" class="picture.fluid-2" style="max-height: 3.3em;" alt="mastercard-icon"></div>
+  </div>
   <div class="row">
-    <div class="form-group col-12" formGroupName="paymentForm">
+    <div class="input-field-hold" formGroupName="paymentForm">
       <p class="input-field-description">Name on Card</p>
       <app-text-input [label]="'Name on Card'" formControlName="nameOnCard"></app-text-input>
     </div>

@@ -6,6 +6,7 @@ $montserrat-font: 'Montserrat', sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
+    margin-right: 10em;
   }
 
 }
@@ -26,13 +27,12 @@ $montserrat-font: 'Montserrat', sans-serif;
   margin: 0 auto;
   padding-top: 2em;
   padding-bottom: 2em;
-  margin-right: 10em;
+
 }
 
 .delivery-option-item {
-  //border: 2px solid red;
   margin: 1em;
-
+  margin-left: 2em;
   font-family: $montserrat-font;
 }
 

@@ -88,3 +88,25 @@ $montserrat-font: 'Montserrat', sans-serif;
   justify-content: space-between;
   padding-top: 2em;
 }
+
+.payment-icon-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.payment-icon {
+  padding: 1.2em;
+}
+
+.input-field-hold {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 25%;
+  margin-bottom: 1rem;
+
+}
+
