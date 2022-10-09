@@ -14,6 +14,7 @@
               Wops, there are no items in the cart yet
               <div class="button-holder"><button class="shop-now-btn"
                 role="button"(click)="toggleMenu()"
+
                 routerLink="/shop" routerLinkActive="active">Shop now</button>
               </div>
             </div>
@@ -96,7 +97,7 @@
         </ul>
       </div>
 
-        <button class="activate-cart" (click)="toggleMenu()">
+        <button class="activate-cart" (click)="closeHamburgerMenu()" (click)="toggleMenu()">
           <img class="shop-cart" src="/assets/images/Shop-Cart_blue.svg" style="width: 26px; height: 18px;" alt="shopping-cart">
             <div *ngIf="(basket$ | async) as basket" class="cart-no">
               <div class="item-quantity-basket">
