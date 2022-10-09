@@ -1,5 +1,5 @@
-<ng-container *ngIf="basket$ | async">
-
+<ng-container *ngIf="isBasket === true">
+  <ng-container *ngIf="basket$ | async">
     <div class="table-responsive">
         <table class="table">
 
@@ -24,9 +24,13 @@
                     <td class="align-middle">
                         <div class="quantity-container"
                             [class.justify-content-center]="!isBasket">
-                            <i *ngIf="isBasket" (click)="decrementItemQuantity(item)" class="fa fa-minus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            <div class="minus-symbol-holder">
+                              <i *ngIf="isBasket" (click)="decrementItemQuantity(item)" class="fa fa-minus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            </div>
                             <span class="quantity-text">{{item.quantity}}</span>
-                            <i *ngIf="isBasket" (click)="incrementItemQuantity(item)" class="fa fa-plus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            <div class="plus-symbol-holder">
+                              <i *ngIf="isBasket" (click)="incrementItemQuantity(item)" class="fa fa-plus" aria-hidden="true" style="cursor: pointer; font-size: 0.8em;"></i>
+                            </div>
                         </div>
                     </td>
                     <td class="align-middle">
@@ -39,7 +43,29 @@
             </tbody>
         </table>
     </div>
-
-
+  </ng-container>
 </ng-container>
 
+<!--This section is only shown in the checkout component review-->
+
+<div *ngIf="!isBasket" class="review-holder">
+  <div class="product-review-grid">
+    <div class="product-holder" *ngFor="let item of (basket$ | async).items">
+      <div class="picture-holder">
+        <img src="{{item.pictureUrl}}" alt="{{item.productName}}
+        "class="picture.fluid" style="max-height: 8em;">
+      </div>
+        <div class="product-info">
+            <a routerLink="/shop/{{item.id}}"
+            class="product-name">{{item.productName}}</a>
+            <div>
+              <span class="product-type-text">{{item.productType}}</span>
+            </div>
+        </div>
+        <div class="quantity-container-review">
+          <span class="review-quantity-text">{{item.quantity}} pcs</span>
+          <span class="review-price-text">{{item.price * item.quantity | currency}}</span>
+        </div>
+    </div>
+  </div>
+</div>
