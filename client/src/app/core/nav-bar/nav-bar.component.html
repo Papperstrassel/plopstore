@@ -4,7 +4,8 @@
     <div class="shop-cart-panel-content">
       <div class="cart-always-shown">
         <div class="user-cart-text">Your Cart</div>
-        <div (click)="toggleMenu()" class="exit-symbol"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <!-- <div (click)="toggleMenu()" class="exit-symbol"><i class="fa fa-times" aria-hidden="true"></i></div> -->
+        <div (click)="toggleMenu()" class="exit-symbol"><img src="/assets/images/close-icon-3.svg" class="picture.fluid-2" style="max-height: 0.65em;" alt="close-icon"></div>
       </div>
       <div *ngIf="(basket$ | async) == null">
         <div class="empty-cart">
