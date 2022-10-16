@@ -3,19 +3,19 @@
         <div class="col-12">
             <table class="table table-hover" style="cursor: pointer;">
                <thead class="thead-light">
-                   <tr>
-                       <th>Order</th>
-                       <th>Date</th>
-                       <th>Total</th>
-                       <th>Status</th>
+                   <tr class="bg-primary">
+                       <th><div class="order-text-header">Order</div></th>
+                       <th><div class="order-text-header">Date</div></th>
+                       <th><div class="order-text-header">Total</div></th>
+                       <th><div class="order-text-header">Status</div></th>
                    </tr>
                </thead>
                <tbody>
                    <tr *ngFor="let order of orders" routerLink="/orders/{{order.id}}">
-                    <th># {{order.id}}</th>
-                    <th># {{order.orderDate | date: 'medium'}}</th>
-                    <th># {{order.total | currency}}</th>
-                    <th># {{order.status}}</th>
+                    <th><span class="order-text"> # {{order.id}}</span></th>
+                    <th><span class="order-text"> {{order.orderDate | date: 'medium'}}</span></th>
+                    <th><span class="order-text"> {{order.total | currency}}</span></th>
+                    <th><span class="order-text"> {{order.status}}</span></th>
                    </tr>
                </tbody>
             </table>
