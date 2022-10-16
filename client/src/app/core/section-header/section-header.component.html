@@ -1,12 +1,12 @@
 <ng-container *ngIf="(breadcrumb$ | async) as breadcrumbs">
-    <section *ngIf="breadcrumbs.length > 0 && breadcrumbs[breadcrumbs.length - 1].label !== 'Home'">
+    <section class="fixed-navbar-alignment" *ngIf="breadcrumbs.length > 0 && breadcrumbs[breadcrumbs.length - 1].label !== 'Home'">
         <div class="container">
             <!-- <div class="section-title">
                 {{breadcrumbs.length > 0 && breadcrumbs[breadcrumbs.length - 1].label |
                 titlecase}}
             </div> -->
             <div class="section-description">
-              <xng-breadcrumb separator=">"></xng-breadcrumb>
+              <xng-breadcrumb separator="/"></xng-breadcrumb>
             </div>
 
         </div>

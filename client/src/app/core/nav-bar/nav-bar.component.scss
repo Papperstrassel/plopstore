@@ -77,9 +77,16 @@ $primary-font-color: #006EB9;
   align-items: center;
 }
 
+.navbar-main {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
 .navbar-desktop {
 
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   margin: auto;
@@ -90,6 +97,9 @@ $primary-font-color: #006EB9;
   align-items: center;
   justify-content: space-between;
   background-color: white;
+
+  //fixed height
+  height: 3.5em;
 
 
 }
@@ -106,7 +116,8 @@ $primary-font-color: #006EB9;
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 15%;
+  align-items: center;
+  width: 15em;
   padding-top: 15px;
 }
 .nav-links a{
@@ -148,7 +159,7 @@ $primary-font-color: #006EB9;
 }
 
 
-@media screen and (max-width: 1340px) {
+@media screen and (max-width: 1200px) {
   .nav-links {
 
     width: 35%;
@@ -161,22 +172,12 @@ $primary-font-color: #006EB9;
 
 
 
-   .navbar-main{
-     position: sticky;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     margin: 0;
-     width: 100%;
-     height: 40%;
-   }
 
    .navbar-desktop{
      display: flex;
      align-items: center;
      position: relative;
-     height: 60px;
+     height: 3.5em;
      padding: 0 0 0 10px;
    }
 
@@ -215,9 +216,12 @@ $primary-font-color: #006EB9;
 
   position: fixed;
   width: 100%;
-  top: 3.8em;
+  top: 3.5em;
+  right: 0;
   bottom: 0;
-  z-index: 10;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  z-index: 1010;
 }
 
 
@@ -287,12 +291,12 @@ $primary-font-color: #006EB9;
 // testing Basket
 .shop-cart-window {
 
+  z-index: 1010;
   position: fixed;
   width: 100%;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(3px);
 }
@@ -304,11 +308,12 @@ $primary-font-color: #006EB9;
   right: 0;
   bottom: 0;
   width: 100%;
-  z-index: 11;
+  z-index: 1010;
   background-color: white;
 }
 
 .shop-cart-panel-content {
+  z-index: 1010;
   width: 100%;
   height: 100%;
   overflow-y: auto;

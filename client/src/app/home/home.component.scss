@@ -3,161 +3,123 @@ $montserrat-font: 'Montserrat', sans-serif;
 $lexend-font: 'Lexend', sans-serif;
 $primary-font-color: #006EB9;
 
-.home-hero{
-  display: block;
-}
 
-.col-100vh{
-  // Full screen minus navbar height
-  height: calc(100vh - 55px);
-}
-
-.info-pane{
-   height: 100vh;
-   background-color: #006EB9;
-}
-
-.two-col{
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.home-hero-img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+@media (max-width: 1000px)
+{
+  .grid-container {
+    grid-template-columns: 1fr;
+    border: 2px solid red;
+  }
 
 }
+@media (min-width: 960px)
+{
+  .grid-container {
 
-.home-hero-img img{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+    display: grid;
+    grid-template-columns: 45vw 55vw;
+  }
+
+  .hero-text-header {
+    margin-left: 2em;
+    margin-right: 5em;
+    font-size: 4.5em !important;
+  }
+
+  .hero-image-holder {
+    height: calc(100vh - 3.5em) !important;
+  }
+
+  .shop-now-btn {
+    margin-left: 7em !important;
+    width: 22em !important;
+  }
+
+  .hero-message-holder {
+    margin-top: 5em !important;
+  }
+
 }
-
-.col-100vh-flex{
+.home-container {
+  margin-top: 3.5em;
   display: flex;
+  justify-content: center;
+}
+
+
+
+.hero-image-holder {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/assets/images/img-hero.jpg");
+  height: calc(50vh);
+  z-index: -1;
+
+}
+
+.hero-message-holder {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.hero-text-header {
+  font-family: $montserrat-font;
+  color: $primary-font-color;
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-text-holder {
+  margin-bottom: 1em;
+}
+
+.btn-holder {
+  position: relative;
+}
+
+//buttons
+.shop-now-btn {
+
   align-items: center;
   justify-content: center;
-
-}
-
-.hero-content{
-  position: relative;
-  padding: 0 70px;
-  width: 100%;
-}
-
-.hero-text{
-  position: relative;
-  color: $primary-font-color;
-  font-family: $montserrat-font;
-  text-decoration: none;
-  font-size: 5vh;
-  text-align: left;
-  font-weight: 900;
-}
-
-.home-hero_buttons{
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  //justify-content: center;
-}
-
-
-
-//button stuff
-
-.view-btn {
-  display: inline-block;
-  padding: 0.1rem 1rem;
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #BF1F80;
-  border: 3px solid #BF1F80;
+  background-color: #E81D88;
+  border: 2px solid #E81D88;
+  box-sizing: border-box;
+  color: #fff;
   cursor: pointer;
-  position: relative;
-  background-color: white;
-  text-decoration: none;
-  overflow: hidden;
-  z-index: 1;
+  display: inline-flex;
+  fill: #000;
   font-family: $montserrat-font;
-  border-radius: 3px;
- }
-
- .view-btn::before {
-   content: "";
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   background-color: #BF1F80;
-   transform: translateX(-100%);
-   transition: all .3s;
-   z-index: -1;
-  }
-
-  .view-btn:hover {
-   color: white;
-
-  }
-
-  .view-btn:hover::before {
-   transform: translateX(0);
-  }
-
-
-//Mobile Media section
-
-@media screen and (max-width: 966px) {
-  .home-hero-img{
-    position: relative;
-    height: 600px;
-    width: 100%;
-  }
-
-  .home-hero_buttons {
-    justify-content: center;
-  }
-
-  .two-col{
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .col-100vh-flex{
-    height: auto;
-  }
-
-  .hero-content{
-    padding: 40px 30px 30px;
-  }
-
-  .hero-text{
-    font-size: 24px;
-  }
-
-  .discover_img{
-    width: 137px;
-    height: 44px;
-  }
-
-  .explore_img{
-    width: 137px;
-    height: 44px;
-  }
-
+  font-size: 1.3em;
+  font-weight: 600;
+  height: 3em;
+  line-height: 24px;
+  //width: 22em;
+  width: 100%;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-//Big screens
+.shop-now-btn:focus {
+  color: #171e29;
+}
 
+.shop-now-btn:hover {
+  background-color: #f7369d;
+  border-color: #f7369d;
+  fill: #06f;
+}
 
+.shop-now-btn:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}

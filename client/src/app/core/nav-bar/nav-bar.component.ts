@@ -72,6 +72,10 @@ export class NavBarComponent implements OnInit {
     this.hamburgerMenuState = this.hamburgerMenuState === 'out_b' ? 'in_b' : 'out_b';
   }
 
+  public closeHamburgerMenu() {
+    this.hamburgerMenuState = 'out_b';
+  }
+
   logout() {
     this.accountService.logout();
   }

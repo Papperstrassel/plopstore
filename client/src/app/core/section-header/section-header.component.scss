@@ -6,7 +6,6 @@ $montserrat-font: 'Montserrat', sans-serif;
   margin-top: 0.8em;
   display: flex;
   justify-content: center;
-  //background-color: wheat;
   font-family: $montserrat-font;
   font-weight: 500;
   font-size: 1.1em;
@@ -14,7 +13,14 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 }
 
+.fixed-navbar-alignment {
+  margin-top: 5em;
+  margin-bottom: -3em;
+
+}
+
 .section-description {
+  margin-left: 1.2em;
   justify-content: center;
   font-weight: 500;
   color: #585858;
