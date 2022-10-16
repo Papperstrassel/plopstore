@@ -4,11 +4,15 @@ $lexend-font: 'Lexend', sans-serif;
 $primary-font-color: #006EB9;
 
 
+@media (max-width: 960px) {
+  .hero-text-header {
+    margin-left: 1em !important;
+  }
+}
 @media (max-width: 1000px)
 {
   .grid-container {
     grid-template-columns: 1fr;
-    border: 2px solid red;
   }
 
 }
@@ -69,6 +73,7 @@ $primary-font-color: #006EB9;
   font-size: 2.5em;
   font-weight: 800;
   line-height: 1.1;
+
 }
 
 .hero-text-holder {
