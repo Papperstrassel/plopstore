@@ -216,9 +216,12 @@ $primary-font-color: #006EB9;
 
   position: fixed;
   width: 100%;
-  top: 3.8em;
+  top: 3.5em;
+  right: 0;
   bottom: 0;
-  z-index: 10;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  z-index: 1010;
 }
 
 
