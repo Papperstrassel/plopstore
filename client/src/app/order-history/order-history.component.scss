@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+$primary-font-color: #1F80BF;
+
+.order-history-container {
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.order-history-item-holder {
+  border: 2px solid red;
+}
+
+.order-text-header {
+  display: flex;
+  align-items: center;
+  color: $primary-font-color;
+  font-family: $montserrat-font;
+  font-weight: 600;
+}
+
+.order-text {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #6d6d6d;
+}

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
+
+@media (max-width: 795px) {
+  .grid-holder {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+.container-order-details {
+  margin-top: 6em;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+}
+.grid-holder {
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.order-totals-container {
+  grid-column: 2;
+  grid-row: 1;
+  height: 200px;
+
+}
+
+
+.order-summary-header {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  padding-left: 1.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #1F80BF;
+  border-top: 1px solid #EEEEEE;
+}
+
+.shipping-info-text {
+  font-family: $montserrat-font;
+  font-weight: 400;
+  font-size: 0.85em;
+  color: #6D6D6D;
+
+}
+
+.order-list-text {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.order-total-numbers {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+}
+
+.picture-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.product-info {
+  line-height: 1;
+  padding-top: 0.5em;
+  text-align: center;
+
+}
+
+.product-name {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #1F80BF;
+  font-size: .8em;
+}
+
+.quantity-container-review {
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.review-quantity-text {
+  font-family: $montserrat-font;
+  font-weight: 600;
+}
+
+.review-price-text {
+  margin-left: 0.4em;
+  font-family: $montserrat-font;
+  font-weight: 600;
+
+}
+
+.product-holder {
+  //grid-column: 1;
+  padding-top: 0.5em;
+  margin-bottom: 1em;
+
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
