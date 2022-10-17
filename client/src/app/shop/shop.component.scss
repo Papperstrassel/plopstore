@@ -44,6 +44,172 @@ $off-color: #E81D88;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
+.filter-btn-icon {
+  margin-left: 0.1;
+}
+.filter-icon-txt {
+  margin-left: .75em;
+}
+
+.filter-btn {
+  border-radius: 2px;
+  margin-top: 2em;
+  align-items: center;
+  justify-content: center;
+  background-color: #E81D88;
+  border: 2px solid #E81D88;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: left;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 1.1em;
+  font-weight: 600;
+  height: 2.5em;
+  line-height: 24px;
+  width: 10em;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+//Mobile filter menu
+
+
+.filter-mobile-menu-window {
+
+  position: fixed;
+  width: 100%;
+  top: 3.5em;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  z-index: 1010;
+}
+
+.filter-panel {
+  max-width: 17rem;
+  position: absolute;
+  top: 0em;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  background-color: white;
+}
+
+.filter-icon-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  font-family: $montserrat-font;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #8E8E8E;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.filter-text-space {
+  margin-left: 0.3em;
+
+}
+
+.filter-alternative-mobile-holder {
+  //Issue with layout
+  //display: flex;
+  flex-direction: row;
+  margin-left: 1.5em;
+}
+
+.filter-alternative-mobile-item {
+  font-family: $montserrat-font;
+  margin-top: 1em;
+}
+.header {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+//Test custom checkboxes
+
+.check-alternative-holder {
+  margin-top: 1em;
+}
+
+:root {
+  --form-control-color: rebeccapurple;
+
+}
+.form-control {
+  font-family: $montserrat-font;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  border: none;
+  padding: 0;
+  height: 1.25em;
+
+}
+
+
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.12em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  //box-shadow: inset 1em 1em var(--form-control-color);
+  box-shadow: inset 1em 1em $off-color;
+  border: 0.25em solid $off-color;
+  /* Windows High Contrast Mode */
+  background-color: $off-color;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+//Text custom checkboxes
+//mobile filter menu End
+
+
+
 .empty-result-text {
   font-family: $montserrat-font;
   color: $main-color;
@@ -84,6 +250,7 @@ $off-color: #E81D88;
   display: flex;
   justify-content: center;
   padding-bottom: 2em;
+
 
 }
 
@@ -141,11 +308,14 @@ $off-color: #E81D88;
   }
 
 
+
+
+
+}
+@media (max-width: 900px) {
   .mobile-filter-container {
     visibility: visible;
   }
-
-
 }
 
 @media (min-width: 600px) {
@@ -155,14 +325,18 @@ $off-color: #E81D88;
 }
 
 @media (min-width: 769px) {
-  .searchbar-holder {
-    margin-top: -4em !important;
-    margin-bottom: 4em !important;
-  }
+
 
   .container-shop {
     padding-left: 2em !important;
     padding-right: 2em !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .searchbar-holder {
+    margin-top: -4em !important;
+    margin-bottom: 4em !important;
   }
 }
 
@@ -179,6 +353,7 @@ $off-color: #E81D88;
   margin-right: 2em;
   width: 12rem;
   margin-left: -5em;
+  margin-top: 3.5em;
 
 }
 
