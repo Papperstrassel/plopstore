@@ -6,6 +6,11 @@ $off-color: #E81D88;
 
 
 //searchbar stuff
+
+//Searchbar remodel
+
+//
+
 .searchbar-holder {
   display: flex;
   justify-content: center;
@@ -32,8 +37,6 @@ $off-color: #E81D88;
 }
 
 .custom-field {
-
-
   font-family: $montserrat-font;
   border: none;
   border-radius: 4px;
@@ -42,6 +45,13 @@ $off-color: #E81D88;
   background: rgba(247, 247, 247, 0.47);
   padding-left: 0.75em;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.custom-field:focus, .custom-field:hover {
+  outline: none;
+  border: 1px solid #1FBFAE;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }
 
 .filter-btn-icon {
@@ -449,8 +459,8 @@ input[type="radio"]:checked::before {
 .button-28 {
   appearance: none;
   background-color: transparent;
-  border: 2px solid #EEEEEE;
-  border-radius: 18px;
+  border: 2px solid #1FBFAE;
+  border-radius: 0.2em;
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
@@ -481,12 +491,7 @@ input[type="radio"]:checked::before {
   pointer-events: none;
 }
 
-.button-28:hover {
-  color: #fff;
-  background-color: #1F80BF;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
+
 
 .button-28:active {
   box-shadow: none;
