@@ -4,10 +4,9 @@
     <div [ngClass]="mobileFilterMenuState === 'in_filter' ? 'overflow-removed' : 'overflow-normal'">
       <div  class="filter-mobile-menu-window" [@slideInOut_mobile_filter]="mobileFilterMenuState">
         <div class="pane-toggle-unseen-filter">
-          <button class="toggle-filter-menu-section-btn" (click)="toggleMobileFilterMenu()">TogglePane</button>
+          <button class="toggle-filter-menu-section-btn" (click)="toggleMobileFilterMenu()"></button>
         </div>
         <div class="filter-panel">
-          <button (click)="toggleMobileFilterMenu()">X</button>
           <div class="filter-menu-holder">
 
             <div class="filter-icon-mobile">
