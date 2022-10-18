@@ -289,6 +289,26 @@ $primary-font-color: #006EB9;
 //end of hamburger overlay
 
 // testing Basket
+
+//invisible btn toggle pane
+.pane-toggle-unseen {
+  background: transparent;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: calc(100% - 30rem);
+}
+
+.toggle-shop-menu-section-btn {
+  cursor: default;
+  background: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+//End of btn toggle pane
+
 .shop-cart-window {
 
   z-index: 1010;

@@ -29,6 +29,17 @@ import {
       transition('in => out', animate('300ms ease-in-out')),
       transition('out => in', animate('250ms ease-in-out'))
     ]),
+
+    trigger('slideInOut_mobile_filter', [
+      state('in_filter', style({
+        transform: 'translate3d(0,0,0)'
+      })),
+      state('out_filter', style({
+        transform: 'translate3d(-100%, 0, 0)'
+      })),
+      transition('in_filter => out_filter', animate('300ms ease-in-out')),
+      transition('out_filter => in_filter', animate('250ms ease-in-out'))
+    ]),
   ]
 
 })
@@ -45,7 +56,7 @@ export class ShopComponent implements OnInit {
   //animation testing
 
   public menuState:string = 'out';
-
+  public mobileFilterMenuState:string = 'out_filter';
 
   //animation testing
 
@@ -62,7 +73,9 @@ export class ShopComponent implements OnInit {
    }
 
    //animation testing
-
+   public toggleMobileFilterMenu() {
+    this.mobileFilterMenuState = this.mobileFilterMenuState === 'out_filter' ? 'in_filter' : 'out_filter';
+  }
 
    public toggleMenu(){
     this.menuState = this.menuState === 'out' ? 'in' : 'out';

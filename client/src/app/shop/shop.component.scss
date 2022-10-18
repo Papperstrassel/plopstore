@@ -1,5 +1,305 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
 $montserrat-font: 'Montserrat', sans-serif;
+$main-color: #1F80BF;
+$off-color: #E81D88;
+
+
+
+//searchbar stuff
+
+//Searchbar remodel
+
+//
+
+.searchbar-holder {
+  display: flex;
+  justify-content: center;
+
+}
+
+.searchbar-box {
+  margin-bottom: 1em;
+  align-items: center;
+}
+
+.fa-search {
+  color: #A0A0A0;
+  font-size: 1.5em;
+}
+
+.icon-search {
+  margin-top: 0.38em;
+  margin-left: 15.3em;
+  position: absolute;
+  height: 1.85em;
+  width: auto;
+
+}
+
+.custom-field {
+  font-family: $montserrat-font;
+  border: none;
+  border-radius: 4px;
+  width: 280px;
+  height: 40px;
+  background: rgba(247, 247, 247, 0.47);
+  padding-left: 0.75em;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.custom-field:focus, .custom-field:hover {
+  outline: none;
+  border: 1px solid #1FBFAE;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.filter-btn-icon {
+  margin-left: 0.1;
+}
+.filter-icon-txt {
+  margin-left: .75em;
+}
+
+.filter-btn {
+  border-radius: 2px;
+  margin-top: 2em;
+  align-items: center;
+  justify-content: center;
+  background-color: #E81D88;
+  border: 2px solid #E81D88;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: left;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 1.1em;
+  font-weight: 600;
+  height: 2.5em;
+  line-height: 24px;
+  width: 10em;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.filter-btn-2 {
+  border-radius: 2px;
+  margin-top: 0.65em;
+  align-items: center;
+  justify-content: center;
+  background-color: #E81D88;
+  border: 2px solid #E81D88;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 1.1em;
+  font-weight: 600;
+  height: 2.2em;
+  line-height: 24px;
+  width: 10em;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+//Mobile filter menu
+
+.pane-toggle-unseen-filter {
+  background: transparent;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: calc(100% - 17rem);
+}
+
+.toggle-filter-menu-section-btn {
+  cursor: default;
+  background: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+.reset-btn-holder {
+  display: flex;
+  justify-content: center;
+}
+
+
+.filter-mobile-menu-window {
+
+  position: fixed;
+  width: 100%;
+  top: 3.5em;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  z-index: 1010;
+}
+
+.filter-panel {
+  max-width: 17rem;
+  position: absolute;
+  top: 0em;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  background-color: white;
+}
+
+.filter-icon-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  font-family: $montserrat-font;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #8E8E8E;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.filter-text-space {
+  margin-left: 0.3em;
+
+}
+
+.filter-alternative-mobile-holder {
+  //Issue with layout
+  //display: flex;
+  flex-direction: row;
+  margin-left: 1.5em;
+}
+
+.filter-alternative-mobile-item {
+  font-family: $montserrat-font;
+  margin-top: 1em;
+}
+.header {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+//Test custom checkboxes
+
+.check-alternative-holder {
+  margin-top: 1em;
+}
+
+:root {
+  --form-control-color: rebeccapurple;
+
+}
+.form-control {
+  font-family: $montserrat-font;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  border: none;
+  padding: 0;
+  height: 1.25em;
+
+}
+
+
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.12em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  //box-shadow: inset 1em 1em var(--form-control-color);
+  box-shadow: inset 1em 1em $off-color;
+  border: 0.25em solid $off-color;
+  /* Windows High Contrast Mode */
+  background-color: $off-color;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+//Text custom checkboxes
+//mobile filter menu End
+
+
+
+.empty-result-text {
+  font-family: $montserrat-font;
+  color: $main-color;
+  text-align: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 2em;
+  margin-top: 3.5em;
+}
+
+.view-btn {
+
+  margin-left: 0.5em;
+  height: 3em;
+  display: inline-block;
+  padding: 0.1rem 1rem;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: white;
+  border: 2px solid $main-color;
+  cursor: pointer;
+  position: relative;
+  background-color: $main-color;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: $montserrat-font;
+ }
+
+
+
+//Searchbar stuff END
 
 
 .mobile-filter-container {
@@ -8,6 +308,7 @@ $montserrat-font: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
   padding-bottom: 2em;
+
 
 }
 
@@ -23,9 +324,6 @@ $montserrat-font: 'Montserrat', sans-serif;
 .container-shop {
     display: flex;
     justify-content: center;
-    padding-left: 2em;
-    padding-right: 2em;
-
  }
 
  .container-shop-overflow-hidden {
@@ -55,6 +353,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 .card-grid {
   max-width: 1220px;
   display: grid;
+  justify-content: center;
   gap: 0.2rem;
 
 }
@@ -65,19 +364,38 @@ $montserrat-font: 'Montserrat', sans-serif;
     flex-direction: column;
     width: 100vw;
   }
-  .container-shop {
-    padding-left: 0;
-  }
 
+
+
+
+
+}
+@media (max-width: 900px) {
   .mobile-filter-container {
     visibility: visible;
   }
-
-
 }
 
 @media (min-width: 600px) {
   .card-grid { grid-template-columns: repeat(2, .1fr); }
+
+
+}
+
+@media (min-width: 769px) {
+
+
+  .container-shop {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .searchbar-holder {
+    margin-top: -4em !important;
+    margin-bottom: 4em !important;
+  }
 }
 
 @media (min-width: 1215px) {
@@ -93,6 +411,7 @@ $montserrat-font: 'Montserrat', sans-serif;
   margin-right: 2em;
   width: 12rem;
   margin-left: -5em;
+  margin-top: 3.5em;
 
 }
 
@@ -140,8 +459,8 @@ $montserrat-font: 'Montserrat', sans-serif;
 .button-28 {
   appearance: none;
   background-color: transparent;
-  border: 2px solid #EEEEEE;
-  border-radius: 18px;
+  border: 2px solid #1FBFAE;
+  border-radius: 0.2em;
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
@@ -172,12 +491,7 @@ $montserrat-font: 'Montserrat', sans-serif;
   pointer-events: none;
 }
 
-.button-28:hover {
-  color: #fff;
-  background-color: #1F80BF;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
+
 
 .button-28:active {
   box-shadow: none;

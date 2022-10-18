@@ -2,6 +2,7 @@
 $montserrat-font: 'Montserrat', sans-serif;
 $lexend-font: 'Lexend', sans-serif;
 $primary-font-color: #006EB9;
+$off-color: #E81D88;
 
 
 @media (max-width: 960px) {
@@ -35,7 +36,7 @@ $primary-font-color: #006EB9;
   }
 
   .shop-now-btn {
-    margin-left: 7em !important;
+
     width: 22em !important;
   }
 
@@ -44,6 +45,151 @@ $primary-font-color: #006EB9;
   }
 
 }
+
+//redesign
+
+@media (min-width: 900px) {
+  .home-main-window {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .home-content-main-pane {
+    padding-bottom: 10em !important;
+    padding-right: 2em !important;
+    margin-right: 2em !important;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .home-img--main {
+    position: relative;
+    height: 500px !important;
+    grid-row: 2 !important;
+  }
+  .home-img--main img {
+    width: 100% !important;
+  }
+
+  .home-content-main-pane {
+    grid-row: 1 !important;
+    height: 18em !important;
+  }
+}
+
+.home-main-window {
+  margin-top: 3.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+.home-content-main {
+  height: calc(100vh - 3.5em);
+}
+
+.home-content-main-pane {
+  height: calc(100vh - 3.5em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-img--main {
+
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+}
+
+.home-img--main img {
+  height: 100%;
+  width: 80%;
+  object-fit: cover;
+}
+
+
+.main-message-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.content-main-info {
+  font-family: $montserrat-font;
+  color: $primary-font-color;
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.1;
+  padding-bottom: 0.3em;
+}
+
+//new btns
+.cssbuttons-io-button {
+  background: $off-color;
+  color: white;
+  font-family: $montserrat-font;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 1.5em;
+  font-weight: 700;
+  border-radius: 0.3em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em $off-color;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+ }
+
+ .cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.3em;
+  width: 2.3em;
+  border-radius: 0.3em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em $off-color;
+  right: 0.3em;
+  transition: all 0.3s;
+ }
+
+ .cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+ }
+
+ .cssbuttons-io-button .icon svg {
+  width: 2em;
+  height: 1.5em;
+  transition: transform 0.3s;
+  color: $off-color;
+ }
+
+ .cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+ }
+
+ .cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+ }
+
+//end btns
+
+
+
+//end of redesign
+
+
+
+
 .home-container {
   margin-top: 3.5em;
   display: flex;
@@ -61,10 +207,14 @@ $primary-font-color: #006EB9;
 
 }
 
+
+
 .hero-message-holder {
   display: flex;
   flex-direction: column;
-  margin-top: 1em;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .hero-text-header {
