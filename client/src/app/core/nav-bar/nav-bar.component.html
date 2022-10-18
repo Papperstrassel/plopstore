@@ -1,6 +1,9 @@
 <!--Basket overlay -->
 <div [ngClass]="menuState === 'in' ? 'overflow-removed' : 'overflow-normal'">
 <div class="shop-cart-window" [@slideInOut]="menuState">
+  <div class="pane-toggle-unseen">
+    <button class="toggle-shop-menu-section-btn" (click)="toggleMenu()"></button>
+  </div>
   <div class="shop-cart-panel">
     <div class="shop-cart-panel-content">
       <div class="cart-always-shown">

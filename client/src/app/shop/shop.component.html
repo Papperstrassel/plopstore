@@ -3,6 +3,9 @@
     <button class="filter-btn" (click)="toggleMobileFilterMenu()"><img src="/assets/images/icon-filter-white.png" class="filter-btn-icon" style="max-height: 50px" alt="FilterIcon"><span class="filter-icon-txt">Filter</span></button>
     <div [ngClass]="mobileFilterMenuState === 'in_filter' ? 'overflow-removed' : 'overflow-normal'">
       <div  class="filter-mobile-menu-window" [@slideInOut_mobile_filter]="mobileFilterMenuState">
+        <div class="pane-toggle-unseen-filter">
+          <button class="toggle-filter-menu-section-btn" (click)="toggleMobileFilterMenu()">TogglePane</button>
+        </div>
         <div class="filter-panel">
           <button (click)="toggleMobileFilterMenu()">X</button>
           <div class="filter-menu-holder">
@@ -10,6 +13,10 @@
             <div class="filter-icon-mobile">
               <img src="/assets/images/filter-icon-2.png" style="max-height: 35px" alt="FilterIcon">
               <span class="filter-text-space">Filter</span>
+            </div>
+
+            <div class="reset-btn-holder">
+              <button class="filter-btn-2" (click)="onReset()">Reset Filter</button>
             </div>
 
             <div class="filter-alternative-mobile-holder">
