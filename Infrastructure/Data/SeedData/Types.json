@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "In-ear headphones"
+  },
+  {
+    "Id": 2,
+    "Name": "Over-ear headphones"
+  },
+  {
+    "Id": 3,
+    "Name": "Gaming Accessories"
+  },
+  {
+    "Id": 4,
+    "Name": "Phone Accessories"
+  },
+  {
+    "Id": 5,
+    "Name": "Fitness Trackers"
+  },
+  {
+    "Id": 6,
+    "Name": "Toys"
+  }
+]

@@ -9,7 +9,10 @@ namespace Core.Entities
     {
         public string Name { get; set; }
 
+        public string ShortDescription { get; set; }
         public string Description { get; set; }
+
+        public string TechnicalDescription { get; set; }
         public Decimal Price { get; set; }
         public string PictureUrl { get; set; }
         public ProductType ProductType { get; set; }
@@ -17,5 +20,7 @@ namespace Core.Entities
         public int ProductTypeId { get; set; }
         public ProductBrand ProductBrand { get; set; }
         public int ProductBrandId { get; set; }
+
+        public int productSKU { get; set; }
     }
 }

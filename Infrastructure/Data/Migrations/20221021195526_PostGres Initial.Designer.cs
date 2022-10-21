@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20220420160226_PostGres initial")]
-    partial class PostGresinitial
+    [Migration("20221021195526_PostGres Initial")]
+    partial class PostGresInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -128,6 +128,16 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("ProductTypeId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ShortDescription")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TechnicalDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("productSKU")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

@@ -9,6 +9,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { getBsVer, IBsVersion } from 'ngx-bootstrap/utils';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BasketModule } from '../basket/basket.module';
+import { TextFormattingPipe } from 'src/app/shared/Pipes/text-formatting.pipe';
 
 
 
@@ -19,6 +20,7 @@ import { BasketModule } from '../basket/basket.module';
     ShopComponent,
     ProductItemComponent,
     ProductDetailsComponent,
+    TextFormattingPipe
 
   ],
   imports: [
@@ -26,7 +28,7 @@ import { BasketModule } from '../basket/basket.module';
     SharedModule,
     ShopRoutingModule,
     AccordionModule.forRoot(),
-    BasketModule
+    BasketModule,
 
 
   ]
