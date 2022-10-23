@@ -13,8 +13,8 @@ $main-font: 'Roboto', sans-serif;
   min-height: 20em;
   height: 26em;
   width: 19em;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  background: #FFFDFA;
+  box-shadow: rgba(100, 100, 100, 0.05) 0px 0px 0px 1px;
+  background: white;
   border-radius: 5px;
   text-align: center;
   justify-content: center;
@@ -146,4 +146,15 @@ $main-font: 'Roboto', sans-serif;
   background-color: #3385ff;
   border-color: #3385ff;
   fill: #06f;
+}
+
+.rating-system {
+  color: #FFCD3C;
+  font-size: 1.2em;
+}
+
+.rating-quantity-text {
+  font-family: $main-font;
+  font-size: 0.7em;
+  color: #787878;
 }

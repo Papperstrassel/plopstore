@@ -20,5 +20,8 @@ namespace API.DataTransferObjects
         public string ProductBrand { get; set; }
 
         public string productSKU { get; set; }
+
+        public int NumberOfRatings { get; set; }
+        public int ProductRatingScore { get; set; }
     }
 }

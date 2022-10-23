@@ -5,14 +5,20 @@
     <div class="product-name-title" routerLink="/shop/{{product.id}}">{{product.name}}</div>
   </div>
 
-  <div class="rating-custom">
+  <div class="rating-system">
+    <rating [(ngModel)]="rate" [max]="maxRating" [readonly]="isReadonly"></rating>
+    <span class="rating-quantity-text"> ({{product.numberOfRatings}})</span>
+  </div>
+
+
+  <!-- <div class="rating-custom">
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star-half-o"></span>
     <span class="custom-text-rating">(294)</span>
-  </div>
+  </div> -->
 
   <div class="product-quick-info">
     <div class="product-technical-description" [innerText]="product.technicalDescription | textFormat"></div>

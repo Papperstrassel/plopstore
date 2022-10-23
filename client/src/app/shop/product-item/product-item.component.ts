@@ -18,11 +18,21 @@ export class ProductItemComponent implements OnInit {
   @Input() product: IProduct;
 
   public textInput:string;
+  public rate:number;
+  public maxRating: number;
+  isReadonly = true;
 
-  constructor(private basketService: BasketService) { }
+  constructor(private basketService: BasketService) {}
 
   ngOnInit() {
+    this.generateStarRating();
+
   }
+
+  generateStarRating() {
+    this.rate = this.product.productRatingScore;
+  }
+
 
   addItemToBasket() {
     this.basketService.addItemToBasket(this.product);

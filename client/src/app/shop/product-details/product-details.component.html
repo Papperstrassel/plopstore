@@ -7,8 +7,13 @@
     </div>
     <div class="product-info-holder">
       <div class="product-title">
-        <p class="title-text">{{product.name}}</p>
-        <p class="product-type-text">{{product.productType}}</p>
+        <div class="title-text">{{product.name}}</div>
+        <div class="product-type-text">{{product.productType}} - {{product.shortDescription | titlecase}}</div>
+        <p class="product-sku-text">Article: {{product.productSKU}}</p>
+        <div class="rating-system">
+          <rating [(ngModel)]="rate" [max]="maxRating" [readonly]="isReadonly"></rating>
+          <span class="rating-quantity-text"> ({{product.numberOfRatings}})</span>
+        </div>
         <p class="product-price-text">{{product.price | currency}}</p>
 
         <div class="btn-holder">
@@ -16,21 +21,12 @@
         </div>
 
         <div class="detail-info-box">
-          <accordion [isAnimated]="true" class="customClass">
-            <accordion-group [panelClass]="customClass" [isOpen]="true">
-              <button class="product-desc-spec-btn" accordion-heading type="button">
-                Description <i class="fa fa-caret-down" aria-hidden="true"></i>
-              </button>
-              <div class="expanded-info">
-                {{product.description}}
-              </div>
-            </accordion-group>
-            <accordion-group [panelClass]="customClass">
-              <button class="product-desc-spec-btn" accordion-heading type="button">
-                Specification <i class="fa fa-caret-down" aria-hidden="true"></i>
-              </button>
-            </accordion-group>
-          </accordion>
+          <div>
+            <p class="product-description-head"> Description</p>
+            <div class="product-description-text">{{product.description}}</div>
+          </div>
+          <p class="product-description-head">Specification</p>
+          <div class="product-technical-description-text" [innerText]="product.technicalDescription | textFormat"></div>
         </div>
       </div>
     </div>

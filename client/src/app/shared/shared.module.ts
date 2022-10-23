@@ -12,6 +12,7 @@ import { CdkStep, CdkStepperModule } from '@angular/cdk/stepper';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
 import { RouterModule } from '@angular/router';
+import { RatingModule } from 'ngx-bootstrap/rating';
 
 
 
@@ -42,6 +43,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     CdkStepperModule,
     RouterModule,
+    RatingModule.forRoot()
 
 
 
@@ -59,6 +61,7 @@ import { RouterModule } from '@angular/router';
     CdkStepperModule,
     StepperComponent,
     BasketSummaryComponent,
+    RatingModule
   ]
 })
 export class SharedModule { }

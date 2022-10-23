@@ -8,5 +8,7 @@ export interface IProduct {
     pictureUrl: string;
     productType: string;
     productBrand: string;
-    productSKU: string;
+    productSKU: number;
+    numberOfRatings: number;
+    productRatingScore: number;
 }

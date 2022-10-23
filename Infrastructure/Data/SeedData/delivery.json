@@ -11,20 +11,20 @@
     "ShortName": "DHL",
     "Description": "Regular shipping",
     "DeliveryTime": "3-4 Days",
-    "Price": 5
+    "Price": 4.95
   },
   {
     "Id": 3,
     "ShortName": "DHL",
     "Description": "Express shipping",
     "DeliveryTime": "2 Days",
-    "Price": 10
+    "Price": 9.95
   },
   {
     "Id": 4,
     "ShortName": "FedEx",
-    "Description": "superQuick shipping",
+    "Description": "SuperQuick shipping",
     "DeliveryTime": "24 Hours",
-    "Price": 30
+    "Price": 29.95
   }
 ]

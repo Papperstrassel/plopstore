@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
 $montserrat-font: 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$main-font: 'Roboto', sans-serif;
+
 $main-color: #1F80BF;
 $off-color: #E81D88;
 
@@ -37,7 +41,7 @@ $off-color: #E81D88;
 }
 
 .custom-field {
-  font-family: $montserrat-font;
+  font-family: $main-font;
   border: none;
   border-radius: 4px;
   width: 280px;
@@ -74,7 +78,7 @@ $off-color: #E81D88;
   display: flex;
   justify-content: left;
   fill: #000;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-size: 1.1em;
   font-weight: 600;
   height: 2.5em;
@@ -102,7 +106,7 @@ $off-color: #E81D88;
   cursor: pointer;
   display: flex;
   fill: #000;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-size: 1.1em;
   font-weight: 600;
   height: 2.2em;
@@ -159,9 +163,16 @@ $off-color: #E81D88;
   top: 0em;
   bottom: 0;
   width: 100%;
-  height: 100%;
   z-index: 12;
   background-color: white;
+}
+
+.filter-menu-holder {
+  z-index: 1010;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .filter-icon-mobile {
@@ -169,7 +180,7 @@ $off-color: #E81D88;
   justify-content: center;
   align-items: center;
   margin-top: 0.5em;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-size: 1.3em;
   font-weight: 600;
   color: #8E8E8E;
@@ -189,7 +200,7 @@ $off-color: #E81D88;
 }
 
 .filter-alternative-mobile-item {
-  font-family: $montserrat-font;
+  font-family: $main-font;
   margin-top: 1em;
 }
 .header {
@@ -207,7 +218,7 @@ $off-color: #E81D88;
 
 }
 .form-control {
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-size: 1em;
   font-weight: 600;
   line-height: 1.1;
@@ -269,7 +280,7 @@ input[type="radio"]:checked::before {
 
 
 .empty-result-text {
-  font-family: $montserrat-font;
+  font-family: $main-font;
   color: $main-color;
   text-align: center;
   align-items: center;
@@ -294,8 +305,50 @@ input[type="radio"]:checked::before {
   text-decoration: none;
   overflow: hidden;
   z-index: 1;
-  font-family: $montserrat-font;
+  font-family: $main-font;
  }
+
+
+ .reset--btn {
+  margin-left: 0.5em;
+  align-items: center;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
+  border-radius: 0.1em;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $main-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 2.5em;
+  justify-content: center;
+  line-height: 24px;
+  width: 4.5em;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.reset--btn:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.reset--btn:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
 
 
 
@@ -313,7 +366,7 @@ input[type="radio"]:checked::before {
 }
 
 .filter-headline-mobile-label {
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-weight: 600;
   text-align: center;
   padding-top: .2em;
@@ -345,7 +398,7 @@ input[type="radio"]:checked::before {
 
 .products-holder {
 
-  flex: 0 0 43%;
+  flex: 0 0 55%;
   max-width: 100%;
 
 }
@@ -370,7 +423,7 @@ input[type="radio"]:checked::before {
 
 
 }
-@media (max-width: 900px) {
+@media (max-width: 1015px) {
   .mobile-filter-container {
     visibility: visible;
   }
@@ -391,7 +444,7 @@ input[type="radio"]:checked::before {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1015px) {
   .searchbar-holder {
     margin-top: -4em !important;
     margin-bottom: 4em !important;
@@ -403,7 +456,7 @@ input[type="radio"]:checked::before {
 
 }
 
-.tempMenu {
+.filterMenu {
   display: block;
   flex-direction: column;
   position: relative;
@@ -412,12 +465,11 @@ input[type="radio"]:checked::before {
   width: 12rem;
   margin-left: -5em;
   margin-top: 3.5em;
-
 }
 
 
-@media (max-width: 900px) {
-  .tempMenu {
+@media (max-width: 1015px) {
+  .filterMenu {
     display: none;
   }
 }
@@ -447,7 +499,7 @@ input[type="radio"]:checked::before {
   margin-left: 0.5em;
   margin-bottom: 0.5em;
   font-size: 1em;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-weight: 600;
   color: black;
 }
@@ -456,25 +508,25 @@ input[type="radio"]:checked::before {
 
 
 /* Button filter stuff */
-.button-28 {
+.filter-btn-side {
   appearance: none;
   background-color: transparent;
-  border: 2px solid #1FBFAE;
-  border-radius: 0.2em;
+  border: none;
+  border-bottom: 1px solid rgb(221, 221, 221);
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: $montserrat-font;
-  font-size: .8em;
-  font-weight: 600;
+  font-family: $main-font;
+  font-size: 0.95em;
+  font-weight: 500;
   line-height: normal;
   margin: 0;
   min-height: 2em;
   min-width: 4em;
   outline: none;
   padding: 10px 10px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
@@ -485,13 +537,48 @@ input[type="radio"]:checked::before {
   margin-top: 10px;
 }
 
+.filter-btn-side:disabled {
+  pointer-events: none;
+}
 
+.filter-btn-side:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+.button-28 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #606161;
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $main-font;
+  font-size: 0.95em;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  min-height: 2em;
+  min-width: 4em;
+  outline: none;
+  padding: 10px 10px;
+  text-align: left;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 60%;
+  will-change: transform;
+  margin-top: 10px;
+}
 
 .button-28:disabled {
   pointer-events: none;
 }
-
-
 
 .button-28:active {
   box-shadow: none;
@@ -512,7 +599,7 @@ input[type="radio"]:checked::before {
   list-style: none;
   cursor: pointer;
   padding-bottom: 0;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-weight: 500;
   font-size: .85em;
   color: #606060;
@@ -564,7 +651,7 @@ input[type="radio"]:checked::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-weight: 700;
   font-size: 1.2em;
   color: #1F80BF;

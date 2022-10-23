@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
 $montserrat-font: 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$main-font: 'Roboto', sans-serif;
+
 $base-color: #1F80BF;
 $light-color: #AAAAAA;
 
@@ -38,10 +42,10 @@ $light-color: #AAAAAA;
 }
 
 .title-text {
-  font-family: $montserrat-font;
+  font-family: $main-font;
   color: $base-color;
-  font-weight: 700;
-  font-size: 1.3em;
+  font-weight: 800;
+  font-size: 1.8em;
 }
 
 .img-holder {
@@ -56,20 +60,41 @@ $light-color: #AAAAAA;
 
 .product-type-text {
   margin: 0;
-  margin-top: -1.55em;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   color: $light-color;
   font-weight: 500;
-  font-size: 0.85em;
+  font-size: 1em;
+  margin-top: -0.2em;
+}
+.product-sku-text {
+  font-family: $main-font;
+  font-weight: 400;
+  color: $light-color;
+  font-size: 0.9em;
 }
 
 .product-price-text {
   margin: 0;
   padding-top: 1.1em;
   color: black;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
+}
+.product-description-head {
+  font-family: $main-font;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.product-description-text {
+  font-family: $main-font;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+.product-technical-description-text {
+  font-family: $main-font;
+  font-size: 1.1em;
+  padding-bottom: 1em;
 }
 
 .btn-holder {
@@ -87,12 +112,11 @@ $light-color: #AAAAAA;
   cursor: pointer;
   display: inline-flex;
   fill: #000;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-size: 16px;
   font-weight: 600;
   height: 3.2em;
   justify-content: center;
-  letter-spacing: -.8px;
   line-height: 24px;
   min-width: 140px;
   width: 100%;
@@ -106,9 +130,6 @@ $light-color: #AAAAAA;
   touch-action: manipulation;
 }
 
-.add-to-cart-btn:focus {
-  color: #171e29;
-}
 
 .add-to-cart-btn:hover {
   background-color: #3385ff;
@@ -131,7 +152,7 @@ $light-color: #AAAAAA;
   padding-top: 1em;
   border: none;
   background-color: white;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-weight: 600;
   font-size: 1.3em;
 }
@@ -139,10 +160,19 @@ $light-color: #AAAAAA;
 .expanded-info {
   margin-top: 0.5em;
   margin-left: 0.4em;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-size: 0.85em;
   color: black;
+}
+.rating-system {
+  color: #FFCD3C;
+  font-size: 1.45em;
+  margin-top: -0.85em;
+}
 
-
+.rating-quantity-text {
+  font-family: $main-font;
+  font-size: 0.65em;
+  color: #787878;
 }
 
