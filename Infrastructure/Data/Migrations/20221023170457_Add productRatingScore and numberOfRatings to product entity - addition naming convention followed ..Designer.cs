@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20220420160226_PostGres initial")]
-    partial class PostGresinitial
+    [Migration("20221023170457_Add productRatingScore and numberOfRatings to product entity - addition naming convention followed .")]
+    partial class AddproductRatingScoreandnumberOfRatingstoproductentityadditionnamingconventionfollowed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -128,6 +128,22 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("ProductTypeId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ShortDescription")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TechnicalDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("numberOfRatings")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("productRatingScore")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("productSKU")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

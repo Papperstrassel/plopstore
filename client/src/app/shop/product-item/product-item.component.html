@@ -1,37 +1,32 @@
 <div class="product-card">
 
-  <div class="thumbnail-holder">
-    <img class="product-image" src="{{product.pictureUrl}}" alt="{{product.name}}">
+  <div class="product--container">
+    <img class="product-img" routerLink="/shop/{{product.id}}" src="{{product.pictureUrl}}" alt="{{product.name}}">
+    <div class="product-name-title" routerLink="/shop/{{product.id}}">{{product.name}}</div>
   </div>
 
-  <div class="information-holder">
-
-    <p class="product-name">{{product.name}}</p>
-    <div class="product-description">
-      <p class="left-align-product-info">{{product.description}}</p>
-    </div>
-
-    <div class="buttonStuff">
-      <button (click)="addItemToBasket()" type="button" class="add-btn">Add to cart</button>
-
-      <div class="buy-button-holder">
-      </div>
-
-      <button routerLink="/shop/{{product.id}}"type="button" class="view-btn">View</button>
-    </div>
-
-    <div class="rating-system">
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star-half-o"></span>
-      <span>(294)</span>
+  <div class="rating-system">
+    <rating [(ngModel)]="rate" [max]="maxRating" [readonly]="isReadonly"></rating>
+    <span class="rating-quantity-text"> ({{product.numberOfRatings}})</span>
   </div>
 
-  <div class="product-price">
-    {{product.price | currency}}
+
+  <!-- <div class="rating-custom">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-half-o"></span>
+    <span class="custom-text-rating">(294)</span>
+  </div> -->
+
+  <div class="product-quick-info">
+    <div class="product-technical-description" [innerText]="product.technicalDescription | textFormat"></div>
   </div>
-</div>
+
+  <div class="price-checkout-btn-holder">
+    <div class="price-container">{{product.price | currency}}</div>
+    <div class="btn-holder-buy"><button class="shop-now-btn" (click)="addItemToBasket()">Buy</button></div>
+  </div>
 
 </div>

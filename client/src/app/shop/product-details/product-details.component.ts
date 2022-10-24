@@ -14,6 +14,10 @@ export class ProductDetailsComponent implements OnInit {
   product: IProduct;
   quantity = 1;
 
+  public rate:number;
+  public maxRating: number;
+  isReadonly = true;
+
   customClass = 'customClass';
 
 
@@ -24,6 +28,11 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.loadProduct();
+    this.generateStarRating();
+  }
+
+  generateStarRating() {
+    this.rate = this.product.productRatingScore;
   }
 
   addItemToBasket() {

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
 $montserrat-font: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$main-font: 'Roboto', sans-serif;
 
 
 .section-title {
@@ -30,7 +32,7 @@ $montserrat-font: 'Montserrat', sans-serif;
 ::ng-deep .xng-breadcrumb-root {
 
   color: #414141;
-  font-family: $montserrat-font;
+  font-family: $main-font;
   font-weight: 400;
   font-size: .8em;
   margin: 0;

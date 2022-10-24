@@ -53,7 +53,7 @@
     <div class="product-holder" *ngFor="let item of (basket$ | async).items">
       <div class="picture-holder">
         <img src="{{item.pictureUrl}}" alt="{{item.productName}}
-        "class="picture.fluid" style="max-height: 8em;">
+        "class="picture.fluid" style="max-height: 8.5em;">
       </div>
         <div class="product-info">
             <a routerLink="/shop/{{item.id}}"

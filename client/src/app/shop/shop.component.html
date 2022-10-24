@@ -75,7 +75,7 @@
 
 
 <div class="container-shop">
-  <div class="tempMenu">
+  <div class="filterMenu">
     <div class="filter-header">
       <div class="filter-headline">
         <div class="filter-icon">
@@ -92,56 +92,53 @@
      <div class="dropdown">
       <accordion [isAnimated]="true" class="customClass">
         <accordion-group [panelClass]="customClass" [isOpen]="true">
-          <button class="button-28" accordion-heading type="button">
+          <button class="filter-btn-side" accordion-heading type="button">
             <div>Types</div>
           </button>
           <div>
-            <ng-container *ngIf="productTypes && brands">
-              <ul class="filter-ul-items">
-                <li class="filter-list-items" tabindex="0"
-                  *ngFor="let productType of productTypes"
-                  [class.active]="productType.id === this.shopParams.typeId"
-                  [value]="productType.id"
-                  (click)="onTypeSelected(productType.id)">
-                  {{productType.name}}
-                </li>
-              </ul>
-            </ng-container>
+            <div class="check-alternative-holder">
+              <ng-container *ngIf="productTypes && brands">
+                <ng-container *ngFor="let productType of productTypes">
+                  <label class="form-control">
+                    <input type="radio" name="checkbox" [class.active]="productType.id === this.shopParams.typeId"
+                    [value]="productType.id" (click)="onTypeSelected(productType.id)">{{productType.name}}
+                  </label>
+                </ng-container>
+              </ng-container>
+            </div>
           </div>
 
         </accordion-group>
         <accordion-group [panelClass]="customClass" [isOpen]="true">
-          <button class="button-28" accordion-heading type="button">
+          <button class="filter-btn-side" accordion-heading type="button">
             Price
           </button>
-          <ng-container *ngIf="productTypes && brands">
-           <ul class="filter-ul-items">
-            <li class="filter-list-items" tabindex="1"
-              *ngFor="let sort of sortOptions"
-              [class.active]="shopParams.sort === sort.value"
-              [value]="sort.value"
-              (click)="onSortSelected(sort.value)">
-              {{sort.name}}
-              </li>
-           </ul>
-          </ng-container>
+          <div class="check-alternative-holder">
+            <ng-container *ngIf="productTypes && brands">
+              <ng-container *ngFor="let sort of sortOptions">
+                <label class="form-control">
+                  <input type="radio" name="checkbox" [class.active]="shopParams.sort === sort.value"
+                  [value]="sort.value" (click)="onSortSelected(sort.value)">{{sort.name}}
+                </label>
+              </ng-container>
+            </ng-container>
+          </div>
         </accordion-group>
         <accordion-group [panelClass]="customClass" [isOpen]="true">
-          <button class="button-28" accordion-heading type="button">
-            Brand
+          <button class="filter-btn-side" accordion-heading type="button">
+            Brands
           </button>
          <div>
-          <ng-container *ngIf="productTypes && brands">
-            <ul class="filter-ul-items">
-              <li class="filter-list-items" tabindex="2"
-                *ngFor="let brand of brands"
-                [class.active]="brand.id === this.shopParams.brandId"
-                [value]="brand.id"
-                (click)="onBrandSelected(brand.id)">
-                {{brand.name}}
-              </li>
-           </ul>
-          </ng-container>
+          <div class="check-alternative-holder">
+            <ng-container *ngIf="productTypes && brands">
+              <ng-container *ngFor="let brand of brands">
+                <label class="form-control">
+                  <input type="radio" name="checkbox" [class.active]="brand.id === this.shopParams.brandId"
+                  [value]="brand.id" (click)="onBrandSelected(brand.id)">{{brand.name}}
+                </label>
+              </ng-container>
+            </ng-container>
+          </div>
          </div>
         </accordion-group>
       </accordion>
@@ -157,7 +154,7 @@
         <div class="searchbar-box">
           <img class="icon-search" src="assets/images/search-solid.png" alt="search-icon">
           <input (keyup.enter)="onSearch()" class="custom-field" #search placeholder="Search" type="text">
-          <button (click)="onReset()" class="view-btn">Reset</button>
+          <button (click)="onReset()" class="reset--btn">Reset</button>
         </div>
       </div>
       <div *ngIf="totalCount === 0" class="empty-result-text">Ops, We didn't find anything with this filter, Please try again</div>
