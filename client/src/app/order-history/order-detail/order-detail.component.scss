@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
 $montserrat-font: 'Montserrat', sans-serif;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$main-font: 'Roboto', sans-serif;
+
 
 @media (max-width: 795px) {
   .grid-holder {
@@ -33,8 +36,9 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 .order-summary-header {
   font-family: $montserrat-font;
-  font-weight: 600;
-  padding-left: 1.3em;
+  font-size: 1.65em;
+  font-weight: 700;
+  padding-left: 0.8em;
   padding-top: 1em;
   padding-bottom: 1em;
   color: #1F80BF;
@@ -74,10 +78,14 @@ $montserrat-font: 'Montserrat', sans-serif;
 }
 
 .product-name {
-  font-family: $montserrat-font;
+  cursor: pointer;
+  font-family: $main-font;
   font-weight: 600;
   color: #1F80BF;
-  font-size: .8em;
+  font-size: 1em;
+}
+.product-name:hover {
+  border-bottom: 2px solid #1F80BF;
 }
 
 .quantity-container-review {
@@ -95,8 +103,8 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 .review-price-text {
   margin-left: 0.4em;
-  font-family: $montserrat-font;
-  font-weight: 600;
+  font-family: $main-font;
+  font-weight: 500;
 
 }
 
@@ -109,6 +117,18 @@ $montserrat-font: 'Montserrat', sans-serif;
 
 .product-grid {
   display: grid;
+  justify-content: center;
   grid-template-columns: 1fr 1fr;
 }
 
+.order-status-container {
+  display: flex;
+  margin-top: 1em;
+  font-family: $montserrat-font;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+.status-code-text {
+  margin-left: 0.5em;
+  color: #1FBFAE;
+}

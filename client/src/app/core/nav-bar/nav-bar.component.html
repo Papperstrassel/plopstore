@@ -76,7 +76,7 @@
       <img src="/assets/images/Mjaubie_new_logo_blue.svg" alt="logo" class="logo" routerLink="/">
 
         <ul class="nav-links">
-          <li><a class="nav-bar-text" routerLink="/shop" routerLinkActive="active">Shop</a></li>
+          <li><a class="nav-bar-text" routerLink="/shop" routerLinkActive="active"><div class="shop-link-text">Shop</div></a></li>
           <li>
             <ng-container *ngIf="(currentUser$ | async) === null">
               <a class="nav-bar-text" routerLink="/account/login">Sign In</a>

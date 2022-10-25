@@ -9,7 +9,7 @@
             "class="picture.fluid" style="max-height: 8em;">
           </div>
             <div class="product-info">
-                <span class="product-name">{{item.productName}}</span>
+                <span class="product-name" routerLink="/shop/{{item.productId}}">{{item.productName}}</span>
             </div>
             <div class="quantity-container-review">
               <span class="review-quantity-text">{{item.quantity}} pcs</span>
@@ -39,6 +39,7 @@
                   <span class="order-total-numbers">{{order.total | currency}}</span>
               </li>
           </ul>
+          <div class="order-status-container">Order Status: <div class="status-code-text">{{order.status}}</div>
       </div>
       </div>
 

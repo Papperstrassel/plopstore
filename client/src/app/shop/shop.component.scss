@@ -231,6 +231,20 @@ $off-color: #E81D88;
 
 }
 
+.form-control-desktop {
+  font-family: $main-font;
+  font-size: 0.87em;
+  font-weight: 600;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  border: none;
+  padding: 0;
+  height: 1.25em;
+
+}
+
 
 
 input[type="radio"] {
@@ -454,6 +468,12 @@ input[type="radio"]:checked::before {
 @media (min-width: 1215px) {
   .card-grid { grid-template-columns: repeat(3, .1fr); }
 
+}
+
+@media (min-width: 1900px) {
+  .filterMenu {
+    margin-right: -0.85em !important;
+  }
 }
 
 .filterMenu {

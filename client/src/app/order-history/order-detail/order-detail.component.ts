@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IOrder } from 'src/app/shared/models/order';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { OrderHistoryService } from '../order-history.service';
+
 
 @Component({
   selector: 'app-order-detail',

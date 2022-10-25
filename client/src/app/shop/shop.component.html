@@ -99,7 +99,7 @@
             <div class="check-alternative-holder">
               <ng-container *ngIf="productTypes && brands">
                 <ng-container *ngFor="let productType of productTypes">
-                  <label class="form-control">
+                  <label class="form-control-desktop">
                     <input type="radio" name="checkbox" [class.active]="productType.id === this.shopParams.typeId"
                     [value]="productType.id" (click)="onTypeSelected(productType.id)">{{productType.name}}
                   </label>
@@ -116,7 +116,7 @@
           <div class="check-alternative-holder">
             <ng-container *ngIf="productTypes && brands">
               <ng-container *ngFor="let sort of sortOptions">
-                <label class="form-control">
+                <label class="form-control-desktop">
                   <input type="radio" name="checkbox" [class.active]="shopParams.sort === sort.value"
                   [value]="sort.value" (click)="onSortSelected(sort.value)">{{sort.name}}
                 </label>
@@ -132,7 +132,7 @@
           <div class="check-alternative-holder">
             <ng-container *ngIf="productTypes && brands">
               <ng-container *ngFor="let brand of brands">
-                <label class="form-control">
+                <label class="form-control-desktop">
                   <input type="radio" name="checkbox" [class.active]="brand.id === this.shopParams.brandId"
                   [value]="brand.id" (click)="onBrandSelected(brand.id)">{{brand.name}}
                 </label>
@@ -157,7 +157,7 @@
           <button (click)="onReset()" class="reset--btn">Reset</button>
         </div>
       </div>
-      <div *ngIf="totalCount === 0" class="empty-result-text">Ops, We didn't find anything with this filter, Please try again</div>
+      <div *ngIf="totalCount < 1" class="empty-result-text">Ops, We didn't find anything with this filter, Please try again</div>
         <div class="card-grid">
           <div class="item-cards" *ngFor="let item of products">
             <app-product-item [product]="item"></app-product-item>
