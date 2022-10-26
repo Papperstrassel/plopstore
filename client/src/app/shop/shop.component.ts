@@ -130,6 +130,15 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
+  //test reset
+  onTypeDeselected(){
+    const params = this.shopService.getShopParams();
+    params.typeId = 0;
+    params.pageNumber = 1;
+    this.shopService.setShopParams(params);
+    this.getProducts();
+  }
+
   onSortSelected(sort: string){
     const params = this.shopService.getShopParams();
     params.sort = sort;
