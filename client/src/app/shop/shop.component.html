@@ -25,8 +25,8 @@
                   <ng-container *ngIf="productTypes && brands">
                     <ng-container *ngFor="let productType of productTypes">
                       <label class="form-control">
-                        <input type="radio" name="checkbox"
-                        [value]="productType.id" (click)="onTypeSelected(productType.id)">{{productType.name}}
+                        <input type="checkbox" name="checkbox"
+                        [value]="productType.id" (change)="getCheckboxValuesForProductTypes($event, productType.id)">{{productType.name}}
                       </label>
                     </ng-container>
                   </ng-container>
@@ -39,7 +39,7 @@
                   <ng-container *ngIf="productTypes && brands">
                     <ng-container *ngFor="let sort of sortOptions">
                       <label class="form-control">
-                        <input type="radio" name="checkbox" [class.active]="shopParams.sort === sort.value"
+                        <input type="checkbox" name="checkbox" [class.active]="shopParams.sort === sort.value"
                         [value]="sort.value" (click)="onSortSelected(sort.value)">{{sort.name}}
                       </label>
                     </ng-container>
@@ -53,8 +53,8 @@
                   <ng-container *ngIf="productTypes && brands">
                     <ng-container *ngFor="let brand of brands">
                       <label class="form-control">
-                        <input type="radio" name="checkbox"
-                        [value]="brand.id" (click)="onBrandSelected(brand.id)">{{brand.name}}
+                        <input type="checkbox" name="checkbox"
+                        [value]="brand.id" (change)="getCheckboxValuesForBrandTypes($event, brand.id)">{{brand.name}}
                       </label>
                     </ng-container>
                   </ng-container>
@@ -117,7 +117,7 @@
             <ng-container *ngIf="productTypes && brands">
               <ng-container *ngFor="let sort of sortOptions">
                 <label class="form-control-desktop">
-                  <input type="radio" tabindex="2" name="checkbox" [class.active]="shopParams.sort === sort.value"
+                  <input type="checkbox" tabindex="2" name="checkbox" [class.active]="shopParams.sort === sort.value"
                   [value]="sort.value" (click)="onSortSelected(sort.value)">{{sort.name}}
                 </label>
               </ng-container>
