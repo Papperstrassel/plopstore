@@ -38,12 +38,19 @@ export class ShopService {
 
     let params = new HttpParams();
 
-    if(this.shopParams.brandId !== 0) {
-      params = params.append('brandId', this.shopParams.brandId.toString());
+    if(this.shopParams.brandIds.length > 0) {
+      for(let i = 0; i < this.shopParams.brandIds.length; i++)
+      {
+        params = params.append('brandIds', this.shopParams.brandIds[i].toString());
+      }
+
     }
 
-    if(this.shopParams.typeId !== 0) {
-      params = params.append('typeId', this.shopParams.typeId.toString());
+    if(this.shopParams.typeIds.length > 0) {
+      for(let i = 0; i < this.shopParams.typeIds.length; i++)
+      {
+        params = params.append('typeIds', this.shopParams.typeIds[i].toString());
+      }
     }
 
       if(this.shopParams.search) {

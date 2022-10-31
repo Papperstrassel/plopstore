@@ -25,7 +25,7 @@
                   <ng-container *ngIf="productTypes && brands">
                     <ng-container *ngFor="let productType of productTypes">
                       <label class="form-control">
-                        <input type="radio" name="checkbox" [class.active]="productType.id === this.shopParams.typeId"
+                        <input type="radio" name="checkbox"
                         [value]="productType.id" (click)="onTypeSelected(productType.id)">{{productType.name}}
                       </label>
                     </ng-container>
@@ -53,7 +53,7 @@
                   <ng-container *ngIf="productTypes && brands">
                     <ng-container *ngFor="let brand of brands">
                       <label class="form-control">
-                        <input type="radio" name="checkbox" [class.active]="brand.id === this.shopParams.brandId"
+                        <input type="radio" name="checkbox"
                         [value]="brand.id" (click)="onBrandSelected(brand.id)">{{brand.name}}
                       </label>
                     </ng-container>
@@ -100,10 +100,9 @@
               <ng-container *ngIf="productTypes && brands">
                 <ng-container *ngFor="let productType of productTypes">
                   <label class="form-control-desktop">
-                    <input type="checkbox" name="checkbox" [class.active]="productType.id === this.shopParams.typeId"
-                    [value]="productType.id" (click)="onTypeSelected(productType.id)">{{productType.name}}
+                    <input type="checkbox" name="checkbox"
+                    [value]="productType.id" (change)="getCheckboxValuesForProductTypes($event, productType.id)">{{productType.name}}
                   </label>
-                  <button (click)="onTypeDeselected()">Reset Type selected</button>
                 </ng-container>
               </ng-container>
             </div>
@@ -118,7 +117,7 @@
             <ng-container *ngIf="productTypes && brands">
               <ng-container *ngFor="let sort of sortOptions">
                 <label class="form-control-desktop">
-                  <input type="checkbox" name="checkbox" [class.active]="shopParams.sort === sort.value"
+                  <input type="radio" tabindex="2" name="checkbox" [class.active]="shopParams.sort === sort.value"
                   [value]="sort.value" (click)="onSortSelected(sort.value)">{{sort.name}}
                 </label>
               </ng-container>
@@ -134,8 +133,8 @@
             <ng-container *ngIf="productTypes && brands">
               <ng-container *ngFor="let brand of brands">
                 <label class="form-control-desktop">
-                  <input type="checkbox" name="checkbox" [class.active]="brand.id === this.shopParams.brandId"
-                  [value]="brand.id" (click)="onBrandSelected(brand.id)">{{brand.name}}
+                  <input type="checkbox"  name="checkbox"
+                  [value]="brand.id" (change)="getCheckboxValuesForBrandTypes($event, brand.id)">{{brand.name}}
                 </label>
               </ng-container>
             </ng-container>

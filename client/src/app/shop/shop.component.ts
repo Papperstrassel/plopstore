@@ -51,6 +51,8 @@ export class ShopComponent implements OnInit {
   shopParams: ShopParams;
   totalCount: number;
 
+  temporaryArrayFilter : any [];
+
   customClass = 'customClass';
 
   //animation testing
@@ -116,7 +118,7 @@ export class ShopComponent implements OnInit {
 
   onBrandSelected(brandId: number) {
     const params = this.shopService.getShopParams();
-    params.brandId = brandId;
+    params.brandIds.push(brandId);
     params.pageNumber = 1;
     this.shopService.setShopParams(params);
     this.getProducts();
@@ -124,20 +126,54 @@ export class ShopComponent implements OnInit {
 
   onTypeSelected(typeId: number){
     const params = this.shopService.getShopParams();
-    params.typeId = typeId;
+    params.typeIds.push(typeId);
     params.pageNumber = 1;
     this.shopService.setShopParams(params);
     this.getProducts();
   }
 
-  //test reset
-  onTypeDeselected(){
+  //Filter Checkbox testing
+  getCheckboxValuesForProductTypes(event, typeId){
     const params = this.shopService.getShopParams();
-    params.typeId = 0;
+    if(event.target.checked){
+      params.typeIds.push(typeId);
+    }
+    else {
+      let indexOfTypeId = params.typeIds.indexOf(typeId);
+
+      if(indexOfTypeId != -1)
+      {
+        params.typeIds.splice(indexOfTypeId,1);
+      }
+    }
     params.pageNumber = 1;
     this.shopService.setShopParams(params);
     this.getProducts();
+
   }
+
+  getCheckboxValuesForBrandTypes(event, brandId){
+    const params = this.shopService.getShopParams();
+    if(event.target.checked){
+      params.brandIds.push(brandId);
+    }
+    else {
+      let indexOfBrandId = params.brandIds.indexOf(brandId);
+
+      if(indexOfBrandId != -1)
+      {
+        params.brandIds.splice(indexOfBrandId,1);
+      }
+    }
+    params.pageNumber = 1;
+    this.shopService.setShopParams(params);
+    this.getProducts();
+
+  }
+
+  //End of filter testing
+
+
 
   onSortSelected(sort: string){
     const params = this.shopService.getShopParams();
