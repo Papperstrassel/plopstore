@@ -34,12 +34,12 @@
               </div>
 
               <div class="filter-alternative-mobile-item">
-                <span class="header">Price</span>
+                <span class="header">Sort</span>
                 <div class="check-alternative-holder">
                   <ng-container *ngIf="productTypes && brands">
                     <ng-container *ngFor="let sort of sortOptions">
                       <label class="form-control">
-                        <input type="checkbox" name="checkbox" [class.active]="shopParams.sort === sort.value"
+                        <input type="radio" name="checkbox" [class.active]="shopParams.sort === sort.value"
                         [value]="sort.value" (click)="onSortSelected(sort.value)">{{sort.name}}
                       </label>
                     </ng-container>
@@ -111,13 +111,13 @@
         </accordion-group>
         <accordion-group [panelClass]="customClass" [isOpen]="true">
           <button class="filter-btn-side" accordion-heading type="button">
-            Price
+            Sort
           </button>
           <div class="check-alternative-holder">
             <ng-container *ngIf="productTypes && brands">
               <ng-container *ngFor="let sort of sortOptions">
                 <label class="form-control-desktop">
-                  <input type="checkbox" tabindex="2" name="checkbox" [class.active]="shopParams.sort === sort.value"
+                  <input type="radio" tabindex="2" name="checkbox" [class.active]="shopParams.sort === sort.value"
                   [value]="sort.value" (click)="onSortSelected(sort.value)">{{sort.name}}
                 </label>
               </ng-container>
@@ -154,7 +154,7 @@
         <div class="searchbar-box">
           <img class="icon-search" src="assets/images/search-solid.png" alt="search-icon">
           <input (keyup.enter)="onSearch()" class="custom-field" #search placeholder="Search" type="text">
-          <button (click)="onReset()" class="reset--btn">Reset</button>
+
         </div>
       </div>
       <div *ngIf="totalCount === 0" class="empty-result-text">Ops, We didn't find anything with this filter, Please try again</div>

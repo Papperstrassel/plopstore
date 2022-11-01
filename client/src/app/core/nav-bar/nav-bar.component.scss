@@ -338,6 +338,10 @@ $primary-font-color: #006EB9;
   background-color: white;
 }
 
+.shop-cart-panel-content::-webkit-scrollbar {
+  display: none;
+}
+
 .shop-cart-panel-content {
   z-index: 1010;
   width: 100%;
@@ -370,6 +374,7 @@ $primary-font-color: #006EB9;
 
 .cart-product-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
 }
@@ -475,8 +480,13 @@ $primary-font-color: #006EB9;
   }
 }
 
+.divider-basket {
+  height: 5em;
+}
+
 .checkout-button-holder {
-  display: flex;
+
+  position: absolute;
   bottom: 0;
   width: 100%;
 
