@@ -63,8 +63,11 @@ $off-color: #E81D88;
 @media (max-width: 900px) {
   .home-img--main {
     position: relative;
-    height: 500px !important;
+    height: calc(100vh - 10em) !important;
     grid-row: 2 !important;
+  }
+  .home-content-main {
+    height: auto !important;
   }
   .home-img--main img {
     width: 100% !important;

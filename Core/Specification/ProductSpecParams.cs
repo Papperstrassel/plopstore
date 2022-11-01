@@ -18,8 +18,9 @@ namespace Core.Specification
             set => _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
         }
 
-        public int? BrandId { get; set; }
-        public int? TypeId { get; set; }
+        public List<int> BrandIds { get; set; }  = new List<int>();
+            
+        public List<int> TypeIds { get; set; }  = new List<int>();
 
         public string Sort { get; set; }
 

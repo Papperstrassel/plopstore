@@ -1,21 +1,19 @@
-<div id="orderSuccessInfo">
-    
-    <div class="mt-4"> <i class="fa fa-check-circle fa-5x" style="color: green"></i></div>
-   
-    <div class="mt-5">    
-        <h2>Thank you, Your order is confirmed</h2>
-        <p class="mb-4">Your order has not shipped yet, but this is to be expected as we are not a real store</p>
-    </div>
-    <button *ngIf="order" routerLink="/orders/{{order?.id}}" class="btn btn-outline-success">View
-        Your Order</button>
-    <button *ngIf="!order" routerLink="/order">View your orders</button>
+<div class="disclaimer-text">Note: This is just a demo site, no actual products will be shipped. But I'm still happy you're here!</div>
+
+<div class="success-holder">
+  <div class="header-text">Awesome! Your order is confirmed and we're so excited here at the office!</div>
 </div>
 
-<!-- Old formatting
-    <div class="container-mt-5">
-    <div class="mb-4 py-5 ml-5"><i class="fa fa-check-circle fa-5x" style="color: green"></i></div>
-    <h2>Thank you. Your order is confirmed</h2>
-    <p class="mb-4">Your order has not shipped yet, but this is to be expected as we are not a real store</p>
-    <button class="btn btn-outline-success">View your order</button>
+<div class="button-holder">
+  <button *ngIf="order" routerLink="/orders/{{order?.id}}" class="view--btn">View
+    Your Order</button>
+  <button *ngIf="!order" routerLink="/order" class="view--btn">View your Order</button>
 </div>
--->
+
+<div class="image-holder">
+  <img class="happy-dog-img" src="/assets/images/happy_dog_cropped.png" alt="happy-dog">
+</div>
+
+
+
+

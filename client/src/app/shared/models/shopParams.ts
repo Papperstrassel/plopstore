@@ -1,6 +1,6 @@
 export class ShopParams {
-    brandId: number = 0;
-    typeId: number = 0;
+    brandIds: number[] = [];
+    typeIds: number[] = [];
     sort = 'name';
     pageNumber = 1;
     pageSize = 6;

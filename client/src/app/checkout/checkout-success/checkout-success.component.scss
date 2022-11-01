@@ -1,14 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
 
-#orderSuccessInfo {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$main-font: 'Roboto', sans-serif;
+$main-color: #1F80BF;
+$off-color-g: #76C9BE;
+$off-color-hover: #7CE3D6;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+.disclaimer-text {
+  margin-top: 4em;
+  display: flex;
+  justify-content: center;
+  color: #A8A8A8;
+  text-align: center;
+  font-family: $montserrat-font;
+}
+.success-holder {
+  display: flex;
+  margin-top: 5em;
+  justify-content: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
-.child {
-    position: relative;
- 
+
+.header-text {
+  display: flex;
+  justify-content: center;
+  width: 20em;
+  color: $main-color;
+  text-align: center;
+  font-family: $montserrat-font;
+  font-size: 3.2em;
+  font-weight: 800;
+  margin-bottom: 1em;
 }
+@media (max-width: 1100px) {
+  .happy-dog-img {
+    display: none !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-text {
+    font-size: 2em;
+    width: 10em;
+  }
+}
+.happy-dog-img {
+  height: 70%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.view--btn {
+  margin-left: 0.5em;
+  align-items: center;
+  background-color: $off-color-g;
+  border: 2px solid $off-color-g;
+  border-radius: 0.1em;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 2.9em;
+  justify-content: center;
+  line-height: 24px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.view--btn:hover {
+  background-color: $off-color-hover;
+  border-color: $off-color-hover;
+  fill: #06f;
+}
+
