@@ -22,5 +22,17 @@
   {
     "Id": 6,
     "Name": "Toys"
+  },
+  {
+    "Id": 7,
+    "Name": "Chairs"
+  },
+  {
+    "Id": 8,
+    "Name": "Lamps"
+  },
+  {
+    "Id": 9,
+    "Name": "Kitchen & Dining"
   }
 ]
