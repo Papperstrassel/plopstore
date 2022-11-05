@@ -141,5 +141,44 @@
     "ProductSKU": 50123,
     "ProductRatingScore": 3,
     "NumberOfRatings": 43
+  },
+  {
+    "Name": "Sakurachan Office Chair",
+    "ShortDescription": "Office chair",
+    "Description": "Reimagine the home office with the handcrafted leather office chair from legendary office supplier Sakurachan. Carefully selected elements in harmony will elevate any home office. Height adjustable for optimal work position now with improved wheels.",
+    "TechnicalDescription": "Luxurious leather, Adjustable settings, Handmade",
+    "Price": 400,
+    "PictureUrl": "images/products/office-chair-leather-brown.png",
+    "ProductTypeId": 7,
+    "ProductBrandId": 8,
+    "ProductSKU": 70123,
+    "ProductRatingScore": 5,
+    "NumberOfRatings": 95
+  },
+  {
+    "Name": "Sakurachan Coffe Mug",
+    "ShortDescription": "Cup",
+    "Description": "A simple and elegant cup made with carefully curated materials sourced locally in japan. A timeless design combined with masterful craftmanship, this cup will be a faithful companion for the early mornings or the late work sessions.",
+    "TechnicalDescription": "Handmade, Coaster included, Local Materials",
+    "Price": 25,
+    "PictureUrl": "images/products/white-coffe-mug.png",
+    "ProductTypeId": 9,
+    "ProductBrandId": 8,
+    "ProductSKU": 90123,
+    "ProductRatingScore": 5,
+    "NumberOfRatings": 402
+  },
+  {
+    "Name": "Sakurachan Desk Lamp",
+    "ShortDescription": "Lamp",
+    "Description": "Legendary office supplier Sakurachan has drawn inspiration from classic designs of the halls of Oxford and created a sophisticated desk lamp, which will offer both excellent lighting and a pleasing aesthetic to any home.",
+    "TechnicalDescription": "Adjustable settings, Black finnish, LED bulb included",
+    "Price": 75,
+    "PictureUrl": "images/products/black-desktop-lamp.png",
+    "ProductTypeId": 8,
+    "ProductBrandId": 8,
+    "ProductSKU": 80123,
+    "ProductRatingScore": 4,
+    "NumberOfRatings": 100
   }
 ]

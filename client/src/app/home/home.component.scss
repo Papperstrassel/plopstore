@@ -35,10 +35,10 @@ $off-color: #E81D88;
     height: calc(100vh - 3.5em) !important;
   }
 
-  .shop-now-btn {
+  // .shop-now-btn {
 
-    width: 22em !important;
-  }
+  //   width: 22em !important;
+  // }
 
   .hero-message-holder {
     margin-top: 5em !important;
@@ -237,27 +237,120 @@ $off-color: #E81D88;
   position: relative;
 }
 
-//buttons
-.shop-now-btn {
 
+
+//New style
+// .home-background {
+//   background-image: url("/assets/images/bg_home.jpg");
+
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   height: 100vh;
+//   padding-top: 10px;
+// }
+
+
+
+//Functional
+
+@media (max-width: 680px) {
+
+  .bg-home {
+    display: none!important;
+  }
+
+  .bg-home img {
+    display: none;
+  }
+
+  .message-box {
+    top: 15%;
+    left: 0 !important;
+    //position: relative !important;
+    bottom: 65% !important;
+    font-size: 2.65em !important;
+  }
+
+  .button-holder-shop {
+    margin-top: 0.5em;
+  }
+
+}
+
+@media (min-width: 680px){
+  .mobile-landing-image {
+    display: none !important;
+  }
+}
+
+.button-holder-shop {
+  position: relative;
+  margin-top: 1em;
+}
+
+
+.mobile-landing-img-holder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+}
+
+.mobile-landing-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bg-home {
+  z-index: -1;
+  position: fixed;
+  top: -49%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+
+.bg-home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%
+}
+
+.message-box {
+  font-family: $montserrat-font;
+  font-size: 3em;
+  font-weight: 400;
+  position: absolute;
+  text-align: center;
+  bottom: 25%;
+  left: 12%;
+
+
+}
+
+.shop-now-btn {
   align-items: center;
-  justify-content: center;
-  background-color: #E81D88;
-  border: 2px solid #E81D88;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-flex;
   fill: #000;
   font-family: $montserrat-font;
-  font-size: 1.3em;
-  font-weight: 600;
-  height: 3em;
+  font-size: 0.6em;
+  font-weight: 500;
+  height: 2em;
+  width: 7em;
+  justify-content: center;
   line-height: 24px;
-  //width: 22em;
-  width: 100%;
   outline: 0;
-  padding: 0 17px;
   text-align: center;
   text-decoration: none;
   transition: all .3s;
@@ -266,18 +359,11 @@ $off-color: #E81D88;
   touch-action: manipulation;
 }
 
-.shop-now-btn:focus {
-  color: #171e29;
-}
 
 .shop-now-btn:hover {
-  background-color: #f7369d;
-  border-color: #f7369d;
-  fill: #06f;
-}
-
-.shop-now-btn:active {
   background-color: #3385ff;
   border-color: #3385ff;
   fill: #06f;
 }
+
+//end of new style
