@@ -96,7 +96,7 @@ namespace API.Controllers
         public async Task<ActionResult<Product>> CreateProduct(ProductCreateDto productToCreate)
         {
             var product = _mapper.Map<ProductCreateDto, Product>(productToCreate);
-            product.PictureUrl = "images/products/placeholder.png";
+            product.PictureUrl = "images/products/placeholder_test.png";
 
             _unitOfWork.Repository<Product>().Add(product);
 

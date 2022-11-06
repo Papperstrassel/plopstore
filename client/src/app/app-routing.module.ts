@@ -30,6 +30,12 @@ const routes: Routes = [
   {path:'orders',canActivate: [AuthGuard], loadChildren: () => import('./order-history/order-history.module').then(mod => mod.OrderHistoryModule),
   data: {breadcrumb: 'Order-History'}},
 
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module')
+      .then(mod => mod.AdminModule), data: { breadcrumb: 'Admin' }
+  },
+
   {path:'**', redirectTo: 'not-found', pathMatch: 'full'},
 ];
 
