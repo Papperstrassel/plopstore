@@ -13,6 +13,7 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
 import { RouterModule } from '@angular/router';
 import { RatingModule } from 'ngx-bootstrap/rating';
+import {CurrencyMaskModule} from 'ng2-currency-mask';
 
 
 
@@ -43,7 +44,8 @@ import { RatingModule } from 'ngx-bootstrap/rating';
     FormsModule,
     CdkStepperModule,
     RouterModule,
-    RatingModule.forRoot()
+    RatingModule.forRoot(),
+    CurrencyMaskModule
 
 
 
@@ -61,7 +63,8 @@ import { RatingModule } from 'ngx-bootstrap/rating';
     CdkStepperModule,
     StepperComponent,
     BasketSummaryComponent,
-    RatingModule
+    RatingModule,
+    CurrencyMaskModule
   ]
 })
 export class SharedModule { }

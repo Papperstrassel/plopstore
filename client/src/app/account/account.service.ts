@@ -11,10 +11,12 @@ import { IUser } from '../shared/models/user';
   providedIn: 'root'
 })
 export class AccountService {
-  //Grab apiUrl from our environment 
+  //Grab apiUrl from our environment
   baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<IUser>(1); // specify how many user object this holds.(cached)
   currentUser$ = this.currentUserSource.asObservable();
+  private isAdminSource = new ReplaySubject<boolean>(1);
+  isAdmin$ = this.isAdminSource.asObservable();
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -32,6 +34,7 @@ export class AccountService {
         if (user) {
           localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
+          this.isAdminSource.next(this.isAdmin(user.token));
         }
       })
     );
@@ -43,6 +46,7 @@ export class AccountService {
         if(user) {
           localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
+          this.isAdminSource.next(this.isAdmin(user.token));
         }
       })
     );
@@ -75,5 +79,14 @@ export class AccountService {
 
   updateUserAddress(address: IAddress) {
     return this.http.put<IAddress>(this.baseUrl + 'account/address', address);
+  }
+
+  isAdmin(token: string): boolean {
+    if(token) {
+      const decodeToken = JSON.parse(atob(token.split('.')[1]));
+      if(decodeToken.role.indexOf('Admin') > -1) {
+        return true;
+      }
+    }
   }
 }

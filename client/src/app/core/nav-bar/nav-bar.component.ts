@@ -50,6 +50,7 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 export class NavBarComponent implements OnInit {
   basket$: Observable<IBasket>;
   currentUser$: Observable<IUser>;
+  isAdmin$: Observable<boolean>;
 
   public menuState:string = 'out';
   public hamburgerMenuState:string = 'out_b';
@@ -60,7 +61,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
     this.basket$ = this.basketService.basket$;
     this.currentUser$ = this.accountService.currentUser$;
-
+    this.isAdmin$ = this.accountService.isAdmin$;
   }
 
   public toggleMenu(){
