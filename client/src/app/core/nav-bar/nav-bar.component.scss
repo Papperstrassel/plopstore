@@ -9,6 +9,85 @@ $main-font: 'Roboto', sans-serif;
 
 $primary-font-color: #006EB9;
 
+.user-style-nav-welcome {
+  font-family: $montserrat-font;
+  color: #212529;
+  text-decoration: none;
+}
+
+.ad-btn-holder {
+  margin-left: 10em;
+}
+
+.fa-tasks {
+  margin-left: 0.5em;
+  font-size: 1.1em;
+}
+
+ .button-ad {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.865em;
+  font-weight: 600;
+  color: #212529;
+  background-color: white;
+  font-family: $montserrat-font;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+ }
+
+ .button-ad:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+ }
+
+ .button-ad:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #1F80BF;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+ }
+
+ .button-ad:hover {
+  color: #ffffff;
+  border: 1px solid #1F80BF;
+ }
+
+ .button-ad:hover:before {
+  top: -35%;
+  background-color: #1F80BF;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+ }
+
+ .button-ad:hover:after {
+  top: -45%;
+  background-color: #1F80BF;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+ }
+
 
 .shop-link-text {
   font-family: $montserrat-font;
@@ -100,7 +179,7 @@ $primary-font-color: #006EB9;
   display: flex;
   padding: 0 24px;
   position: relative;
-  box-shadow: 0px 0px 10px 0px rgb(0 0 0 /15%);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   align-items: center;
   justify-content: space-between;
   background-color: white;
@@ -201,6 +280,9 @@ $primary-font-color: #006EB9;
     display: none;
   }
 
+  .ad-btn-holder {
+    display: none;
+  }
 
 
 
@@ -271,17 +353,41 @@ $primary-font-color: #006EB9;
 .mobile-menu-item-user {
   font-family: $montserrat-font;
   font-weight: 700;
-  font-size: 1.4em;
-  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  margin-bottom: 1em;
   color: $primary-font-color;
   border-bottom: 1px solid rgb(218, 218, 218);
 }
 .mobile-user-item {
   font-family: $montserrat-font;
   font-weight: 500;
-  font-size: 1em;
+  font-size: 1.2em;
   margin-bottom: 0.5em;
-  color: rgb(65, 65, 65);
+  color: #212529;
+}
+
+.mobile-user-item-logout {
+  color: #212529;
+  font-size: 1.2em;
+  font-family: $montserrat-font;
+  position: absolute;
+  bottom: 5em;
+  left: 40%;
+}
+
+.panel-line {
+  border-top: 1px solid red;
+  width: 100%;
+}
+.ad-btn-holder-mobile {
+  margin-top: 2em;
+  position: absolute;
+  bottom: 20em;
+  left: 33%;
+}
+
+.user-specific {
+  margin-top: 3em;
 }
 
 .colored-panel {
