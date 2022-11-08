@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
 $montserrat-font: 'Montserrat', sans-serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
@@ -8,6 +8,7 @@ $main-font: 'Roboto', sans-serif;
 
 
 $primary-font-color: #006EB9;
+$accent-color: #76C9BE;
 
 .user-style-nav-welcome {
   font-family: $montserrat-font;
@@ -127,32 +128,6 @@ $primary-font-color: #006EB9;
 
 }
 
-.dropdown-menu-custom {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 10rem;
-  padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
-  font-size: 1rem;
-  color: #212529;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
-  border-radius: 0.25rem;
-}
-
-.dropdown-item-custom {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
 .bento-menu{
   border: none;
   margin: 0;
@@ -240,24 +215,15 @@ $primary-font-color: #006EB9;
   .navbarTop {
     flex: 1;
   }
-
 }
-
 
 @media screen and (max-width: 1200px) {
   .nav-links {
-
     width: 35%;
-
   }
 }
 
-
 @media screen and (max-width: 966px) {
-
-
-
-
    .navbar-desktop{
      display: flex;
      align-items: center;
@@ -265,32 +231,19 @@ $primary-font-color: #006EB9;
      height: 3.5em;
      padding: 0 0 0 10px;
    }
-
-
    .logo{
-
     display: block;
-
-
-
   }
-
-
   .nav-links{
     display: none;
   }
-
   .ad-btn-holder {
     display: none;
   }
-
-
-
   .expand-sign{
     display: block;
     cursor: pointer;
   }
-
   .shop-cart {
     margin-right: .3em;
   }
@@ -301,7 +254,6 @@ $primary-font-color: #006EB9;
 }
 //hamburger overlay¨
 .hamburger-window {
-
   position: fixed;
   width: 100%;
   top: 3.5em;
@@ -341,44 +293,7 @@ $primary-font-color: #006EB9;
 
 }
 
-.mobile-menu-item {
-  font-family: $montserrat-font;
-  font-weight: 600;
-  font-size: 1.4em;
-  margin-bottom: 0.5em;
-  color: rgb(65, 65, 65);
 
-
-}
-.mobile-menu-item-user {
-  font-family: $montserrat-font;
-  font-weight: 700;
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: $primary-font-color;
-  border-bottom: 1px solid rgb(218, 218, 218);
-}
-.mobile-user-item {
-  font-family: $montserrat-font;
-  font-weight: 500;
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
-  color: #212529;
-}
-
-.mobile-user-item-logout {
-  color: #212529;
-  font-size: 1.2em;
-  font-family: $montserrat-font;
-  position: absolute;
-  bottom: 5em;
-  left: 40%;
-}
-
-.panel-line {
-  border-top: 1px solid red;
-  width: 100%;
-}
 .ad-btn-holder-mobile {
   margin-top: 2em;
   position: absolute;
@@ -400,7 +315,6 @@ $primary-font-color: #006EB9;
 
 //end of hamburger overlay
 
-// testing Basket
 
 //invisible btn toggle pane
 .pane-toggle-unseen {
@@ -422,7 +336,6 @@ $primary-font-color: #006EB9;
 //End of btn toggle pane
 
 .shop-cart-window {
-
   z-index: 1010;
   position: fixed;
   width: 100%;
@@ -485,8 +398,6 @@ $primary-font-color: #006EB9;
 
 }
 
-
-
 .exit-symbol {
   //font-size: 1.3em;
   margin-left: 5em;
@@ -496,7 +407,6 @@ $primary-font-color: #006EB9;
 
 .overflow-removed {
   overflow: hidden;
-
 }
 
 .overflow-normal {
@@ -524,18 +434,7 @@ $primary-font-color: #006EB9;
 
 }
 
-.button-holder {
-  padding-top: 5em;
-}
 
-.checkout-button {
-  width: 100%;
-  height: 3em;
-
-}
-
-
-/* CSS */
 .shop-now-btn {
   align-items: center;
   background-color: #1F80BF;
@@ -591,11 +490,9 @@ $primary-font-color: #006EB9;
 }
 
 .checkout-button-holder {
-
   position: absolute;
   bottom: 0;
   width: 100%;
-
 }
 
 .checkout-btn {
@@ -641,18 +538,80 @@ $primary-font-color: #006EB9;
   border-color: #3385ff;
   fill: #06f;
 }
-
-@media (min-width: 768px) {
-  .button-58 {
-    min-width: 170px;
-  }
-}
-
-
 .item-quantity-basket {
   font-weight: 700;
   margin-top: 0.15em;
   font-size: 0.9em;
   color: #BF1F80;
+
+}
+
+.hamburger-nav-content {
+  display: flex;
+  justify-content: center;
+}
+
+.header-mobile-nav {
+  margin-top: 2em;
+}
+
+.mobile-nav-greeting {
+  font-family: $montserrat-font;
+  color: $primary-font-color;
+  font-size: 1.75em;
+  font-weight: 800;
+  text-align: center;
+  margin-left: 0.65em;
+  margin-right: 0.65em;
+}
+
+.decoration-line {
+  border-bottom: 1px solid #76C9BE;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.mobile-menu-item-list {
+  margin-top: 1.95em;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.mobile-menu-item {
+  font-family: $montserrat-font;
+  font-weight: 500;
+  font-size: 1.25em;
+  margin-left: 2.75em;
+  margin-bottom: 0.5em;
+}
+
+@media screen and(max-height: 669px) {
+  .active-menu-list {
+    bottom: 5em !important;
+  }
+
+}
+
+.active-menu-list {
+  position: absolute;
+  bottom: 10em;
+  left: 29%;
+}
+
+.active.menu-list-item {
+  display: flex;
+  justify-content: center;
+}
+
+.active-menu-list-user {
+  position: relative;
+  margin-top: 3em;
+  margin-left: 2em;
+  font-size: 1.2em;
+  font-family: $montserrat-font;
+  font-weight: 500;
 
 }

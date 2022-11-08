@@ -1,0 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+$montserrat-font: 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$main-font: 'Roboto', sans-serif;
+
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid rgb(228, 228, 228);
+    display: block;
+    margin-bottom: .75em;
+  }
+
+  table td {
+    border: none !important;
+    display: block;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-family: $montserrat-font;
+    font-weight: 500;
+
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  .product-list-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  .custom-img-fluid {
+    max-height: 100px !important;
+  }
+}
+
+.custom-img-fluid {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+  max-height: 75px;
+}
+
+.edit--btn {
+  align-items: center;
+  background-color: #1FBFAE;
+  border: 2px solid #1FBFAE;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 2.6em;
+  justify-content: center;
+  min-width: 120px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 2px;
+}
+
+.edit--btn:focus {
+  color: #171e29;
+}
+
+.edit--btn:hover {
+  background-color: #36ddcc;
+  border-color: #36ddcc;
+  fill: #06f;
+}
+
+.delete--btn {
+  align-items: center;
+  background-color: #BF1F30;
+  border: 2px solid #BF1F30;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 2.6em;
+  justify-content: center;
+  min-width: 120px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 2px;
+}
+
+.delete--btn:focus {
+  color: #171e29;
+}
+
+.delete--btn:hover {
+  background-color: #e23244;
+  border-color: #e23244;
+  fill: #06f;
+}
+
+.add--btn {
+  align-items: center;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 2.6em;
+  justify-content: center;
+  min-width: 120px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 2px;
+}
+
+.add--btn:focus {
+  color: #171e29;
+}
+
+.add--btn:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.container {
+  margin-top: 2em;
+}
+
+.item-description-text {
+  font-family: $main-font;
+  font-weight: 600;
+}
