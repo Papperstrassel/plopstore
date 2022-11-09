@@ -23,5 +23,7 @@ namespace API.DataTransferObjects
 
         public int NumberOfRatings { get; set; }
         public int ProductRatingScore { get; set; }
+
+        public IEnumerable<PhotoToReturnDto> Photos { get; set; }
     }
 }

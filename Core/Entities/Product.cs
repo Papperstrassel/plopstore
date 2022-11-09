@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Core.Entities
 {
@@ -14,7 +13,6 @@ namespace Core.Entities
 
         public string TechnicalDescription { get; set; }
         public Decimal Price { get; set; }
-        public string PictureUrl { get; set; }
         public ProductType ProductType { get; set; }
 
         public int ProductTypeId { get; set; }
@@ -26,5 +24,25 @@ namespace Core.Entities
         public int ProductRatingScore { get; set; }
 
         public int NumberOfRatings { get; set; }
+
+        private readonly List<Photo> _photos = new List<Photo>();
+        public IReadOnlyList<Photo> Photos => _photos.AsReadOnly();
+
+
+        public void AddPhoto(string pictureUrl, string fileName, bool isMain = false)
+        {
+            var photo = new Photo
+            {
+                FileName = fileName,
+                PictureUrl = pictureUrl
+            };
+
+            if (_photos.Count == 0)
+            {
+                photo.IsMain = true;
+            }
+
+            _photos.Add(photo);
+        }
     }
 }
