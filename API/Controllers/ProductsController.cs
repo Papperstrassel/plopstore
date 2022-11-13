@@ -24,11 +24,13 @@ namespace API.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IPhotoService _photoService;
 
-        public ProductsController(IUnitOfWork unitOfWork, IMapper mapper)
+        public ProductsController(IUnitOfWork unitOfWork, IMapper mapper, IPhotoService photoService)
         {
            _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _photoService = photoService;
         }
         
         //[Cached(600)]
@@ -112,6 +114,75 @@ namespace API.Controllers
             return _mapper.Map<Product, ProductsToReturnDto>(product);
         }
 
+        [HttpPut("{id}/photo")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<ProductsToReturnDto>> AddProductPhoto(int id, [FromForm]ProductPhotoDto photoDto)
+        {
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+            var product = await _unitOfWork.Repository<Product>().GetEntityWithSpecification(spec);
+
+            if(photoDto.Photo.Length > 0)
+            {
+                var photo = await _photoService.AddImageAsync(photoDto.Photo);
+
+                if(photo != null)
+                {
+                    product.AddPhoto(photo.PictureUrl, photo.FileName, photo.PublicId);
+
+                    _unitOfWork.Repository<Product>().Update(product);
+
+                    var result = await _unitOfWork.Complete();
+
+                    if(result <= 0)
+                    {
+                        return BadRequest(new ApiResponse(400, "Problem adding photo"));
+                    }
+                }
+                else
+                {
+                    return BadRequest(new ApiResponse(400, "Problem saving photo."));
+                }
+            }
+
+            return _mapper.Map<Product, ProductsToReturnDto>(product);
+        }
+
+        [HttpDelete("{id}/photo/{photoId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> DeleteProductPhoto(int id, int photoId)
+        {
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+            var product = await _unitOfWork.Repository<Product>().GetEntityWithSpecification(spec);
+
+            var photo = product.Photos.SingleOrDefault(x => x.Id == photoId);
+
+            if(photo != null)
+            {
+                if(photo.IsMain)
+                {
+                    return BadRequest(new ApiResponse(400, "You cannot delete the main photo"));
+                }
+                await _photoService.DeleteImageAsync(photo.PublicId);
+            }
+            else 
+            {
+                return BadRequest(new ApiResponse(400, "Photo does not exist"));
+            }
+
+            product.RemovePhoto(photoId);
+
+            _unitOfWork.Repository<Product>().Update(product);
+
+            var result = await _unitOfWork.Complete();
+
+            if(result <= 0)
+            {
+                return BadRequest(new ApiResponse(400, "Problem adding photo product."));
+            }
+
+            return Ok();
+        }
+
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ProductsToReturnDto>> UpdateProduct(int id, ProductCreateDto productToUpdate)
@@ -127,6 +198,32 @@ namespace API.Controllers
             if(result <= 0)
             {
                 return BadRequest(new ApiResponse(400, "Problem updating product."));
+            }
+
+            return _mapper.Map<Product, ProductsToReturnDto>(product);
+        }
+
+        [HttpPost("{id}/photo/{photoId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<ProductsToReturnDto>> SetMainPhoto(int id, int photoId)
+        {
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+            var product = await _unitOfWork.Repository<Product>().GetEntityWithSpecification(spec);
+
+            if(product.Photos.All(x => x.Id != photoId))
+            {
+                return NotFound();
+            }
+
+            product.SetMainPhoto(photoId);
+
+            _unitOfWork.Repository<Product>().Update(product);
+
+            var result = await _unitOfWork.Complete();
+
+            if(result <= 0)
+            {
+                return BadRequest(new ApiResponse(400, "Problem adding photo."));
             }
 
             return _mapper.Map<Product, ProductsToReturnDto>(product);

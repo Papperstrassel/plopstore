@@ -11,6 +11,15 @@ export interface IProduct {
     productSKU: number;
     numberOfRatings: number;
     productRatingScore: number;
+    photos: IPhoto[];
+}
+
+export interface IPhoto {
+  id: number;
+  pictureUrl: string;
+  fileName: string;
+  isMain: boolean;
+  publicId: string;
 }
 
 export interface IProductToCreate {

@@ -4,6 +4,7 @@ import { BasketService } from 'src/app/basket/basket.service';
 import { IProduct } from 'src/app/shared/models/product';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { ShopService } from '../shop.service';
+import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions } from '@kolkov/ngx-gallery';
 
 @Component({
   selector: 'app-product-details',
@@ -18,6 +19,9 @@ export class ProductDetailsComponent implements OnInit {
   public maxRating: number;
   isReadonly = true;
 
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
+
   customClass = 'customClass';
 
 
@@ -30,6 +34,52 @@ export class ProductDetailsComponent implements OnInit {
     this.loadProduct();
     this.generateStarRating();
   }
+
+  initializeGallery() {
+    this.galleryOptions = [
+      {
+        width: '500px',
+        height: '500px',
+        imagePercent: 100,
+        thumbnailsColumns: 5,
+        arrowPrevIcon: 'fa fa-arrow-circle-left',
+        arrowNextIcon: 'fa fa-arrow-circle-right',
+        imageAnimation: NgxGalleryAnimation.Fade,
+        imageSize: NgxGalleryImageSize.Contain,
+        thumbnailSize: NgxGalleryImageSize.Contain,
+        thumbnailsPercent: 16,
+        preview: false,
+
+      },
+      // max-width 850px
+      {
+        breakpoint: 850,
+        arrowPrevIcon: 'fa fa-chevron-left',
+        arrowNextIcon: 'fa fa-chevron-right',
+        width: '100%',
+        height: '500px',
+        imagePercent: 100,
+        //thumbnails: false,
+
+
+      }
+    ];
+    this.galleryImages = this.getImages();
+  }
+
+  getImages() {
+    const imageUrls = [];
+    for (const photo of this.product.photos) {
+      imageUrls.push({
+        small: photo.pictureUrl,
+        medium: photo.pictureUrl,
+        big: photo.pictureUrl,
+      });
+    }
+    return imageUrls;
+  }
+
+
 
   generateStarRating() {
     this.rate = this.product.productRatingScore;
@@ -54,6 +104,7 @@ export class ProductDetailsComponent implements OnInit {
     this.shopService.getProduct(+this.activateRoute.snapshot.paramMap.get('id')).subscribe(product => {
       this.product = product;
       this.bcService.set('@productDetails', product.name)
+      this.initializeGallery();
     }, error => {
       console.log(error)
     });

@@ -76,7 +76,7 @@ namespace Infrastructure.Data
                             ProductRatingScore = item.ProductRatingScore,
                             NumberOfRatings = item.NumberOfRatings
                         };
-                        product.AddPhoto(item.PictureUrl, pictureFileName);
+                        product.AddPhoto(item.PictureUrl, pictureFileName, "Seed product image id");
                         context.Products.Add(product);
                     }
 

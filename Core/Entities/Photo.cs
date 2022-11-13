@@ -7,5 +7,8 @@ namespace Core.Entities
         public bool IsMain { get; set; }
         public Product Product { get; set; }
         public int ProductId { get; set; }
+
+        //Cloudinary publicid, for adding and deleting images from cloudinary service
+        public string PublicId { get; set; }
     }
 }

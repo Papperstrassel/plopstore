@@ -13,8 +13,8 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
 import { RouterModule } from '@angular/router';
 import { RatingModule } from 'ngx-bootstrap/rating';
-import {CurrencyMaskModule} from 'ng2-currency-mask';
-
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 
 
@@ -31,9 +31,6 @@ import {CurrencyMaskModule} from 'ng2-currency-mask';
     StepperComponent,
     BasketSummaryComponent,
 
-
-
-
   ],
   imports: [
     CommonModule,
@@ -45,7 +42,8 @@ import {CurrencyMaskModule} from 'ng2-currency-mask';
     CdkStepperModule,
     RouterModule,
     RatingModule.forRoot(),
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    NgxGalleryModule
 
 
 
@@ -64,7 +62,8 @@ import {CurrencyMaskModule} from 'ng2-currency-mask';
     StepperComponent,
     BasketSummaryComponent,
     RatingModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    NgxGalleryModule
   ]
 })
 export class SharedModule { }
