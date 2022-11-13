@@ -23,6 +23,7 @@ namespace API.Extensions
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+            services.AddScoped<IPhotoService, PhotoService>();
 
             services.Configure<ApiBehaviorOptions>(options =>
             {

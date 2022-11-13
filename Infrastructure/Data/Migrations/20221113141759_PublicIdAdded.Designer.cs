@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20221023170457_Add productRatingScore and numberOfRatings to product entity - addition naming convention followed .")]
-    partial class AddproductRatingScoreandnumberOfRatingstoproductentityadditionnamingconventionfollowed
+    [Migration("20221113141759_PublicIdAdded")]
+    partial class PublicIdAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,6 +101,35 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("OrderItem");
                 });
 
+            modelBuilder.Entity("Core.Entities.Photo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("PictureUrl")
+                        .HasColumnType("text");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("PublicId")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Photo");
+                });
+
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -117,14 +146,19 @@ namespace Infrastructure.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<string>("PictureUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("NumberOfRatings")
+                        .HasColumnType("integer");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductBrandId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ProductRatingScore")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ProductSKU")
                         .HasColumnType("integer");
 
                     b.Property<int>("ProductTypeId")
@@ -136,15 +170,6 @@ namespace Infrastructure.Data.Migrations
                     b.Property<string>("TechnicalDescription")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("numberOfRatings")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("productRatingScore")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("productSKU")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -263,6 +288,17 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("ItemOrdered");
                 });
 
+            modelBuilder.Entity("Core.Entities.Photo", b =>
+                {
+                    b.HasOne("Core.Entities.Product", "Product")
+                        .WithMany("Photos")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
                     b.HasOne("Core.Entities.ProductBrand", "ProductBrand")
@@ -285,6 +321,11 @@ namespace Infrastructure.Data.Migrations
             modelBuilder.Entity("Core.Entities.OrderAggregate.Order", b =>
                 {
                     b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("Core.Entities.Product", b =>
+                {
+                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

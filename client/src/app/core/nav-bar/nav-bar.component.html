@@ -40,28 +40,29 @@
 <div [ngClass]="hamburgerMenuState === 'in_b' ? 'overflow-removed' : 'overflow-normal'">
 <div class="hamburger-window" [@slideInOut_burger]="hamburgerMenuState">
   <div class="hamburger-panel">
-    <div class="hamburger-panel-content">
-      <div class="mobile-navigation-menu">
-        <ng-container *ngIf="currentUser$ | async">
-          <div class="mobile-menu-item-user">Happy seeing you {{(currentUser$ | async).displayName}}!</div>
-        </ng-container>
-        <ng-container *ngIf="(currentUser$ | async) === null">
-          <div class="mobile-menu-item-user">Welcome to the shop!</div>
-        </ng-container>
-        <div class="mobile-menu-item"(click)="toggleHamburgerMenu()" routerLink="/shop">Shop</div>
-        <div class="mobile-menu-item">FAQ</div>
-        <div class="mobile-menu-item">Contact Us</div>
-        <div *ngIf="currentUser$ | async" class="user-specific">
-          <div class="mobile-user-item" routerLink="/orders"><i class="fa fa-history mr-3"></i> View Orders</div>
+    <div class="hamburger-nav-content">
+      <div class="header-mobile-nav">
+        <div *ngIf="(currentUser$ | async) === null" class="mobile-nav-greeting">Happy seeing you!</div>
+        <div *ngIf="(currentUser$ | async)" class="mobile-nav-greeting">Happy seeing you {{(currentUser$ | async).displayName}}!</div>
+        <div class="decoration-line"></div>
+        <div class="mobile-menu-item-list">
+          <div class="mobile-menu-item">Shop</div>
+          <div *ngIf="(currentUser$ | async)" class="mobile-menu-item">Order history</div>
+          <div class="mobile-menu-item">FAQ</div>
+          <div class="mobile-menu-item">Contact us</div>
         </div>
-        <div *ngIf="(isAdmin$ | async)" class="ad-btn-holder-mobile">
-          <button class="button-ad" routerLink="/admin" routerLinkActive="active" (click)="toggleHamburgerMenu()">Admin Panel <i class="fa fa-tasks" aria-hidden="true"></i></button>
+        <div class="active-menu-list">
+          <div *ngIf="(isAdmin$ | async) && (currentUser$ | async)" class="active.menu-list-item">
+            <button class="button-ad" routerLink="/admin" routerLinkActive="active" (click)="toggleHamburgerMenu()">Admin Panel <i class="fa fa-tasks" aria-hidden="true"></i></button>
+          </div>
+          <div class="active-menu-list-user">
+            <div *ngIf="(currentUser$ | async) === null" (click)="toggleHamburgerMenu()"routerLink="/account/login">
+              <i class="fa fa-sign-in" aria-hidden="true"></i> Sign in
+            </div>
+            <div *ngIf="(currentUser$ | async)" (click)="logout()"><i class="fa fa-sign-out mr-1"></i> Logout</div>
+          </div>
         </div>
       </div>
-      <div *ngIf="currentUser$ | async" class="mobile-user-item-logout" (click)="logout()"><i class="fa fa-sign-out mr-1"></i> Logout</div>
-      <div *ngIf="(currentUser$ | async) === null" class="mobile-user-item-logout" routerLink="/account/login" (click)="toggleHamburgerMenu()"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</div>
-    </div>
-
     <div class="colored-panel"></div>
   </div>
 </div>
@@ -81,7 +82,7 @@
         </button>
       </div>
       <div class="navbarTop">
-      <img src="/assets/images/Mjaubie_new_logo_blue.svg" alt="logo" class="logo" routerLink="/">
+      <img src="/assets/images/Mjaubie_new_logo_blue.svg" alt="Mjaubie blue logo" class="logo" routerLink="/">
 
        <!--Admin testing stuff-->
         <div *ngIf="(isAdmin$ | async)" class="ad-btn-holder">
