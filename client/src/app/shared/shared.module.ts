@@ -15,10 +15,11 @@ import { RouterModule } from '@angular/router';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-
-
-
-
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { PhotoWidgetComponent } from './components/photo-widget/photo-widget.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import {ImageCropperModule} from 'ngx-image-cropper';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -30,6 +31,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     TextInputComponent,
     StepperComponent,
     BasketSummaryComponent,
+    PhotoWidgetComponent,
 
   ],
   imports: [
@@ -43,7 +45,11 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     RouterModule,
     RatingModule.forRoot(),
     CurrencyMaskModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    TabsModule.forRoot(),
+    NgxDropzoneModule,
+    ImageCropperModule,
+    ToastrModule
 
 
 
@@ -63,7 +69,12 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     BasketSummaryComponent,
     RatingModule,
     CurrencyMaskModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    TabsModule,
+    NgxDropzoneModule,
+    PhotoWidgetComponent,
+    ImageCropperModule,
+    ToastrModule
   ]
 })
 export class SharedModule { }

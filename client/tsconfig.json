@@ -22,7 +22,11 @@
     "strictTemplates": true,
     "strictDomEventTypes": false,
     "enableI18nLegacyMessageIdFormat": false,
-    
-    
+
+    "paths": {
+      "@Shared/models/productType": ["src/app/shared/models/productType"],
+      "@Shared/models/brands":["src/app/shared/models/brands"],
+      "@Shared/models/product":["src/app/shared/models/product"]
+    }
   }
 }
