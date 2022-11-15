@@ -52,7 +52,7 @@ export class ShopComponent implements OnInit {
   totalCount: number;
 
   temporaryArrayFilter : any [];
-
+  //TODO: Persist filter options when we change component.
   customClass = 'customClass';
 
   //animation testing

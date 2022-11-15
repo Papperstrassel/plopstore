@@ -23,7 +23,7 @@ export class EditProductComponent implements OnInit {
               private shopService: ShopService,
               private route: ActivatedRoute,
               private router: Router) {
-    //this.product = new ProductFormValues();
+    this.productFormValues = new ProductFormValues();
   }
 
   ngOnInit(): void {
