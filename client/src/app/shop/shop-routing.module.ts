@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-  import { ShopComponent } from './shop.component';
-  import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ShopComponent } from './shop.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RouteReuseStrategy, RouterModule, Routes } from '@angular/router';
+
 
 const routes: Routes = [
-  
-  {path:'', component: ShopComponent},
+
+  //Use of RouteReuseStrategy to "save" component state when we navigate from shop to individual products to save resources.
+  {path:'', component: ShopComponent, data: {shouldDetach: true}},
   {path: ':id', component: ProductDetailsComponent, data: {breadcrumb: {alias: 'productDetails'}}},
 ];
 
@@ -17,6 +19,6 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
 })
 export class ShopRoutingModule { }
