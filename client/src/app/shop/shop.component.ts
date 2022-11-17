@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { IBrand } from '../shared/models/brands';
 import { IProduct } from '../shared/models/product';
 import { IProductType } from '../shared/models/productType';
@@ -43,7 +43,8 @@ import {
   ]
 
 })
-export class ShopComponent implements OnInit {
+export class ShopComponent implements OnInit, OnDestroy {
+
   @ViewChild('search', {static: false}) searchTerm: ElementRef;
   products: IProduct[];
   brands: IBrand[];
@@ -88,6 +89,8 @@ export class ShopComponent implements OnInit {
     this.getProducts(true);
     this.getBrands();
     this.getProductTypes();
+
+    console.log('ShopComponent::ngOnInit');
   }
 
   getProducts(useCache = false) {
@@ -116,41 +119,43 @@ export class ShopComponent implements OnInit {
     });
   }
 
-  onBrandSelected(brandId: number) {
-    const params = this.shopService.getShopParams();
-    params.brandIds.push(brandId);
-    params.pageNumber = 1;
-    this.shopService.setShopParams(params);
-    this.getProducts();
-  }
+  // Old version of filtering
+  // onBrandSelected(brandId: number) {
+  //   const params = this.shopService.getShopParams();
+  //   params.brandIds.push(brandId);
+  //   params.pageNumber = 1;
+  //   this.shopService.setShopParams(params);
+  //   this.getProducts();
+  // }
 
-  onTypeSelected(typeId: number){
-    const params = this.shopService.getShopParams();
-    params.typeIds.push(typeId);
-    params.pageNumber = 1;
-    this.shopService.setShopParams(params);
-    this.getProducts();
-  }
+  // onTypeSelected(typeId: number){
+  //   const params = this.shopService.getShopParams();
+  //   params.typeIds.push(typeId);
+  //   params.pageNumber = 1;
+  //   this.shopService.setShopParams(params);
+  //   this.getProducts();
+  // }
 
   //Filter Checkbox testing
   getCheckboxValuesForProductTypes(event, typeId){
     const params = this.shopService.getShopParams();
-    if(event.target.checked){
+
+    if(event.target.checked) {
       params.typeIds.push(typeId);
     }
     else {
       let indexOfTypeId = params.typeIds.indexOf(typeId);
-
       if(indexOfTypeId != -1)
       {
-        params.typeIds.splice(indexOfTypeId,1);
+        params.typeIds.splice(indexOfTypeId, 1);
       }
     }
+
     params.pageNumber = 1;
     this.shopService.setShopParams(params);
     this.getProducts();
-
   }
+
 
   getCheckboxValuesForBrandTypes(event, brandId){
     const params = this.shopService.getShopParams();
@@ -207,4 +212,8 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
+
+  ngOnDestroy() : void {
+    console.log('ShopComponent::ngOnDestroy')
+  }
 }

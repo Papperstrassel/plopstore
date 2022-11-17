@@ -21,6 +21,8 @@ export class ShopService {
   pagination = new Pagination();
   shopParams = new ShopParams();
   productCache = new Map();
+  productTypeIdCheckboxStorage: number[] = [];
+
 
   constructor(private http: HttpClient) { }
 
@@ -119,4 +121,24 @@ export class ShopService {
       })
     );
   }
+
+  addCheckboxValueProductTypes(event, typeId) {
+    if(event.target.checked) {
+      this.productTypeIdCheckboxStorage.push(typeId);
+    }
+    else {
+      console.log("This is fired");
+      let indexOfTypeId = this.productTypeIdCheckboxStorage.indexOf(typeId);
+
+      this.productTypeIdCheckboxStorage.splice(indexOfTypeId,1);
+
+      // if(indexOfTypeId != -1)
+      // {
+      //   this.productTypeIdCheckboxStorage.splice(indexOfTypeId,1);
+      // }
+    }
+
+  }
+
+
 }
