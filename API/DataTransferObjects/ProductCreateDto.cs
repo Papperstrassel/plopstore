@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace API.DataTransferObjects
 {
@@ -21,8 +22,10 @@ namespace API.DataTransferObjects
             ErrorMessage = "Price must be a decimal (e.g 20.30)")]
         public decimal Price { get; set; }
 
-        [Required]
+        //[Required]
         public string PictureUrl { get; set; }
+        
+        public IFormFile file { get; set; }
 
         [Required]
         public int ProductTypeId { get; set; }

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.valid && productForm.value)">
+        <form #productForm="ngForm" enctype="multipart/form-data" (ngSubmit)="onSubmit(productForm.valid && productForm.value)">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Product Name</label>
@@ -167,7 +167,7 @@
                 class="form-control"
                 id="shortdescription"
                 [(ngModel)]="product.shortDescription"
-                name="shortdescription"
+                name="shortDescription"
                 rows="1"></textarea>
               <div *ngIf="description.invalid && (description.dirty || description.touched)" class="invalid-feedback">
                 <div *ngIf="description.errors.required">
@@ -212,6 +212,11 @@
                         [selected]="product.productTypeId === type.id"
                         [ngValue]="type.id">{{type.name}}</option>
               </select>
+            </div>
+            <div>
+              <label for="Photo"></label>
+              <input class="form-control" type="file"
+            (change)="onChange($event)">
             </div>
           </div>
           <button [disabled]="!productForm.valid" type="submit" class="btn btn-primary my-3 float-right">Submit</button>

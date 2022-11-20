@@ -24,6 +24,7 @@ namespace Infrastructure.Services
             _cloudinary = new Cloudinary(acc);
         }
 
+    
         public async Task<Photo> AddImageAsync(IFormFile file)
         {
             var uploadResult = new ImageUploadResult();

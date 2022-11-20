@@ -13,8 +13,25 @@ export class AdminService {
 
   constructor(private http: HttpClient) {}
 
-  createProduct(product: ProductFormValues) {
-    return this.http.post(this.baseUrl + 'products', product)
+  createProduct(product: ProductFormValues, file: File) {
+
+    const formData = new FormData();
+
+    formData.append("name", product.name);
+    formData.append("shortDescription", product.shortDescription);
+    formData.append("description", product.description);
+    formData.append("technicalDescription", product.technicalDescription);
+    formData.append("Price", String(product.price));
+    formData.append("pictureUrl", product.pictureUrl);
+    formData.append("productTypeId", String(product.productTypeId));
+    formData.append("productBrandId", String(product.productBrandId));
+    formData.append("productSKU", String(product.productSKU));
+    formData.append("numberOfRatings", String(product.numberOfRatings));
+    formData.append("productRatingScore", String(product.productRatingScore));
+    formData.append("file", file);
+
+
+    return this.http.post(this.baseUrl + 'products', formData);
   }
 
   updateProduct(product: ProductFormValues, id: number) {

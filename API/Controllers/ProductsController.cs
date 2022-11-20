@@ -97,20 +97,34 @@ namespace API.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult<ProductsToReturnDto>> CreateProduct(ProductCreateDto productToCreate)
+        public async Task<ActionResult<ProductsToReturnDto>> CreateProduct([FromForm]ProductCreateDto productToCreate)
         {
+
             var product = _mapper.Map<ProductCreateDto, Product>(productToCreate);
-      
 
-            _unitOfWork.Repository<Product>().Add(product);
-
-            var result = await _unitOfWork.Complete();
-
-            if(result <= 0)
+             if(productToCreate.file != null)
             {
-                return BadRequest(new ApiResponse(400, "Problem creating product."));
-            }
+                var photo =  await _photoService.AddImageAsync(productToCreate.file);
 
+                if(photo != null)
+                {
+                    product.AddPhoto(photo.PictureUrl, photo.FileName, photo.PublicId);
+
+                     _unitOfWork.Repository<Product>().Add(product);
+
+                     var result = await _unitOfWork.Complete();
+
+                     if(result <= 0)
+                     {
+                        return BadRequest(new ApiResponse(400, "Problem adding product."));
+                     }
+                }
+                else
+                {
+                    return BadRequest(new ApiResponse(400, "Problem adding image to product."));
+                }
+            }
+            
             return _mapper.Map<Product, ProductsToReturnDto>(product);
         }
 
