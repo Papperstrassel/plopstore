@@ -2,27 +2,27 @@
   <div class="container">
     <ng-container *ngIf="!addPhotoMode">
       <div class="d-flex justify-content-between mb-3">
-        <h3>Product Photos</h3>
-        <button class="btn btn-primary" (click)="addPhotoModeToggle()">
+        <span class="product-photo-title">Product Photos</span>
+        <button class="add-now-btn" (click)="addPhotoModeToggle()">
           Add New Photo
         </button>
       </div>
-      <div class="row">
-        <div class="col-3" *ngFor="let photo of product?.photos">
+      <div class="row-custom">
+        <div class="col-custom" *ngFor="let photo of product?.photos">
           <div class="card">
             <img class="card-img-top" width="100%" height="225" src="{{photo.pictureUrl}}" alt="{{photo.fileName}}"/>
-            <div class="btn-group" style="width: 100%">
+            <div class="btn-group-custom" style="width: 100%">
               <button type="button"
                       (click)="setMainPhoto(photo.id)"
                       [disabled]="photo.isMain"
-                      class="{{photo.isMain ? 'btn btn-success' : 'btn btn-outline-success'}}"
-                      style="width: 50%">Set Main
+                      class="{{photo.isMain ? 'img-controll-btn' : 'img-hollow-controll-btn'}}"
+                      style="width: 50%"><ng-container *ngIf="photo.isMain === false">Set</ng-container> Main image
               </button>
               <button
                 (click)="deletePhoto(photo.id)"
                 type="button"
                 [disabled]="photo.isMain"
-                class="btn btn-outline-danger"
+                class="{{photo.isMain ? 'img-delete-controll-btn' : 'img-delete-hollow-controll-btn'}}"
                 style="width: 50%"><i class="fa fa-trash"></i>
               </button>
             </div>
@@ -32,15 +32,12 @@
     </ng-container>
     <ng-container *ngIf="addPhotoMode">
       <div class="d-flex justify-content-between mb-3">
-        <h3>Add new product image</h3>
-        <button class="btn btn-outline-secondary" (click)="addPhotoModeToggle()">Cancel</button>
+        <span class="product-photo-title-large">Add new product image</span>
+        <button class="img-delete-hollow-controll-btn" (click)="addPhotoModeToggle()">Cancel</button>
       </div>
-      <div class="progress form-group" *ngIf="progress > 0">
-        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
-          {{progress}}%
-        </div>
+      <div class="app-widget-container">
+        <app-photo-widget (addFile)="uploadFile($event)"></app-photo-widget>
       </div>
-      <app-photo-widget (addFile)="uploadFile($event)"></app-photo-widget>
     </ng-container>
   </div>
 </div>

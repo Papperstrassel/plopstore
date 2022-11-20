@@ -57,32 +57,47 @@ label.xng-breadcrumb-trail {
 
 //Tab Edit product section
 
+.product-tabset {
+  font-family: $montserrat-font;
+}
+
 .product-tabset > .nav-tabs > li.open > a, .product-tabset > .nav-tabs > li:hover > a {
   border: 0;
   background: none !important;
-  color: #333333;
+  color: #1F80BF;
+
 }
 
 .product-tabset > .nav-tabs > li.open > a > i, .product-tabset > .nav-tabs > li:hover > a > i {
   color: #a6a6a6;
+
 }
 
 .product-tabset > .nav-tabs > li.open .dropdown-menu, .product-tabset > .nav-tabs > li:hover .dropdown-menu {
   margin-top: 0px;
+
 }
 
 .product-tabset > .nav-tabs > li.active {
-  border-bottom: 4px solid #E95420;
+  border-bottom: 4px solid #1FBFAE;
   position: relative;
+
 }
 
 .product-tabset > .nav-tabs > li.active > a {
   border: 0 !important;
-  color: #333333;
+  color: #1F80BF;
+  font-weight: 500;
+
 }
 
 .product-tabset > .nav-tabs > li.active > a > i {
-  color: #404040;
+  color: #4040402a;
+
+}
+
+.product-tabset > .nav-tabs > li > a {
+  color: #212529;
 }
 
 .product-tabset > .tab-content {
@@ -91,5 +106,6 @@ label.xng-breadcrumb-trail {
   border: 0;
   border-top: 1px solid #eee;
   padding: 15px 0;
+
 }
 

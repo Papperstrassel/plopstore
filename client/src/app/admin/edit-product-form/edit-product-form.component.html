@@ -213,13 +213,15 @@
                         [ngValue]="type.id">{{type.name}}</option>
               </select>
             </div>
-            <div>
+            <div *ngIf="!isEditMode">
               <label for="Photo"></label>
               <input class="form-control" type="file"
             (change)="onChange($event)">
             </div>
           </div>
-          <button [disabled]="!productForm.valid" type="submit" class="btn btn-primary my-3 float-right">Submit</button>
+          <div class="btn-holder-form">
+            <button [disabled]="!productForm.valid" type="submit" class="add-now-btn">Submit</button>
+          </div>
         </form>
       </div>
     </div>

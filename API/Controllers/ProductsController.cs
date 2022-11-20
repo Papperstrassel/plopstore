@@ -247,14 +247,12 @@ namespace API.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> DeleteProduct(int id)
         {
-            var product = await _unitOfWork.Repository<Product>().GetByIdAsync(id);
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+            var product = await _unitOfWork.Repository<Product>().GetEntityWithSpecification(spec);
 
             foreach(var photo in product.Photos)
             {
-                if(photo.Id > 18)
-                {
-                    await _photoService.DeleteImageAsync(photo.PublicId);
-                }
+                await _photoService.DeleteImageAsync(photo.PublicId);
             }
 
             _unitOfWork.Repository<Product>().Delete(product);

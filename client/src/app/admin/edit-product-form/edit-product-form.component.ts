@@ -16,10 +16,12 @@ export class EditProductFormComponent implements OnInit {
   @Input() types: IProductType[];
 
   file: File;
+  isEditMode: boolean = false;
 
   constructor(private route: ActivatedRoute, private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
+    this.checkIfEditMode();
   }
 
   updatePrice(event: any) {
@@ -29,7 +31,14 @@ export class EditProductFormComponent implements OnInit {
   onChange(event) {
     this.file = event.target.files[0];
     console.log(this.file);
-}
+  }
+
+  checkIfEditMode() {
+    if(this.route.snapshot.url[0].path === 'edit')
+    {
+       this.isEditMode = true;
+    }
+  }
 
   onSubmit(product: ProductFormValues, file?: File) {
     if (this.route.snapshot.url[0].path === 'edit') {
