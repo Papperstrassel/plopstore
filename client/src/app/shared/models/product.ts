@@ -20,7 +20,7 @@ export interface IPhoto {
   fileName: string;
   isMain: boolean;
   publicId: string;
-}
+  }
 
 export interface IProductToCreate {
   name: string;
@@ -48,6 +48,7 @@ export class ProductFormValues implements IProductToCreate {
   productSKU: number;
   numberOfRatings: number;
   productRatingScore: number;
+  file: File;
 
   constructor(init?: ProductFormValues) {
     Object.assign(this, init);

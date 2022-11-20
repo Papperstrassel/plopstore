@@ -1,11 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
+@media screen and(min-width: 1968px) {
+  .row-custom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: -15px;
+    margin-left: -15px;
+
+  }
+
+  .col-custom {
+    min-width: 25% !important;
+    max-width: 21em !important;
+    margin-bottom: 1em !important;
+  }
+}
+
+@media screen and(max-width: 870px) {
+  .col-custom {
+    max-width: 75% !important;
+    min-width: 20em !important;
+  }
+}
+
+.step-holder-info {
+  font-family: $montserrat-font;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.step-holder-info-drop {
+  margin-top: 0.5em;
+  font-family: $montserrat-font;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.divider-preview {
+  border-bottom: 1.5px solid #dee2e6;
+  margin-bottom: 1em;
+}
+
+.croppedImagePreview {
+  display: flex;
+  justify-content: center;
+}
+
 .custom-dropzone {
-  border: 3px dashed #eee;
-  border-radius: 5px;
+  border: 2.5px dashed #eee;
+  border-radius: 3px;
   padding-top: 30px;
   text-align: center;
   height: 200px;
+  margin-bottom: 1.25em;
 }
 
 .custom-dropzone.ngx-dz-hovered {
   border: 3px solid green;
+}
+
+.btn-holder {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.85em;
+}
+
+.add-now-btn {
+  align-items: center;
+  background-color: #1F80BF;
+  border: 2px solid #1F80BF;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 16px;
+  font-weight: 600;
+  height: 3.2em;
+  justify-content: center;
+  letter-spacing: -.3px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add-now-btn:focus {
+  color: #171e29;
+}
+
+.add-now-btn:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
 }
