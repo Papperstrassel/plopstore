@@ -17,6 +17,7 @@ export class EditProductFormComponent implements OnInit {
 
   file: File;
   isEditMode: boolean = false;
+  imageAdded: boolean = false;
 
   constructor(private route: ActivatedRoute, private adminService: AdminService, private router: Router) { }
 
@@ -31,6 +32,12 @@ export class EditProductFormComponent implements OnInit {
   onChange(event) {
     this.file = event.target.files[0];
     console.log(this.file);
+  }
+
+  storeFile(file: File)
+  {
+    this.imageAdded = true;
+    this.file = file;
   }
 
   checkIfEditMode() {

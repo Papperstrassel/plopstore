@@ -1,5 +1,9 @@
 <section class="product-edit mt-5">
   <div class="container">
+    <div *ngIf="!isEditMode" class="create-title">
+      Create new Product
+      <div class="divider-line"></div>
+    </div>
     <div class="row">
       <div class="col-lg-8">
         <form #productForm="ngForm" enctype="multipart/form-data" (ngSubmit)="onSubmit(productForm.valid && productForm.value)">
@@ -213,16 +217,24 @@
                         [ngValue]="type.id">{{type.name}}</option>
               </select>
             </div>
-            <div *ngIf="!isEditMode">
+            <!-- <div *ngIf="!isEditMode">
               <label for="Photo"></label>
               <input class="form-control" type="file"
             (change)="onChange($event)">
-            </div>
+            </div> -->
           </div>
           <div class="btn-holder-form">
-            <button [disabled]="!productForm.valid" type="submit" class="add-now-btn">Submit</button>
+            <ng-container *ngIf="!isEditMode">
+              <button [disabled]="!productForm.valid || (imageAdded === false)" type="submit" class="add-now-btn">Submit</button>
+            </ng-container>
+            <ng-container *ngIf="isEditMode">
+              <button [disabled]="!productForm.valid" type="submit" class="add-now-btn">Submit</button>
+            </ng-container>
           </div>
         </form>
+        <div *ngIf="!isEditMode">
+          <app-photo-widget (addFile)="storeFile($event)"></app-photo-widget>
+        </div>
       </div>
     </div>
   </div>
