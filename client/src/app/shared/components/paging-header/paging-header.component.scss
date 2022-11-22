@@ -1,0 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
+
+.custom-header-paging {
+  font-family: $montserrat-font;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+}
