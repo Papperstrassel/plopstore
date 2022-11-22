@@ -18,6 +18,7 @@ export class EditProductComponent implements OnInit {
   productFormValues: ProductFormValues;
   brands: IBrand[];
   types: IProductType[];
+  showEditPhotos: boolean = false;
 
   constructor(private adminService: AdminService,
               private shopService: ShopService,
@@ -38,6 +39,7 @@ export class EditProductComponent implements OnInit {
     }, () => {
       if (this.route.snapshot.url[0].path === 'edit') {
         this.loadProduct();
+        this.showEditPhotos = true;
       }
     });
   }

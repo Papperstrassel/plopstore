@@ -30,7 +30,10 @@
         <img [src]="croppedImage" class="img-fluid">
       </div>
       <div class="btn-holder">
-        <button class="add-now-btn" (click)="onUpload()">Upload Image</button>
+        <button class="{{imageIsAdded ? 'img-added-btn' : 'add-img-btn' }}" (click)="onUpload()">
+          <span *ngIf="imageIsAdded === false">Upload Image</span>
+          <span *ngIf="imageIsAdded"><i class="fa fa-check" aria-hidden="true"></i> Image Added</span>
+        </button>
       </div>
     </ng-container>
   </div>

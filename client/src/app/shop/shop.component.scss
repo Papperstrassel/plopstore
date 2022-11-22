@@ -9,15 +9,23 @@ $off-color: #E81D88;
 
 
 
-//searchbar stuff
+.paging-result-holder {
+  margin-bottom: 0.3em;
+}
 
-//Searchbar remodel
+.paging-nav-holder {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5em;
+}
 
-//
+
 
 .searchbar-holder {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
 }
 

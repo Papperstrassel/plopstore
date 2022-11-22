@@ -147,14 +147,18 @@
   </div>
   </div>
 
-
-
     <div class="products-holder">
       <div class="searchbar-holder">
+        <div class="paging-result-holder">
+          <app-paging-header
+            [totalCount]="totalCount"
+            [pageSize]="this.shopParams.pageSize"
+            [pageNumber]="this.shopParams.pageNumber">
+          </app-paging-header>
+        </div>
         <div class="searchbar-box">
           <img class="icon-search" src="assets/images/search-solid.png" alt="search-icon">
           <input (keyup.enter)="onSearch()" class="custom-field" #search placeholder="Search" type="text">
-
         </div>
       </div>
       <div *ngIf="totalCount === 0" class="empty-result-text">Ops, We didn't find anything with this filter, Please try again</div>
@@ -163,7 +167,14 @@
             <app-product-item [product]="item"></app-product-item>
         </div>
       </div>
+      <div class="paging-nav-holder" *ngIf="totalCount > 0">
+        <app-pager
+          [pageSize]="shopParams.pageSize"
+          [pageNumber]="shopParams.pageNumber"
+          [totalCount]="totalCount"
+          (pageChanged)="onPageChanged($event)"
+        ></app-pager>
+      </div>
     </div>
-
 
 </div>

@@ -12,16 +12,20 @@ export class PhotoWidgetComponent implements OnInit {
   files: File[] = [];
   imageChangedEvent: any = '';
   croppedImage: any = '';
+  imageIsAdded: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
   onUpload() {
     console.log(base64ToFile(this.croppedImage));
+    this.imageIsAdded = true;
     this.addFile.emit(base64ToFile(this.croppedImage));
   }
+
 
   fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;

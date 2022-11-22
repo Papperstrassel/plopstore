@@ -69,7 +69,7 @@ $montserrat-font: 'Montserrat', sans-serif;
   margin-top: 1.85em;
 }
 
-.add-now-btn {
+.add-img-btn {
   align-items: center;
   background-color: #1F80BF;
   border: 2px solid #1F80BF;
@@ -96,12 +96,41 @@ $montserrat-font: 'Montserrat', sans-serif;
   touch-action: manipulation;
 }
 
-.add-now-btn:focus {
-  color: #171e29;
-}
-
-.add-now-btn:hover {
+.add-img-btn:hover {
   background-color: #3385ff;
   border-color: #3385ff;
   fill: #06f;
 }
+
+.img-added-btn {
+  align-items: center;
+  background-color: #1fbfaf00;
+  border: 2px solid #1fbfaf00;
+  box-sizing: border-box;
+  color: #1FBFAE;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: $montserrat-font;
+  font-size: 1.25em;
+  font-weight: 600;
+  height: 3.2em;
+  justify-content: center;
+  letter-spacing: -.3px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.img-added-btn:hover {
+  cursor: default;
+}
+
+

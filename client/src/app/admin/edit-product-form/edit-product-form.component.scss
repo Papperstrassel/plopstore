@@ -2,6 +2,21 @@
 $montserrat-font: 'Montserrat', sans-serif;
 
 
+
+.create-title {
+  font-family: $montserrat-font;
+  font-weight: 600;
+  font-size: 1.32em;
+  margin-top: -0.85em;
+  margin-bottom: 1.3em;
+
+}
+
+.divider-line {
+  margin-top: 0.3em;
+  border-bottom: 1.5px solid #dee2e6;
+}
+
 .btn-holder-form {
   display: flex;
   justify-content: flex-end;
