@@ -64,7 +64,10 @@ namespace Core.Entities
             if (photo != null)
             {
                 photo.IsMain = true;
-                if (currentMain != null) currentMain.IsMain = false;
+                if (currentMain != null)
+                {
+                    currentMain.IsMain = false;
+                } 
             }
         }
     }

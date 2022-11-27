@@ -26,13 +26,13 @@ namespace API.Helpers
                 //return photo.PictureUrl;
                 if(photo.PictureUrl.Contains("images"))
                 {
-                    return _config["ApiUrl"] + photo.PictureUrl;
+                    return photo.PictureUrl;
                 }
                 return photo.PictureUrl;
 
             }
 
-            return _config["ApiUrl"] + "images/products/placeholder.png";
+            return "images/products/placeholder.png";
         }
     }
 }
