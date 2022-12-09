@@ -34,5 +34,13 @@
   {
     "Id": 9,
     "Name": "Kitchen & Dining"
+  },
+  {
+    "Id": 10,
+    "Name": "Office & work"
+  },
+  {
+    "Id": 11,
+    "Name": "Computer accessories"
   }
 ]
