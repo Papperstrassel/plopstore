@@ -27,7 +27,15 @@
         <app-basket></app-basket>
         <div class="divider-basket"></div>
         <div *ngIf="(basket$ | async) !== null" class="checkout-button-holder">
-          <button (click)="toggleMenu()" routerLink="/checkout" class="checkout-btn" role="button">Checkout</button>
+          <ng-container *ngIf="(currentUser$ | async)">
+            <button (click)="toggleMenu()" routerLink="/checkout" class="checkout-btn" role="button">Checkout</button>
+          </ng-container>
+          <ng-container *ngIf="(currentUser$ | async) === null">
+           <div class="login-prompt">
+            <span class="prompt-login-text">Please login to continue to checkout</span>
+            <button (click)="toggleMenu()" routerLink="/account/login" class="checkout-btn" role="button">Sign in</button>
+           </div>
+          </ng-container>
         </div>
       </div>
     </div>
