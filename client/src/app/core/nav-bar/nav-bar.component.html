@@ -90,13 +90,9 @@
       </div>
       <div class="navbarTop">
       <img src="/assets/images/Mjaubie_new_logo_blue.svg" alt="Mjaubie blue logo" class="logo" routerLink="/">
-
-       <!--Admin testing stuff-->
         <div *ngIf="(isAdmin$ | async)" class="ad-btn-holder">
           <button *ngIf="(isAdmin$ | async)" class="button-ad" routerLink="/admin" routerLinkActive="active">Admin Panel <i class="fa fa-tasks" aria-hidden="true"></i></button>
         </div>
-       <!--End of Admin Test stuff-->
-
         <ul class="nav-links">
           <li><a class="nav-bar-text" routerLink="/shop" routerLinkActive="active"><div class="shop-link-text">Shop</div></a></li>
           <li>

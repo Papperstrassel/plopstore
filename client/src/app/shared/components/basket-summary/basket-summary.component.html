@@ -36,8 +36,9 @@
                     <td class="align-middle">
                       <span class="price-text">{{item.price * item.quantity | currency}}</span>
                     </td>
-                    <td class="align-middle text-center">
-                        <i *ngIf="isBasket" (click)="removeBasketItem(item)" class="fa fa-trash-o" style="font-size: 1.2em; cursor: pointer;"></i>
+                    <td *ngIf="(basket$ | async) as basket" class="align-middle text-center">
+                        <i *ngIf="isBasket && (basket.items.length > 1)" (click)="removeBasketItem(item)" class="fa fa-trash-o" style="font-size: 1.2em; cursor: pointer;"></i>
+                        <i *ngIf="isBasket && (basket.items.length === 1)" (click)="removeBasketItem(item)" routerLink="/shop" class="fa fa-trash-o" style="font-size: 1.2em; cursor: pointer;"></i>
                     </td>
                 </tr>
             </tbody>

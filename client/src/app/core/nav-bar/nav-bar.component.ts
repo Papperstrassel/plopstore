@@ -6,7 +6,7 @@ import { BasketService } from 'src/app/basket/basket.service';
 import { IBasket } from 'src/app/shared/models/basket';
 import { IUser } from 'src/app/shared/models/user';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
-
+import { CheckoutService } from 'src/app/checkout/checkout.service';
 
 
 
@@ -51,12 +51,11 @@ export class NavBarComponent implements OnInit {
   basket$: Observable<IBasket>;
   currentUser$: Observable<IUser>;
   isAdmin$: Observable<boolean>;
-
   public menuState:string = 'out';
   public hamburgerMenuState:string = 'out_b';
 
 
-  constructor(private basketService: BasketService, private accountService: AccountService,) { }
+  constructor(private basketService: BasketService, private accountService: AccountService, private checkoutService: CheckoutService) { }
 
   ngOnInit() {
     this.basket$ = this.basketService.basket$;
@@ -80,5 +79,6 @@ export class NavBarComponent implements OnInit {
   logout() {
     this.accountService.logout();
   }
+
 
 }
