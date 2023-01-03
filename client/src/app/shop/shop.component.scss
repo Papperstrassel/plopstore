@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
-$montserrat-font: 'Montserrat', sans-serif;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$montserrat-font: 'Montserrat', sans-serif;
 $main-font: 'Roboto', sans-serif;
 
 $main-color: #1F80BF;
@@ -19,14 +17,11 @@ $off-color: #E81D88;
   margin-top: 2.5em;
 }
 
-
-
 .searchbar-holder {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
 .searchbar-box {
@@ -61,9 +56,7 @@ $off-color: #E81D88;
 
 .custom-field:focus, .custom-field:hover {
   outline: none;
-  //border: 1px solid $main-color;
   background-color: #fff;
-  //box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
@@ -131,8 +124,6 @@ $off-color: #E81D88;
   touch-action: manipulation;
 }
 
-//Mobile filter menu
-
 .pane-toggle-unseen-filter {
   background: transparent;
   position: absolute;
@@ -153,9 +144,7 @@ $off-color: #E81D88;
   justify-content: center;
 }
 
-
 .filter-mobile-menu-window {
-
   position: fixed;
   width: 100%;
   top: 3.5em;
@@ -202,8 +191,6 @@ $off-color: #E81D88;
 }
 
 .filter-alternative-mobile-holder {
-  //Issue with layout
-  //display: flex;
   flex-direction: row;
   margin-left: 1.5em;
 }
@@ -216,7 +203,6 @@ $off-color: #E81D88;
   font-size: 1.2em;
   font-weight: 600;
 }
-//Test custom checkboxes
 
 .check-alternative-holder {
   margin-top: 1em;
@@ -257,16 +243,11 @@ $off-color: #E81D88;
 }
 
 
-
 input[type="checkbox"] {
   cursor: pointer;
-  /* Add if not using autoprefixer */
   -webkit-appearance: none;
-  /* Remove most all native input styles */
   appearance: none;
-  /* For iOS < 15 */
   background-color: var(--form-background);
-  /* Not removed via appearance */
   margin: 0;
 
   font: inherit;
@@ -289,10 +270,8 @@ input[type="checkbox"]::before {
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
-  //box-shadow: inset 1em 1em var(--form-control-color);
   box-shadow: inset 1em 1em $off-color;
   border: 0.25em solid $off-color;
-  /* Windows High Contrast Mode */
   background-color: $off-color;
 }
 
@@ -300,16 +279,10 @@ input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 
-
-//Radio buttons
 input[type="radio"] {
-  /* Add if not using autoprefixer */
   -webkit-appearance: none;
-  /* Remove most all native input styles */
   appearance: none;
-  /* For iOS < 15 */
   background-color: var(--form-background);
-  /* Not removed via appearance */
   margin: 0;
 
   font: inherit;
@@ -332,21 +305,14 @@ input[type="radio"]::before {
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
-  //box-shadow: inset 1em 1em var(--form-control-color);
   box-shadow: inset 1em 1em $off-color;
   border: 0.25em solid $off-color;
-  /* Windows High Contrast Mode */
   background-color: $off-color;
 }
 
 input[type="radio"]:checked::before {
   transform: scale(1);
 }
-
-//Text custom checkboxes
-//mobile filter menu End
-
-
 
 .empty-result-text {
   font-family: $main-font;
@@ -358,102 +324,17 @@ input[type="radio"]:checked::before {
   margin-top: 3.5em;
 }
 
-.view-btn {
-
-  margin-left: 0.5em;
-  height: 3em;
-  display: inline-block;
-  padding: 0.1rem 1rem;
-  font-size: 0.8em;
-  font-weight: 600;
-  color: white;
-  border: 2px solid $main-color;
-  cursor: pointer;
-  position: relative;
-  background-color: $main-color;
-  text-decoration: none;
-  overflow: hidden;
-  z-index: 1;
-  font-family: $main-font;
- }
-
-
- .reset--btn {
-  margin-left: 0.5em;
-  align-items: center;
-  background-color: #1F80BF;
-  border: 2px solid #1F80BF;
-  border-radius: 0.1em;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  fill: #000;
-  font-family: $main-font;
-  font-size: 16px;
-  font-weight: 600;
-  height: 2.5em;
-  justify-content: center;
-  line-height: 24px;
-  width: 4.5em;
-  outline: 0;
-  padding: 0 17px;
-  text-align: center;
-  text-decoration: none;
-  transition: all .3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-
-.reset--btn:hover {
-  background-color: #3385ff;
-  border-color: #3385ff;
-  fill: #06f;
-}
-
-.reset--btn:active {
-  background-color: #3385ff;
-  border-color: #3385ff;
-  fill: #06f;
-}
-
-
-
-//Searchbar stuff END
-
-
 .mobile-filter-container {
-
   visibility: hidden;
   display: flex;
   justify-content: center;
   padding-bottom: 2em;
-
-
 }
-
-.filter-headline-mobile-label {
-  font-family: $main-font;
-  font-weight: 600;
-  text-align: center;
-  padding-top: .2em;
-  padding-left: .3em;
-}
-
 
 .container-shop {
     display: flex;
     justify-content: center;
  }
-
- .container-shop-overflow-hidden {
-  display: flex;
-  justify-content: center;
-  padding-right: 7em;
-  overflow-y: hidden;
-}
 
 .overflow-removed {
   overflow: hidden;
@@ -487,11 +368,6 @@ input[type="radio"]:checked::before {
     flex-direction: column;
     width: 100vw;
   }
-
-
-
-
-
 }
 @media (max-width: 1015px) {
   .mobile-filter-container {
@@ -506,8 +382,6 @@ input[type="radio"]:checked::before {
 }
 
 @media (min-width: 769px) {
-
-
   .container-shop {
     padding-left: 2em !important;
     padding-right: 2em !important;
@@ -549,29 +423,19 @@ input[type="radio"]:checked::before {
     display: none;
   }
 }
-
-
   .filter-header {
-
     display: flex;
     align-content: center;
     justify-content: space-between;
     padding: 0 5rem 1.5625rem 0;
-
-
   }
 
   .filter-headline {
-
     display: flex;
     align-items: flex-end;
-
   }
 
-
-
 .filter-headline-label {
-
   margin-left: 0.5em;
   margin-bottom: 0.5em;
   font-size: 1em;
@@ -580,10 +444,6 @@ input[type="radio"]:checked::before {
   color: black;
 }
 
-
-
-
-/* Button filter stuff */
 .filter-btn-side {
   appearance: none;
   background-color: transparent;
@@ -623,146 +483,6 @@ input[type="radio"]:checked::before {
 }
 
 
-.button-28 {
-  appearance: none;
-  background-color: transparent;
-  border: 2px solid #606161;
-  border-radius: 0.2em;
-  box-sizing: border-box;
-  color: #000000;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $main-font;
-  font-size: 0.95em;
-  font-weight: 500;
-  line-height: normal;
-  margin: 0;
-  min-height: 2em;
-  min-width: 4em;
-  outline: none;
-  padding: 10px 10px;
-  text-align: left;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 60%;
-  will-change: transform;
-  margin-top: 10px;
-}
-
-.button-28:disabled {
-  pointer-events: none;
-}
-
-.button-28:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-
-.filter-ul-items {
-  margin-left: -2em;
-  margin-top: 1em;
-  padding-right: 1em;
-  padding-bottom: 0;
-  :hover {
-    text-decoration: underline;
-  }
-}
-
-.filter-list-items {
-  list-style: none;
-  cursor: pointer;
-  padding-bottom: 0;
-  font-family: $main-font;
-  font-weight: 500;
-  font-size: .85em;
-  color: #606060;
-
-}
-
-
-.filter-list-items.active {
-  color: #1e75af;
-  text-decoration: underline;
-
-
-}
-
-// Shop cart
-
-.shop-cart-window {
-
-  position: fixed;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(3px);
-}
-
-.shop-cart-panel {
-  max-width: 30rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 11;
-  background-color: white;
-}
-
-.shop-cart-panel-content {
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-
-}
-
-.cart-always-shown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: $main-font;
-  font-weight: 700;
-  font-size: 1.2em;
-  color: #1F80BF;
-  padding-top: 1em;
-  padding-bottom: 1.1em;
-  margin-left: 6em;
-  padding-left: 3em;
-
-}
-
-.cart-header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
-
-.exit-symbol {
-  font-size: 1em;
-  margin-left: 6em;
-  padding-right: 1em;
-  padding-left: .5em;
-  margin-top: 0.1em;
-  cursor: pointer;
-}
-
-
-
-.cart-product-container {
-  display: flex;
-  justify-content: center;
-
-}
 
 
 

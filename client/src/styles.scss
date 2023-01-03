@@ -3,9 +3,10 @@
 @import"../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";;
 @import"../node_modules/ngx-toastr/toastr.css";
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
 $montserrat-font: 'Montserrat', sans-serif;
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
+$main-font: 'Roboto', sans-serif;
 
 .xng-breadcrumb-root {
     padding: 8px 16px;

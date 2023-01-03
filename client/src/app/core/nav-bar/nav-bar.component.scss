@@ -1,20 +1,6 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
-$montserrat-font: 'Montserrat', sans-serif;
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet');
-$main-font: 'Roboto', sans-serif;
-
-
+$font-main: "Montserrat";
 $primary-font-color: #006EB9;
 $accent-color: #76C9BE;
-
-.user-style-nav-welcome {
-  font-family: $montserrat-font;
-  color: #212529;
-  text-decoration: none;
-}
 
 .ad-btn-holder {
   margin-left: 10em;
@@ -37,7 +23,7 @@ $accent-color: #76C9BE;
   font-weight: 600;
   color: #212529;
   background-color: white;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
  }
@@ -91,7 +77,7 @@ $accent-color: #76C9BE;
 
 
 .shop-link-text {
-  font-family: $montserrat-font;
+  font-family: $font-main;
   margin-top: 0.39em;
 }
 
@@ -103,16 +89,14 @@ $accent-color: #76C9BE;
   font-size: 0.9em;
   color: #3c3d3d;
   text-align: center;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   font-weight: 600;
 
 }
 
 .logo{
   cursor: pointer;
-  //height: 28px;
   width: 6.3em;
-
 }
 
 .activate-cart{
@@ -146,7 +130,6 @@ $accent-color: #76C9BE;
 }
 
 .navbar-desktop {
-
   position: relative;
   top: 0;
   width: 100%;
@@ -158,17 +141,10 @@ $accent-color: #76C9BE;
   align-items: center;
   justify-content: space-between;
   background-color: white;
-
-  //fixed height
   height: 3.5em;
-
-
 }
 
-
-
 .navbarTop{
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -182,7 +158,7 @@ $accent-color: #76C9BE;
 }
 .nav-links a{
   color: $primary-font-color;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   text-decoration: none;
   font-size: .8rem;
   text-align: center;
@@ -208,7 +184,7 @@ $accent-color: #76C9BE;
 .empty-btn {
   border: none;
   background: transparent;
-  font-family: $montserrat-font;
+  font-family: $font-main;
 }
 
 @media screen and (min-width: 900px) {
@@ -249,10 +225,7 @@ $accent-color: #76C9BE;
   }
 }
 
-.nav-active{
-  transform: translateX(0%);
-}
-//hamburger overlay¨
+
 .hamburger-window {
   position: fixed;
   width: 100%;
@@ -263,7 +236,6 @@ $accent-color: #76C9BE;
   backdrop-filter: blur(3px);
   z-index: 1010;
 }
-
 
 .hamburger-panel {
   max-width: 30rem;
@@ -276,35 +248,6 @@ $accent-color: #76C9BE;
   background-color: white;
 }
 
-.hamburger-panel-content {
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-
-}
-
-.mobile-navigation-menu {
-  margin-left: 1em;
-  padding-top: 3em;
-  display: grid;
-  text-align: left;
-  justify-content: center;
-
-}
-
-
-.ad-btn-holder-mobile {
-  margin-top: 2em;
-  position: absolute;
-  bottom: 20em;
-  left: 33%;
-}
-
-.user-specific {
-  margin-top: 3em;
-}
-
 .colored-panel {
   background: $primary-font-color;
   width: 100%;
@@ -313,10 +256,6 @@ $accent-color: #76C9BE;
   bottom: 0;
 }
 
-//end of hamburger overlay
-
-
-//invisible btn toggle pane
 .pane-toggle-unseen {
   background: transparent;
   position: absolute;
@@ -332,8 +271,6 @@ $accent-color: #76C9BE;
   height: 100%;
   width: 100%;
 }
-
-//End of btn toggle pane
 
 .shop-cart-window {
   z-index: 1010;
@@ -380,7 +317,7 @@ $accent-color: #76C9BE;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   font-weight: 700;
   font-size: 1.2em;
   color: #1F80BF;
@@ -399,7 +336,6 @@ $accent-color: #76C9BE;
 }
 
 .exit-symbol {
-  //font-size: 1.3em;
   margin-left: 5em;
   cursor: pointer;
   color: #BF1F80 ;
@@ -428,7 +364,7 @@ $accent-color: #76C9BE;
   width: 15em;
   text-align: center;
   font-size: 1.5em;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   font-weight: 700;
   color: #1F80BF;
 
@@ -447,7 +383,7 @@ $accent-color: #76C9BE;
   cursor: pointer;
   display: inline-flex;
   fill: #000;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   font-size: 16px;
   font-weight: 600;
   height: 4.5em;
@@ -507,7 +443,7 @@ $accent-color: #76C9BE;
   cursor: pointer;
   display: inline-flex;
   fill: #000;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   font-size: 16px;
   font-weight: 600;
   height: 4.5em;
@@ -559,7 +495,7 @@ $accent-color: #76C9BE;
 }
 
 .mobile-nav-greeting {
-  font-family: $montserrat-font;
+  font-family: $font-main;
   color: $primary-font-color;
   font-size: 1.75em;
   font-weight: 800;
@@ -584,7 +520,7 @@ $accent-color: #76C9BE;
 }
 
 .mobile-menu-item {
-  font-family: $montserrat-font;
+  font-family: $font-main;
   font-weight: 500;
   font-size: 1.25em;
   margin-left: 2.75em;
@@ -614,7 +550,7 @@ $accent-color: #76C9BE;
   margin-top: 3em;
   margin-left: 2em;
   font-size: 1.2em;
-  font-family: $montserrat-font;
+  font-family: $font-main;
   font-weight: 500;
 
 }
@@ -624,7 +560,7 @@ $accent-color: #76C9BE;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: $montserrat-font;
+    font-family: $font-main;
     font-size: 1.25em;
     font-weight: 500;
 }
